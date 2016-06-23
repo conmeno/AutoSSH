@@ -52,6 +52,7 @@ namespace AutoSSH
         {
             Utility.LoadConfig();
             LoadListApp();
+            gridApps.DataSource = Utility.LoadListAppstoGrid();
         }
         public void LoadListApp()
         {
@@ -59,7 +60,7 @@ namespace AutoSSH
             StringBuilder sb = new StringBuilder();
             foreach (App a in Apps)
             {
-                sb.AppendLine(a.Name + "  " + a.BundleID);
+                sb.AppendLine(a.AppName + "  " + a.BundleID);
             }
             txtListApp.Text = sb.ToString();
 
@@ -114,7 +115,7 @@ namespace AutoSSH
         {
             App app = new App();
             app.BundleID = txtBundleID.Text;
-            app.Name = txtAppName.Text;
+            app.AppName = txtAppName.Text;
             Apps.Add(app);
             Utility.SaveApps(Apps);
         }
@@ -133,6 +134,14 @@ namespace AutoSSH
             Utility.SaveListIP(listIP);
 
 
+        }
+
+        private void btSaveAppFromGrid_Click(object sender, EventArgs e)
+        {
+            BindingList<App> listIP = (BindingList<App>)gridApps.DataSource;
+
+
+            Utility.SaveListAppsGrid(listIP);
         }
     }
 }

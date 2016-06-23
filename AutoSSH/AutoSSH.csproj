@@ -52,21 +52,12 @@
     </Compile>
     <Compile Include="Iphone.cs" />
     <Compile Include="Config.cs" />
-    <Compile Include="IphoneChooseApps.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="IphoneChooseApps.Designer.cs">
-      <DependentUpon>IphoneChooseApps.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utility.cs" />
     <Compile Include="XmlSerializationHelper.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="IphoneChooseApps.resx">
-      <DependentUpon>IphoneChooseApps.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -39,6 +39,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btSaveListIp = new System.Windows.Forms.Button();
             this.btSaveAppstoIphone = new System.Windows.Forms.Button();
             this.lbIphone = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -65,11 +66,18 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtSleep = new System.Windows.Forms.TextBox();
             this.btSaveConfig = new System.Windows.Forms.Button();
-            this.btSaveListIp = new System.Windows.Forms.Button();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.btSaveAppFromGrid = new System.Windows.Forms.Button();
+            this.gridApps = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AppName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridlist)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridApps)).BeginInit();
             this.SuspendLayout();
             // 
             // btStart
@@ -157,6 +165,7 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Location = new System.Drawing.Point(4, 11);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -186,6 +195,16 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Main";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // btSaveListIp
+            // 
+            this.btSaveListIp.Location = new System.Drawing.Point(194, 345);
+            this.btSaveListIp.Name = "btSaveListIp";
+            this.btSaveListIp.Size = new System.Drawing.Size(75, 23);
+            this.btSaveListIp.TabIndex = 81;
+            this.btSaveListIp.Text = "Save List IP";
+            this.btSaveListIp.UseVisualStyleBackColor = true;
+            this.btSaveListIp.Click += new System.EventHandler(this.btSaveListIp_Click);
             // 
             // btSaveAppstoIphone
             // 
@@ -302,7 +321,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(672, 345);
+            this.tabPage2.Size = new System.Drawing.Size(672, 392);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Config";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -427,15 +446,61 @@
             this.btSaveConfig.UseVisualStyleBackColor = true;
             this.btSaveConfig.Click += new System.EventHandler(this.btSaveConfig_Click);
             // 
-            // btSaveListIp
+            // tabPage3
             // 
-            this.btSaveListIp.Location = new System.Drawing.Point(194, 345);
-            this.btSaveListIp.Name = "btSaveListIp";
-            this.btSaveListIp.Size = new System.Drawing.Size(75, 23);
-            this.btSaveListIp.TabIndex = 81;
-            this.btSaveListIp.Text = "Save List IP";
-            this.btSaveListIp.UseVisualStyleBackColor = true;
-            this.btSaveListIp.Click += new System.EventHandler(this.btSaveListIp_Click);
+            this.tabPage3.Controls.Add(this.btSaveAppFromGrid);
+            this.tabPage3.Controls.Add(this.gridApps);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(672, 392);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Apps";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // btSaveAppFromGrid
+            // 
+            this.btSaveAppFromGrid.Location = new System.Drawing.Point(326, 341);
+            this.btSaveAppFromGrid.Name = "btSaveAppFromGrid";
+            this.btSaveAppFromGrid.Size = new System.Drawing.Size(75, 23);
+            this.btSaveAppFromGrid.TabIndex = 60;
+            this.btSaveAppFromGrid.Text = "Start";
+            this.btSaveAppFromGrid.UseVisualStyleBackColor = true;
+            this.btSaveAppFromGrid.Click += new System.EventHandler(this.btSaveAppFromGrid_Click);
+            // 
+            // gridApps
+            // 
+            this.gridApps.BackgroundColor = System.Drawing.Color.AliceBlue;
+            this.gridApps.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridApps.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.AppName});
+            this.gridApps.Location = new System.Drawing.Point(3, 6);
+            this.gridApps.Name = "gridApps";
+            this.gridApps.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.gridApps.Size = new System.Drawing.Size(424, 320);
+            this.gridApps.TabIndex = 20;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "ID";
+            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 50;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "BundleID";
+            this.dataGridViewTextBoxColumn2.HeaderText = "BundleID";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Width = 200;
+            // 
+            // AppName
+            // 
+            this.AppName.DataPropertyName = "AppName";
+            this.AppName.HeaderText = "App Name";
+            this.AppName.Name = "AppName";
             // 
             // Form1
             // 
@@ -456,6 +521,8 @@
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridApps)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -501,6 +568,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Action;
         private System.Windows.Forms.DataGridViewTextBoxColumn IP;
         private System.Windows.Forms.Button btSaveListIp;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.DataGridView gridApps;
+        private System.Windows.Forms.Button btSaveAppFromGrid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AppName;
     }
 }
 

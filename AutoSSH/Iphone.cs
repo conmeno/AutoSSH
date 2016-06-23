@@ -7,8 +7,9 @@ namespace AutoSSH
 {
     public class App
     {
+        public int ID { get; set; }
         public string BundleID { get; set; }
-        public string Name { get; set; }
+        public string AppName { get; set; }
 
     }
 

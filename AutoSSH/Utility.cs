@@ -146,6 +146,34 @@ namespace AutoSSH
 
             return listVNC;
         }
+
+        public static BindingList<App> LoadListAppstoGrid()
+        {
+            string VNCListPath = Application.StartupPath + "\\Apps.txt";
+            BindingList<App> listVNC = new BindingList<App>();
+            try
+            {
+                listVNC = (BindingList<App>)DeSerialize(System.IO.File.ReadAllText(VNCListPath), typeof(BindingList<App>));
+            }
+            catch
+            {
+
+            }
+
+            return listVNC;
+        }
+        public static void SaveListAppsGrid(BindingList<App> listIP)
+        {
+            string VNCListPath = Application.StartupPath + "\\Apps.txt";
+            //if (listVNC.Count == 0)
+            //    listVNC.Add(new VNC());
+            string XML = Serialize(listIP, true);
+            System.IO.StreamWriter sr = new StreamWriter(VNCListPath);
+            sr.WriteLine(XML);
+            sr.Close();
+        }
+
+
         public static void SaveListIP(BindingList<Iphone> listIP)
         {
             string VNCListPath = Application.StartupPath + "\\ListIP.txt";
