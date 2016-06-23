@@ -18,7 +18,7 @@ namespace AutoSSH
             InitializeComponent();
         }
         Process amixerMediaProcess = new Process();
-
+        public List<App> Apps = new List<App>();
         private void btStart_Click(object sender, EventArgs e)
         {
             List<Iphone> iphones = new List<Iphone>();
@@ -42,11 +42,39 @@ namespace AutoSSH
             //OpenPutty("192.168.1.110", "command2.txt");
         }
 
-       
 
+        public void LoadIphoneGrid()
+        {
+            gridlist.DataSource = Utility.LoadIPListBind();
+
+        }
         public void LoadFirst()
         {
             Utility.LoadConfig();
+            LoadListApp();
+        }
+        public void LoadListApp()
+        {
+            Apps = Utility.LoadApps();
+            StringBuilder sb = new StringBuilder();
+            foreach (App a in Apps)
+            {
+                sb.AppendLine(a.Name + "  " + a.BundleID);
+            }
+            txtListApp.Text = sb.ToString();
+
+            LoadAppsCheckListbox();
+        }
+
+        public void LoadAppsCheckListbox()
+        {
+            StringBuilder sb = new StringBuilder();
+            foreach (App a in Apps)
+            {
+                //sb.AppendLine(a.Name + "  " + a.BundleID);
+                clbApp.Items.Add(a);
+            }
+            //clbApp.Text = sb.ToString();
         }
         public void OpenPutty(string IP, string command)
         {
@@ -80,13 +108,31 @@ namespace AutoSSH
             Utility.SaveConfig(cf);
         }
 
-        private void btSaveApps_Click(object sender, EventArgs e)
+        
+
+        private void btAddApp_Click(object sender, EventArgs e)
+        {
+            App app = new App();
+            app.BundleID = txtBundleID.Text;
+            app.Name = txtAppName.Text;
+            Apps.Add(app);
+            Utility.SaveApps(Apps);
+        }
+
+        private void clbApplist_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
 
+        private void btSaveListIp_Click(object sender, EventArgs e)
+        {
+           
+            BindingList<Iphone> listIP = (BindingList<Iphone>)gridlist.DataSource;
 
 
+            Utility.SaveListIP(listIP);
 
+
+        }
     }
 }

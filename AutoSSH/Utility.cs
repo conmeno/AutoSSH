@@ -103,22 +103,61 @@ namespace AutoSSH
             sr.Close();
 
         }
+        public static List<App> LoadApps()
+        {
+            string ConfigPath = Application.StartupPath + "\\Apps.txt";
+            List<App> apps = new List<App>();
+            try
+            {
+                apps = (List<App>)DeSerialize(System.IO.File.ReadAllText(ConfigPath), typeof(List<App>));
 
-        public static void SaveApps(App app)
+            }
+            catch
+            {
+                apps = new List<App>();
+            }
+
+            
+            return apps;
+        }
+        public static void SaveApps(List<App> app)
         {
             string ConfigPath = Application.StartupPath + "\\Apps.txt";
 
-            string XML = Serialize(App, true);
+            string XML = Serialize(app, true);
             System.IO.StreamWriter sr = new StreamWriter(ConfigPath);
             sr.WriteLine(XML);
             sr.Close();
 
         }
-      
-       
-      
-         
- 
-       
+
+        public static BindingList<Iphone> LoadIPListBind()
+        {
+            string VNCListPath = Application.StartupPath + "\\ListIP.txt";
+            BindingList<Iphone> listVNC = new BindingList<Iphone>();
+            try
+            {
+                listVNC = (BindingList<Iphone>)DeSerialize(System.IO.File.ReadAllText(VNCListPath), typeof(BindingList<Iphone>));
+            }
+            catch
+            {
+
+            }
+
+            return listVNC;
+        }
+        public static void SaveListIP(BindingList<Iphone> listIP)
+        {
+            string VNCListPath = Application.StartupPath + "\\ListIP.txt";
+            //if (listVNC.Count == 0)
+            //    listVNC.Add(new VNC());
+            string XML = Serialize(listIP, true);
+            System.IO.StreamWriter sr = new StreamWriter(VNCListPath);
+            sr.WriteLine(XML);
+            sr.Close();
+        }
+
+
+
     }
 }
