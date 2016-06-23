@@ -1,0 +1,1 @@
+activator send libactivator.system.homebutton && sleep 1 && stouch swipe 200 300 700 300 0.2 1 && Sleep 3

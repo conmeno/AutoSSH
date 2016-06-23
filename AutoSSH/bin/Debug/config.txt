@@ -1,0 +1,11 @@
+<Config>
+  <Sleep>10000</Sleep>
+  <AdPoint>
+    <X>0</X>
+    <Y>0</Y>
+  </AdPoint>
+  <AutoStart>false</AutoStart>
+  <Username>root</Username>
+  <Passwrod>alpine</Passwrod>
+  <DefaultIP>192.168.1.</DefaultIP>
+</Config>

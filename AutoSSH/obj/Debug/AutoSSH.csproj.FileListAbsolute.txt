@@ -1,0 +1,8 @@
+E:\AutoSSH\AutoSSH\bin\Debug\AutoSSH.exe
+E:\AutoSSH\AutoSSH\bin\Debug\AutoSSH.pdb
+E:\AutoSSH\AutoSSH\obj\Debug\AutoSSH.csprojResolveAssemblyReference.cache
+E:\AutoSSH\AutoSSH\obj\Debug\AutoSSH.Form1.resources
+E:\AutoSSH\AutoSSH\obj\Debug\AutoSSH.Properties.Resources.resources
+E:\AutoSSH\AutoSSH\obj\Debug\AutoSSH.csproj.GenerateResource.Cache
+E:\AutoSSH\AutoSSH\obj\Debug\AutoSSH.exe
+E:\AutoSSH\AutoSSH\obj\Debug\AutoSSH.pdb
