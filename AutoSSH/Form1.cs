@@ -21,16 +21,17 @@ namespace AutoSSH
         public List<App> Apps = new List<App>();
         private void btStart_Click(object sender, EventArgs e)
         {
-            List<Iphone> iphones = new List<Iphone>();
-            iphones.Add(new Iphone { IP = "192.168.1.110" });
-
-            iphones.Add(new Iphone { IP = "192.168.1.74" });
-            Parallel.ForEach(iphones, iphone =>
+            List<Iphone> iphones = Utility.LoadIPList();
+            if (iphones != null)
             {
-                OpenPutty(iphone.IP, "command.txt");
+                Parallel.ForEach(iphones, iphone =>
+                {
+                    OpenPutty(iphone.IP, "command.txt");
 
-            }
+                }
             );
+            }
+            
         }
 
 
@@ -39,7 +40,7 @@ namespace AutoSSH
             LoadFirst();
 
             
-            //OpenPutty("192.168.1.110", "command2.txt");
+          //  OpenPutty("192.168.1.140", "command2.txt");
         }
 
 
@@ -51,32 +52,16 @@ namespace AutoSSH
         public void LoadFirst()
         {
             Utility.LoadConfig();
-            LoadListApp();
+            LoadIphoneGrid();
+       LoadConfigtoForm();
+            LoadListAppsToForm();
+        }
+    
+        public void LoadListAppsToForm()
+        {
             gridApps.DataSource = Utility.LoadListAppstoGrid();
         }
-        public void LoadListApp()
-        {
-            Apps = Utility.LoadApps();
-            StringBuilder sb = new StringBuilder();
-            foreach (App a in Apps)
-            {
-                sb.AppendLine(a.AppName + "  " + a.BundleID);
-            }
-            txtListApp.Text = sb.ToString();
-
-            LoadAppsCheckListbox();
-        }
-
-        public void LoadAppsCheckListbox()
-        {
-            StringBuilder sb = new StringBuilder();
-            foreach (App a in Apps)
-            {
-                //sb.AppendLine(a.Name + "  " + a.BundleID);
-                clbApp.Items.Add(a);
-            }
-            //clbApp.Text = sb.ToString();
-        }
+       
         public void OpenPutty(string IP, string command)
         {
 
@@ -103,23 +88,27 @@ namespace AutoSSH
                 cf = new Config();
             cf.Sleep = int.Parse(txtSleep.Text);
             cf.Username = txtUsername.Text;
-            cf.Passwrod = txtPassword.Text;
+            cf.Password = txtPassword.Text;
             cf.DefaultIP = txtDefaultIP.Text;
-
+            cf.RoundClickAd = int.Parse(txtRoundClickAd.Text.ToString());
+            cf.AdPoint = new Point(int.Parse(txtPointX.ToString()), int.Parse(txtPointY.ToString()));
             Utility.SaveConfig(cf);
         }
+        public void LoadConfigtoForm()
+        {
+            Config cf = Utility.LoadConfig();
+            txtRoundClickAd.Text = cf.RoundClickAd.ToString();
+            txtSleep.Text = cf.Sleep.ToString();
+            txtPointY.Text = cf.AdPoint.Y.ToString();
+            txtPointX.Text = cf.AdPoint.X.ToString();
+            txtPassword.Text = cf.Password;
+            txtUsername.Text = cf.Username;
+            
 
+        }
         
 
-        private void btAddApp_Click(object sender, EventArgs e)
-        {
-            App app = new App();
-            app.BundleID = txtBundleID.Text;
-            app.AppName = txtAppName.Text;
-            Apps.Add(app);
-            Utility.SaveApps(Apps);
-        }
-
+      
         private void clbApplist_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -143,5 +132,7 @@ namespace AutoSSH
 
             Utility.SaveListAppsGrid(listIP);
         }
+
+       
     }
 }

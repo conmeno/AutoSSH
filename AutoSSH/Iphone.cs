@@ -16,7 +16,8 @@ namespace AutoSSH
     public class Iphone
     {
         public string IP { get; set; }
-        public List<App> Apps { get; set; } 
+        public string Apps { get; set; }
+        //public List<App> Apps { get; set; } 
        // public string Username { get; set}
        // public string Password { get; set; }
         

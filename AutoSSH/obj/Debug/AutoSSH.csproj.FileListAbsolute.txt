@@ -14,7 +14,6 @@ E:\AutoSSHGit\AutoSSH\obj\Debug\AutoSSH.csprojResolveAssemblyReference.cache
 E:\AutoSSHGit\AutoSSH\obj\Debug\AutoSSH.Form1.resources
 E:\AutoSSHGit\AutoSSH\obj\Debug\AutoSSH.Properties.Resources.resources
 E:\AutoSSHGit\AutoSSH\obj\Debug\AutoSSH.csproj.GenerateResource.Cache
-E:\AutoSSHGit\AutoSSH\obj\Debug\AutoSSH.IphoneChooseApps.resources
 C:\Users\phuongnt\Desktop\autossh\AutoSSH\obj\Debug\AutoSSH.exe
 C:\Users\phuongnt\Desktop\autossh\AutoSSH\obj\Debug\AutoSSH.pdb
 C:\Users\phuongnt\Desktop\autossh\AutoSSH\obj\Debug\AutoSSH.csprojResolveAssemblyReference.cache

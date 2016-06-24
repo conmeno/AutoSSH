@@ -35,23 +35,14 @@
             this.Run = new System.Windows.Forms.DataGridViewButtonColumn();
             this.cbStartWindows = new System.Windows.Forms.CheckBox();
             this.cbAutoStart = new System.Windows.Forms.CheckBox();
-            this.txtListApp = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.btSaveListIp = new System.Windows.Forms.Button();
-            this.btSaveAppstoIphone = new System.Windows.Forms.Button();
-            this.lbIphone = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.clbApp = new System.Windows.Forms.CheckedListBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.btAddApp = new System.Windows.Forms.Button();
-            this.txtAppName = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.txtBundleID = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.txtRoundClickAd = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.txtDefaultIP = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
@@ -82,9 +73,9 @@
             // 
             // btStart
             // 
-            this.btStart.Location = new System.Drawing.Point(605, 435);
+            this.btStart.Location = new System.Drawing.Point(605, 431);
             this.btStart.Name = "btStart";
-            this.btStart.Size = new System.Drawing.Size(75, 23);
+            this.btStart.Size = new System.Drawing.Size(75, 27);
             this.btStart.TabIndex = 3;
             this.btStart.Text = "Start";
             this.btStart.UseVisualStyleBackColor = true;
@@ -98,10 +89,10 @@
             this.IP,
             this.Action,
             this.Run});
-            this.gridlist.Location = new System.Drawing.Point(194, 19);
+            this.gridlist.Location = new System.Drawing.Point(94, 18);
             this.gridlist.Name = "gridlist";
             this.gridlist.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.gridlist.Size = new System.Drawing.Size(282, 320);
+            this.gridlist.Size = new System.Drawing.Size(294, 320);
             this.gridlist.TabIndex = 19;
             // 
             // IP
@@ -119,9 +110,9 @@
             // 
             // Run
             // 
-            this.Run.HeaderText = "Choose Apps";
+            this.Run.HeaderText = "Test";
             this.Run.Name = "Run";
-            this.Run.Text = "Choose Apps";
+            this.Run.Text = "Test";
             this.Run.Width = 70;
             // 
             // cbStartWindows
@@ -143,14 +134,6 @@
             this.cbAutoStart.TabIndex = 55;
             this.cbAutoStart.Text = "Auto Start";
             this.cbAutoStart.UseVisualStyleBackColor = true;
-            // 
-            // txtListApp
-            // 
-            this.txtListApp.Location = new System.Drawing.Point(9, 102);
-            this.txtListApp.Multiline = true;
-            this.txtListApp.Name = "txtListApp";
-            this.txtListApp.Size = new System.Drawing.Size(149, 219);
-            this.txtListApp.TabIndex = 57;
             // 
             // label2
             // 
@@ -175,18 +158,7 @@
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.btSaveListIp);
-            this.tabPage1.Controls.Add(this.btSaveAppstoIphone);
-            this.tabPage1.Controls.Add(this.lbIphone);
-            this.tabPage1.Controls.Add(this.label12);
-            this.tabPage1.Controls.Add(this.clbApp);
             this.tabPage1.Controls.Add(this.label11);
-            this.tabPage1.Controls.Add(this.btAddApp);
-            this.tabPage1.Controls.Add(this.txtAppName);
-            this.tabPage1.Controls.Add(this.label10);
-            this.tabPage1.Controls.Add(this.txtBundleID);
-            this.tabPage1.Controls.Add(this.label9);
-            this.tabPage1.Controls.Add(this.label4);
-            this.tabPage1.Controls.Add(this.txtListApp);
             this.tabPage1.Controls.Add(this.gridlist);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
@@ -198,112 +170,27 @@
             // 
             // btSaveListIp
             // 
-            this.btSaveListIp.Location = new System.Drawing.Point(194, 345);
+            this.btSaveListIp.Location = new System.Drawing.Point(9, 344);
             this.btSaveListIp.Name = "btSaveListIp";
-            this.btSaveListIp.Size = new System.Drawing.Size(75, 23);
+            this.btSaveListIp.Size = new System.Drawing.Size(83, 42);
             this.btSaveListIp.TabIndex = 81;
             this.btSaveListIp.Text = "Save List IP";
             this.btSaveListIp.UseVisualStyleBackColor = true;
             this.btSaveListIp.Click += new System.EventHandler(this.btSaveListIp_Click);
             // 
-            // btSaveAppstoIphone
-            // 
-            this.btSaveAppstoIphone.Location = new System.Drawing.Point(589, 21);
-            this.btSaveAppstoIphone.Name = "btSaveAppstoIphone";
-            this.btSaveAppstoIphone.Size = new System.Drawing.Size(75, 23);
-            this.btSaveAppstoIphone.TabIndex = 60;
-            this.btSaveAppstoIphone.Text = "Save";
-            this.btSaveAppstoIphone.UseVisualStyleBackColor = true;
-            // 
-            // lbIphone
-            // 
-            this.lbIphone.AutoSize = true;
-            this.lbIphone.Location = new System.Drawing.Point(533, 26);
-            this.lbIphone.Name = "lbIphone";
-            this.lbIphone.Size = new System.Drawing.Size(21, 13);
-            this.lbIphone.TabIndex = 80;
-            this.lbIphone.Text = "[ip]";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(484, 26);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(43, 13);
-            this.label12.TabIndex = 79;
-            this.label12.Text = "Iphone:";
-            // 
-            // clbApp
-            // 
-            this.clbApp.CheckOnClick = true;
-            this.clbApp.FormattingEnabled = true;
-            this.clbApp.Location = new System.Drawing.Point(482, 49);
-            this.clbApp.Name = "clbApp";
-            this.clbApp.Size = new System.Drawing.Size(182, 289);
-            this.clbApp.TabIndex = 60;
-            // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(198, 3);
+            this.label11.Location = new System.Drawing.Point(6, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(62, 13);
             this.label11.TabIndex = 78;
             this.label11.Text = "List Iphone:";
             // 
-            // btAddApp
-            // 
-            this.btAddApp.Location = new System.Drawing.Point(63, 58);
-            this.btAddApp.Name = "btAddApp";
-            this.btAddApp.Size = new System.Drawing.Size(75, 23);
-            this.btAddApp.TabIndex = 60;
-            this.btAddApp.Text = "Add App";
-            this.btAddApp.UseVisualStyleBackColor = true;
-            this.btAddApp.Click += new System.EventHandler(this.btAddApp_Click);
-            // 
-            // txtAppName
-            // 
-            this.txtAppName.Location = new System.Drawing.Point(63, 32);
-            this.txtAppName.Name = "txtAppName";
-            this.txtAppName.Size = new System.Drawing.Size(95, 20);
-            this.txtAppName.TabIndex = 77;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(6, 35);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(57, 13);
-            this.label10.TabIndex = 76;
-            this.label10.Text = "App Name";
-            // 
-            // txtBundleID
-            // 
-            this.txtBundleID.Location = new System.Drawing.Point(63, 6);
-            this.txtBundleID.Name = "txtBundleID";
-            this.txtBundleID.Size = new System.Drawing.Size(95, 20);
-            this.txtBundleID.TabIndex = 75;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(6, 9);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(51, 13);
-            this.label9.TabIndex = 74;
-            this.label9.Text = "BundleID";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(9, 63);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(31, 13);
-            this.label4.TabIndex = 58;
-            this.label4.Text = "Apps";
-            // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.txtRoundClickAd);
+            this.tabPage2.Controls.Add(this.label13);
             this.tabPage2.Controls.Add(this.txtDefaultIP);
             this.tabPage2.Controls.Add(this.label8);
             this.tabPage2.Controls.Add(this.txtPassword);
@@ -325,6 +212,23 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Config";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // txtRoundClickAd
+            // 
+            this.txtRoundClickAd.Location = new System.Drawing.Point(86, 185);
+            this.txtRoundClickAd.Name = "txtRoundClickAd";
+            this.txtRoundClickAd.Size = new System.Drawing.Size(124, 20);
+            this.txtRoundClickAd.TabIndex = 77;
+            this.txtRoundClickAd.Text = "60";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(9, 188);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(75, 13);
+            this.label13.TabIndex = 76;
+            this.label13.Text = "RoundClickAd";
             // 
             // txtDefaultIP
             // 
@@ -438,7 +342,7 @@
             // 
             // btSaveConfig
             // 
-            this.btSaveConfig.Location = new System.Drawing.Point(12, 185);
+            this.btSaveConfig.Location = new System.Drawing.Point(12, 231);
             this.btSaveConfig.Name = "btSaveConfig";
             this.btSaveConfig.Size = new System.Drawing.Size(75, 37);
             this.btSaveConfig.TabIndex = 60;
@@ -460,11 +364,11 @@
             // 
             // btSaveAppFromGrid
             // 
-            this.btSaveAppFromGrid.Location = new System.Drawing.Point(326, 341);
+            this.btSaveAppFromGrid.Location = new System.Drawing.Point(551, 332);
             this.btSaveAppFromGrid.Name = "btSaveAppFromGrid";
-            this.btSaveAppFromGrid.Size = new System.Drawing.Size(75, 23);
+            this.btSaveAppFromGrid.Size = new System.Drawing.Size(113, 36);
             this.btSaveAppFromGrid.TabIndex = 60;
-            this.btSaveAppFromGrid.Text = "Start";
+            this.btSaveAppFromGrid.Text = "Save Apps";
             this.btSaveAppFromGrid.UseVisualStyleBackColor = true;
             this.btSaveAppFromGrid.Click += new System.EventHandler(this.btSaveAppFromGrid_Click);
             // 
@@ -476,10 +380,10 @@
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.AppName});
-            this.gridApps.Location = new System.Drawing.Point(3, 6);
+            this.gridApps.Location = new System.Drawing.Point(12, 6);
             this.gridApps.Name = "gridApps";
             this.gridApps.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.gridApps.Size = new System.Drawing.Size(424, 320);
+            this.gridApps.Size = new System.Drawing.Size(646, 320);
             this.gridApps.TabIndex = 20;
             // 
             // dataGridViewTextBoxColumn1
@@ -494,13 +398,14 @@
             this.dataGridViewTextBoxColumn2.DataPropertyName = "BundleID";
             this.dataGridViewTextBoxColumn2.HeaderText = "BundleID";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 200;
+            this.dataGridViewTextBoxColumn2.Width = 300;
             // 
             // AppName
             // 
             this.AppName.DataPropertyName = "AppName";
             this.AppName.HeaderText = "App Name";
             this.AppName.Name = "AppName";
+            this.AppName.Width = 250;
             // 
             // Form1
             // 
@@ -534,7 +439,6 @@
         private System.Windows.Forms.DataGridView gridlist;
         private System.Windows.Forms.CheckBox cbStartWindows;
         private System.Windows.Forms.CheckBox cbAutoStart;
-        private System.Windows.Forms.TextBox txtListApp;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
@@ -553,27 +457,19 @@
         private System.Windows.Forms.TextBox txtRespring;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button btAddApp;
-        private System.Windows.Forms.TextBox txtAppName;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox txtBundleID;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.CheckedListBox clbApp;
-        private System.Windows.Forms.Button btSaveAppstoIphone;
-        private System.Windows.Forms.Label lbIphone;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.DataGridViewButtonColumn Run;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Action;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IP;
         private System.Windows.Forms.Button btSaveListIp;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.DataGridView gridApps;
         private System.Windows.Forms.Button btSaveAppFromGrid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn AppName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.TextBox txtRoundClickAd;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.DataGridViewButtonColumn Run;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Action;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IP;
     }
 }
 

@@ -76,7 +76,7 @@ namespace AutoSSH
 
         public static Config LoadConfig()
         {
-            string ConfigPath = Application.StartupPath + "\\newconfig.txt";
+            string ConfigPath = Application.StartupPath + "\\config.txt";
             Config Config = new Config();
             try
             {
@@ -147,6 +147,39 @@ namespace AutoSSH
             return listVNC;
         }
 
+
+        public static List<Iphone> LoadIPList()
+        {
+            string VNCListPath = Application.StartupPath + "\\ListIP.txt";
+            List<Iphone> listVNC = new List<Iphone>();
+            try
+            {
+                listVNC = (List<Iphone>)DeSerialize(System.IO.File.ReadAllText(VNCListPath), typeof(List<Iphone>));
+            }
+            catch
+            {
+
+            }
+
+            return listVNC;
+        }
+
+
+
+        public static void SaveListIP(BindingList<Iphone> listIP)
+        {
+            string VNCListPath = Application.StartupPath + "\\ListIP.txt";
+            //if (listVNC.Count == 0)
+            //    listVNC.Add(new VNC());
+            string XML = Serialize(listIP, true);
+            System.IO.StreamWriter sr = new StreamWriter(VNCListPath);
+            sr.WriteLine(XML);
+            sr.Close();
+        }
+
+
+
+
         public static BindingList<App> LoadListAppstoGrid()
         {
             string VNCListPath = Application.StartupPath + "\\Apps.txt";
@@ -174,16 +207,7 @@ namespace AutoSSH
         }
 
 
-        public static void SaveListIP(BindingList<Iphone> listIP)
-        {
-            string VNCListPath = Application.StartupPath + "\\ListIP.txt";
-            //if (listVNC.Count == 0)
-            //    listVNC.Add(new VNC());
-            string XML = Serialize(listIP, true);
-            System.IO.StreamWriter sr = new StreamWriter(VNCListPath);
-            sr.WriteLine(XML);
-            sr.Close();
-        }
+      
 
 
 
