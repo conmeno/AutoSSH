@@ -63,11 +63,11 @@
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AppName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btGenerateCommand = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridlist)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridApps)).BeginInit();
             this.SuspendLayout();
             // 
@@ -89,10 +89,10 @@
             this.IP,
             this.Action,
             this.Run});
-            this.gridlist.Location = new System.Drawing.Point(94, 18);
+            this.gridlist.Location = new System.Drawing.Point(398, 18);
             this.gridlist.Name = "gridlist";
             this.gridlist.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.gridlist.Size = new System.Drawing.Size(294, 320);
+            this.gridlist.Size = new System.Drawing.Size(266, 320);
             this.gridlist.TabIndex = 19;
             // 
             // IP
@@ -157,6 +157,9 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.btGenerateCommand);
+            this.tabPage1.Controls.Add(this.btSaveAppFromGrid);
+            this.tabPage1.Controls.Add(this.gridApps);
             this.tabPage1.Controls.Add(this.btSaveListIp);
             this.tabPage1.Controls.Add(this.label11);
             this.tabPage1.Controls.Add(this.gridlist);
@@ -170,7 +173,7 @@
             // 
             // btSaveListIp
             // 
-            this.btSaveListIp.Location = new System.Drawing.Point(9, 344);
+            this.btSaveListIp.Location = new System.Drawing.Point(398, 344);
             this.btSaveListIp.Name = "btSaveListIp";
             this.btSaveListIp.Size = new System.Drawing.Size(83, 42);
             this.btSaveListIp.TabIndex = 81;
@@ -352,8 +355,6 @@
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.btSaveAppFromGrid);
-            this.tabPage3.Controls.Add(this.gridApps);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
@@ -364,7 +365,7 @@
             // 
             // btSaveAppFromGrid
             // 
-            this.btSaveAppFromGrid.Location = new System.Drawing.Point(551, 332);
+            this.btSaveAppFromGrid.Location = new System.Drawing.Point(9, 347);
             this.btSaveAppFromGrid.Name = "btSaveAppFromGrid";
             this.btSaveAppFromGrid.Size = new System.Drawing.Size(113, 36);
             this.btSaveAppFromGrid.TabIndex = 60;
@@ -380,11 +381,11 @@
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.AppName});
-            this.gridApps.Location = new System.Drawing.Point(12, 6);
+            this.gridApps.Location = new System.Drawing.Point(9, 18);
             this.gridApps.Name = "gridApps";
             this.gridApps.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.gridApps.Size = new System.Drawing.Size(646, 320);
-            this.gridApps.TabIndex = 20;
+            this.gridApps.Size = new System.Drawing.Size(337, 320);
+            this.gridApps.TabIndex = 82;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -398,14 +399,24 @@
             this.dataGridViewTextBoxColumn2.DataPropertyName = "BundleID";
             this.dataGridViewTextBoxColumn2.HeaderText = "BundleID";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 300;
+            this.dataGridViewTextBoxColumn2.Width = 150;
             // 
             // AppName
             // 
             this.AppName.DataPropertyName = "AppName";
             this.AppName.HeaderText = "App Name";
             this.AppName.Name = "AppName";
-            this.AppName.Width = 250;
+            this.AppName.Width = 150;
+            // 
+            // btGenerateCommand
+            // 
+            this.btGenerateCommand.Location = new System.Drawing.Point(583, 341);
+            this.btGenerateCommand.Name = "btGenerateCommand";
+            this.btGenerateCommand.Size = new System.Drawing.Size(83, 42);
+            this.btGenerateCommand.TabIndex = 83;
+            this.btGenerateCommand.Text = "Gen Command";
+            this.btGenerateCommand.UseVisualStyleBackColor = true;
+            this.btGenerateCommand.Click += new System.EventHandler(this.btGenerateCommand_Click);
             // 
             // Form1
             // 
@@ -426,7 +437,6 @@
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            this.tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridApps)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -460,16 +470,17 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button btSaveListIp;
         private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.DataGridView gridApps;
         private System.Windows.Forms.Button btSaveAppFromGrid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn AppName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.TextBox txtRoundClickAd;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.DataGridViewButtonColumn Run;
         private System.Windows.Forms.DataGridViewTextBoxColumn Action;
         private System.Windows.Forms.DataGridViewTextBoxColumn IP;
+        private System.Windows.Forms.Button btGenerateCommand;
+        private System.Windows.Forms.DataGridView gridApps;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AppName;
     }
 }
 
