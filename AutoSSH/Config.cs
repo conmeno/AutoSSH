@@ -19,6 +19,7 @@ namespace AutoSSH
         public string Password { get; set; }
         public string DefaultIP { get; set; }//192.168.1.
         public int Sleep { get; set; }
+        public int RoundResetIDFV { get; set; }
         public int RoundClickAd { get; set; }
 
         [XmlIgnore]

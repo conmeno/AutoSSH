@@ -1,0 +1,1 @@
+rm /var/db/lsd/com.apple.lsdidentifiers.plist

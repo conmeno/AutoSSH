@@ -1,0 +1,10 @@
+<ArrayOfIphone>
+  <Iphone>
+    <IP>132</IP>
+    <Apps>1</Apps>
+  </Iphone>
+  <Iphone>
+    <IP>131</IP>
+    <Apps>1,2</Apps>
+  </Iphone>
+</ArrayOfIphone>

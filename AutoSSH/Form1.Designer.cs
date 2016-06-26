@@ -38,6 +38,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btGenerateCommand = new System.Windows.Forms.Button();
+            this.btSaveAppFromGrid = new System.Windows.Forms.Button();
+            this.gridApps = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AppName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btSaveListIp = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -57,28 +63,26 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtSleep = new System.Windows.Forms.TextBox();
             this.btSaveConfig = new System.Windows.Forms.Button();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.btSaveAppFromGrid = new System.Windows.Forms.Button();
-            this.gridApps = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AppName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btGenerateCommand = new System.Windows.Forms.Button();
+            this.txtRoundResetIDFV = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gridlist)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridApps)).BeginInit();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // btStart
             // 
+            this.btStart.BackColor = System.Drawing.SystemColors.InfoText;
+            this.btStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btStart.ForeColor = System.Drawing.SystemColors.Control;
             this.btStart.Location = new System.Drawing.Point(605, 431);
             this.btStart.Name = "btStart";
-            this.btStart.Size = new System.Drawing.Size(75, 27);
+            this.btStart.Size = new System.Drawing.Size(75, 42);
             this.btStart.TabIndex = 3;
             this.btStart.Text = "Start";
-            this.btStart.UseVisualStyleBackColor = true;
+            this.btStart.UseVisualStyleBackColor = false;
             this.btStart.Click += new System.EventHandler(this.btStart_Click);
             // 
             // gridlist
@@ -118,22 +122,24 @@
             // cbStartWindows
             // 
             this.cbStartWindows.AutoSize = true;
-            this.cbStartWindows.Location = new System.Drawing.Point(507, 439);
+            this.cbStartWindows.Location = new System.Drawing.Point(507, 446);
             this.cbStartWindows.Name = "cbStartWindows";
             this.cbStartWindows.Size = new System.Drawing.Size(92, 17);
             this.cbStartWindows.TabIndex = 56;
             this.cbStartWindows.Text = "Start with Win";
             this.cbStartWindows.UseVisualStyleBackColor = true;
+            this.cbStartWindows.CheckedChanged += new System.EventHandler(this.cbStartWindows_CheckedChanged);
             // 
             // cbAutoStart
             // 
             this.cbAutoStart.AutoSize = true;
-            this.cbAutoStart.Location = new System.Drawing.Point(436, 439);
+            this.cbAutoStart.Location = new System.Drawing.Point(436, 446);
             this.cbAutoStart.Name = "cbAutoStart";
             this.cbAutoStart.Size = new System.Drawing.Size(73, 17);
             this.cbAutoStart.TabIndex = 55;
             this.cbAutoStart.Text = "Auto Start";
             this.cbAutoStart.UseVisualStyleBackColor = true;
+            this.cbAutoStart.CheckedChanged += new System.EventHandler(this.cbAutoStart_CheckedChanged);
             // 
             // label2
             // 
@@ -148,7 +154,6 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Location = new System.Drawing.Point(4, 11);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -171,6 +176,61 @@
             this.tabPage1.Text = "Main";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // btGenerateCommand
+            // 
+            this.btGenerateCommand.Location = new System.Drawing.Point(583, 341);
+            this.btGenerateCommand.Name = "btGenerateCommand";
+            this.btGenerateCommand.Size = new System.Drawing.Size(83, 42);
+            this.btGenerateCommand.TabIndex = 83;
+            this.btGenerateCommand.Text = "Gen Command";
+            this.btGenerateCommand.UseVisualStyleBackColor = true;
+            this.btGenerateCommand.Click += new System.EventHandler(this.btGenerateCommand_Click);
+            // 
+            // btSaveAppFromGrid
+            // 
+            this.btSaveAppFromGrid.Location = new System.Drawing.Point(9, 347);
+            this.btSaveAppFromGrid.Name = "btSaveAppFromGrid";
+            this.btSaveAppFromGrid.Size = new System.Drawing.Size(113, 36);
+            this.btSaveAppFromGrid.TabIndex = 60;
+            this.btSaveAppFromGrid.Text = "Save Apps";
+            this.btSaveAppFromGrid.UseVisualStyleBackColor = true;
+            this.btSaveAppFromGrid.Click += new System.EventHandler(this.btSaveAppFromGrid_Click);
+            // 
+            // gridApps
+            // 
+            this.gridApps.BackgroundColor = System.Drawing.Color.AliceBlue;
+            this.gridApps.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridApps.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.AppName});
+            this.gridApps.Location = new System.Drawing.Point(9, 18);
+            this.gridApps.Name = "gridApps";
+            this.gridApps.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.gridApps.Size = new System.Drawing.Size(337, 320);
+            this.gridApps.TabIndex = 82;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "ID";
+            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 50;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "BundleID";
+            this.dataGridViewTextBoxColumn2.HeaderText = "BundleID";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Width = 150;
+            // 
+            // AppName
+            // 
+            this.AppName.DataPropertyName = "AppName";
+            this.AppName.HeaderText = "App Name";
+            this.AppName.Name = "AppName";
+            this.AppName.Width = 150;
+            // 
             // btSaveListIp
             // 
             this.btSaveListIp.Location = new System.Drawing.Point(398, 344);
@@ -192,6 +252,8 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.txtRoundResetIDFV);
+            this.tabPage2.Controls.Add(this.label4);
             this.tabPage2.Controls.Add(this.txtRoundClickAd);
             this.tabPage2.Controls.Add(this.label13);
             this.tabPage2.Controls.Add(this.txtDefaultIP);
@@ -353,76 +415,28 @@
             this.btSaveConfig.UseVisualStyleBackColor = true;
             this.btSaveConfig.Click += new System.EventHandler(this.btSaveConfig_Click);
             // 
-            // tabPage3
+            // txtRoundResetIDFV
             // 
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(672, 392);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Apps";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.txtRoundResetIDFV.Location = new System.Drawing.Point(106, 211);
+            this.txtRoundResetIDFV.Name = "txtRoundResetIDFV";
+            this.txtRoundResetIDFV.Size = new System.Drawing.Size(124, 20);
+            this.txtRoundResetIDFV.TabIndex = 79;
+            this.txtRoundResetIDFV.Text = "3";
             // 
-            // btSaveAppFromGrid
+            // label4
             // 
-            this.btSaveAppFromGrid.Location = new System.Drawing.Point(9, 347);
-            this.btSaveAppFromGrid.Name = "btSaveAppFromGrid";
-            this.btSaveAppFromGrid.Size = new System.Drawing.Size(113, 36);
-            this.btSaveAppFromGrid.TabIndex = 60;
-            this.btSaveAppFromGrid.Text = "Save Apps";
-            this.btSaveAppFromGrid.UseVisualStyleBackColor = true;
-            this.btSaveAppFromGrid.Click += new System.EventHandler(this.btSaveAppFromGrid_Click);
-            // 
-            // gridApps
-            // 
-            this.gridApps.BackgroundColor = System.Drawing.Color.AliceBlue;
-            this.gridApps.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridApps.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.AppName});
-            this.gridApps.Location = new System.Drawing.Point(9, 18);
-            this.gridApps.Name = "gridApps";
-            this.gridApps.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.gridApps.Size = new System.Drawing.Size(337, 320);
-            this.gridApps.TabIndex = 82;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "ID";
-            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 50;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "BundleID";
-            this.dataGridViewTextBoxColumn2.HeaderText = "BundleID";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 150;
-            // 
-            // AppName
-            // 
-            this.AppName.DataPropertyName = "AppName";
-            this.AppName.HeaderText = "App Name";
-            this.AppName.Name = "AppName";
-            this.AppName.Width = 150;
-            // 
-            // btGenerateCommand
-            // 
-            this.btGenerateCommand.Location = new System.Drawing.Point(583, 341);
-            this.btGenerateCommand.Name = "btGenerateCommand";
-            this.btGenerateCommand.Size = new System.Drawing.Size(83, 42);
-            this.btGenerateCommand.TabIndex = 83;
-            this.btGenerateCommand.Text = "Gen Command";
-            this.btGenerateCommand.UseVisualStyleBackColor = true;
-            this.btGenerateCommand.Click += new System.EventHandler(this.btGenerateCommand_Click);
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(9, 214);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(91, 13);
+            this.label4.TabIndex = 78;
+            this.label4.Text = "RoundResetIDFV";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(684, 461);
+            this.ClientSize = new System.Drawing.Size(684, 478);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cbStartWindows);
@@ -435,9 +449,9 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridApps)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridApps)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -469,7 +483,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button btSaveListIp;
-        private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Button btSaveAppFromGrid;
         private System.Windows.Forms.TextBox txtRoundClickAd;
         private System.Windows.Forms.Label label13;
@@ -481,6 +494,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn AppName;
+        private System.Windows.Forms.TextBox txtRoundResetIDFV;
+        private System.Windows.Forms.Label label4;
     }
 }
 

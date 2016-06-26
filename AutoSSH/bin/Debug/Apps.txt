@@ -1,0 +1,17 @@
+<ArrayOfApp>
+  <App>
+    <ID>1</ID>
+    <BundleID>phuongnguyennew.Bird-Jump</BundleID>
+    <AppName>Bird Jump</AppName>
+  </App>
+  <App>
+    <ID>2</ID>
+    <BundleID>phuongntnew.Bird-Jump</BundleID>
+    <AppName>Bird Jump</AppName>
+  </App>
+  <App>
+    <ID>3</ID>
+    <BundleID>bundleid3</BundleID>
+    <AppName>appname3</AppName>
+  </App>
+</ArrayOfApp>

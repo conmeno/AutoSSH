@@ -1,0 +1,4 @@
+killall -c 'appname3'
+sleep 5
+activator send phuongnguyennew.Bird-Jump
+sleep 10
