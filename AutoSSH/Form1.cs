@@ -151,7 +151,7 @@ namespace AutoSSH
             cf.Password = txtPassword.Text;
             cf.DefaultIP = txtDefaultIP.Text;
             cf.RoundClickAd = int.Parse(txtRoundClickAd.Text.ToString());
-            cf.AdPoint = new Point(int.Parse(txtPointX.ToString()), int.Parse(txtPointY.ToString()));
+            cf.AdPoint = new Point(int.Parse(txtPointX.Text.ToString()), int.Parse(txtPointY.Text.ToString()));
             cf.RoundResetIDFV=int.Parse(txtRoundResetIDFV.Text);
             Utility.SaveConfig(cf);
         }

@@ -1,11 +1,14 @@
 <Config>
-  <Sleep>10000</Sleep>
   <AdPoint>
     <X>0</X>
     <Y>0</Y>
   </AdPoint>
   <AutoStart>false</AutoStart>
+  <RespringTime />
   <Username>root</Username>
-  <Passwrod>alpine</Passwrod>
-  <DefaultIP>192.168.1.</DefaultIP>
+  <Password />
+  <DefaultIP>192.168.2.</DefaultIP>
+  <Sleep>10000</Sleep>
+  <RoundResetIDFV>3</RoundResetIDFV>
+  <RoundClickAd>0</RoundClickAd>
 </Config>
