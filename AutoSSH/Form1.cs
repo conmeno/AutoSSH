@@ -18,7 +18,7 @@ namespace AutoSSH
         {
             InitializeComponent();
         }
-        Process amixerMediaProcess = new Process();
+        
         public List<App> Apps = new List<App>();
         private void btStart_Click(object sender, EventArgs e)
         {
@@ -65,23 +65,25 @@ namespace AutoSSH
                 //reset idfa,idfv
                 commandFile=commandFile+"-reset";
             }
-            else if (iphone.OpenNumber == Config.iConfig.RoundClickAd)
+            else if (iphone.OpenNumber%Config.iConfig.RoundClickAd==0)
             {
                 commandFile = "click-ad";
             }
-            OpenPutty(Config.iConfig.DefaultIP + iphone.IP,  commandFile + ".txt");
-            System.Threading.Thread.Sleep(30000);
-            Process[] p = Process.GetProcessesByName("putty");
+            Process p = new Process();
+            OpenPutty(Config.iConfig.DefaultIP + iphone.IP,  commandFile + ".txt",ref p);
+            System.Threading.Thread.Sleep(Config.iConfig.WaitKillPutty);
+            //Process[] p = Process.GetProcessesByName("putty");
             try
             {
-                if (p != null)
-                {
-                    foreach (Process item in p)
-                    {
-
-                        item.Kill();
-                    }
-                }
+                p.Kill();
+                //if (p != null)
+                //{
+                //    foreach (Process item in p)
+                //    {
+                        
+                //        //item.Kill();
+                //    }
+                //}
             }
             catch
             { 
@@ -122,24 +124,24 @@ namespace AutoSSH
             gridApps.DataSource = Utility.LoadListAppstoGrid();
         }
 
-        public void OpenPutty(string IP, string command)
+        public void OpenPutty(string IP, string command,ref Process p)
         {
             try
             {
                 string path = @"putty.exe";
+              
+                p.StartInfo.CreateNoWindow = false;
+                p.StartInfo.UseShellExecute = false;
+                p.StartInfo.ErrorDialog = false;
+                p.StartInfo.RedirectStandardOutput = false;
+                p.StartInfo.RedirectStandardInput = false;
+                p.StartInfo.RedirectStandardError = false;
+                p.EnableRaisingEvents = true;
+                
+                p.StartInfo.Arguments = "-ssh -x -C root@" + IP + " -pw alpine -m " + command;
 
-                amixerMediaProcess.StartInfo.CreateNoWindow = false;
-                amixerMediaProcess.StartInfo.UseShellExecute = false;
-                amixerMediaProcess.StartInfo.ErrorDialog = false;
-                amixerMediaProcess.StartInfo.RedirectStandardOutput = false;
-                amixerMediaProcess.StartInfo.RedirectStandardInput = false;
-                amixerMediaProcess.StartInfo.RedirectStandardError = false;
-                amixerMediaProcess.EnableRaisingEvents = true;
-
-                amixerMediaProcess.StartInfo.Arguments = "-ssh -x -C root@" + IP + " -pw alpine -m " + command;
-
-                amixerMediaProcess.StartInfo.FileName = path;
-                amixerMediaProcess.Start();
+                p.StartInfo.FileName = path;
+                p.Start();
             }
             catch { }
         }
@@ -156,6 +158,7 @@ namespace AutoSSH
             cf.RoundClickAd = int.Parse(txtRoundClickAd.Text.ToString());
             cf.AdPoint = new Point(int.Parse(txtPointX.Text.ToString()), int.Parse(txtPointY.Text.ToString()));
             cf.RoundResetIDFV=int.Parse(txtRoundResetIDFV.Text);
+            cf.WaitKillPutty = (int)WaitKillPutty.Value;
             Utility.SaveConfig(cf);
         }
         public void LoadConfigtoForm()
@@ -168,7 +171,11 @@ namespace AutoSSH
             txtPassword.Text = cf.Password;
             txtUsername.Text = cf.Username;
 
+            txtDefaultIP.Text = cf.DefaultIP;
+            WaitKillPutty.Value = cf.WaitKillPutty;
 
+            txtRoundClickAd.Text = cf.RoundClickAd.ToString();
+            txtRoundResetIDFV.Text = cf.RoundResetIDFV.ToString();
         }
 
 
@@ -206,7 +213,7 @@ namespace AutoSSH
                 //sw.WriteLine("sleep 10");
                 sw.WriteLine("killall -c '" + item.AppName + "'");
                 sw.WriteLine("sleep 5");
-                sw.WriteLine("activator send phuongnguyennew.Bird-Jump");
+                sw.WriteLine("activator send " + item.BundleID);
                 sw.WriteLine("sleep 10");
                 sw.Close();
 
@@ -219,7 +226,7 @@ namespace AutoSSH
                 
                 sw1.WriteLine("killall -c '" + item.AppName + "'");
                 sw1.WriteLine("sleep 5");
-                sw1.WriteLine("activator send phuongnguyennew.Bird-Jump");
+                sw1.WriteLine("activator send "+ item.BundleID);
                 sw1.WriteLine("sleep 10");
                 sw1.Close();
             }
@@ -275,6 +282,28 @@ namespace AutoSSH
             }
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //Random rnd = new Random();
+            //int a = rnd.Next(0, 2);
+            //MessageBox.Show(a.ToString());
 
+
+            Process[] p = Process.GetProcessesByName("putty");
+            try
+            {
+                if (p != null)
+                {
+                    foreach (Process item in p)
+                    {
+
+                        MessageBox.Show(item.MainWindowTitle);
+                    }
+                }
+            }
+            catch
+            {
+            }
+        }
     }
 }

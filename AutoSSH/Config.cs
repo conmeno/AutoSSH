@@ -21,7 +21,7 @@ namespace AutoSSH
         public int Sleep { get; set; }
         public int RoundResetIDFV { get; set; }
         public int RoundClickAd { get; set; }
-
+        public int WaitKillPutty { get; set; }
         [XmlIgnore]
         public static Config iConfig { get; set; }
 

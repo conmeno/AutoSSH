@@ -47,6 +47,8 @@
             this.btSaveListIp = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.txtRoundResetIDFV = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.txtRoundClickAd = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.txtDefaultIP = new System.Windows.Forms.TextBox();
@@ -63,13 +65,15 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtSleep = new System.Windows.Forms.TextBox();
             this.btSaveConfig = new System.Windows.Forms.Button();
-            this.txtRoundResetIDFV = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.WaitKillPutty = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.gridlist)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridApps)).BeginInit();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.WaitKillPutty)).BeginInit();
             this.SuspendLayout();
             // 
             // btStart
@@ -252,6 +256,8 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.WaitKillPutty);
+            this.tabPage2.Controls.Add(this.label9);
             this.tabPage2.Controls.Add(this.txtRoundResetIDFV);
             this.tabPage2.Controls.Add(this.label4);
             this.tabPage2.Controls.Add(this.txtRoundClickAd);
@@ -278,9 +284,26 @@
             this.tabPage2.Text = "Config";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // txtRoundResetIDFV
+            // 
+            this.txtRoundResetIDFV.Location = new System.Drawing.Point(107, 236);
+            this.txtRoundResetIDFV.Name = "txtRoundResetIDFV";
+            this.txtRoundResetIDFV.Size = new System.Drawing.Size(124, 20);
+            this.txtRoundResetIDFV.TabIndex = 79;
+            this.txtRoundResetIDFV.Text = "3";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(10, 239);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(91, 13);
+            this.label4.TabIndex = 78;
+            this.label4.Text = "RoundResetIDFV";
+            // 
             // txtRoundClickAd
             // 
-            this.txtRoundClickAd.Location = new System.Drawing.Point(86, 185);
+            this.txtRoundClickAd.Location = new System.Drawing.Point(87, 210);
             this.txtRoundClickAd.Name = "txtRoundClickAd";
             this.txtRoundClickAd.Size = new System.Drawing.Size(124, 20);
             this.txtRoundClickAd.TabIndex = 77;
@@ -289,7 +312,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(9, 188);
+            this.label13.Location = new System.Drawing.Point(10, 213);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(75, 13);
             this.label13.TabIndex = 76;
@@ -297,7 +320,7 @@
             // 
             // txtDefaultIP
             // 
-            this.txtDefaultIP.Location = new System.Drawing.Point(86, 159);
+            this.txtDefaultIP.Location = new System.Drawing.Point(87, 184);
             this.txtDefaultIP.Name = "txtDefaultIP";
             this.txtDefaultIP.Size = new System.Drawing.Size(124, 20);
             this.txtDefaultIP.TabIndex = 75;
@@ -306,7 +329,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(9, 162);
+            this.label8.Location = new System.Drawing.Point(10, 187);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(54, 13);
             this.label8.TabIndex = 74;
@@ -314,7 +337,7 @@
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(86, 133);
+            this.txtPassword.Location = new System.Drawing.Point(87, 158);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(124, 20);
             this.txtPassword.TabIndex = 73;
@@ -323,7 +346,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(9, 136);
+            this.label7.Location = new System.Drawing.Point(10, 161);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(53, 13);
             this.label7.TabIndex = 72;
@@ -331,7 +354,7 @@
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(86, 107);
+            this.txtUsername.Location = new System.Drawing.Point(87, 132);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(124, 20);
             this.txtUsername.TabIndex = 71;
@@ -340,7 +363,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(9, 110);
+            this.label6.Location = new System.Drawing.Point(10, 135);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(58, 13);
             this.label6.TabIndex = 70;
@@ -348,7 +371,7 @@
             // 
             // txtRespring
             // 
-            this.txtRespring.Location = new System.Drawing.Point(86, 81);
+            this.txtRespring.Location = new System.Drawing.Point(87, 106);
             this.txtRespring.Name = "txtRespring";
             this.txtRespring.Size = new System.Drawing.Size(124, 20);
             this.txtRespring.TabIndex = 69;
@@ -357,7 +380,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(9, 84);
+            this.label5.Location = new System.Drawing.Point(10, 109);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(71, 13);
             this.label5.TabIndex = 68;
@@ -366,7 +389,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(16, 52);
+            this.label3.Location = new System.Drawing.Point(17, 77);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(44, 13);
             this.label3.TabIndex = 66;
@@ -374,7 +397,7 @@
             // 
             // txtPointX
             // 
-            this.txtPointX.Location = new System.Drawing.Point(71, 49);
+            this.txtPointX.Location = new System.Drawing.Point(72, 74);
             this.txtPointX.Name = "txtPointX";
             this.txtPointX.Size = new System.Drawing.Size(47, 20);
             this.txtPointX.TabIndex = 65;
@@ -382,7 +405,7 @@
             // 
             // txtPointY
             // 
-            this.txtPointY.Location = new System.Drawing.Point(124, 49);
+            this.txtPointY.Location = new System.Drawing.Point(125, 74);
             this.txtPointY.Name = "txtPointY";
             this.txtPointY.Size = new System.Drawing.Size(47, 20);
             this.txtPointY.TabIndex = 64;
@@ -399,7 +422,7 @@
             // 
             // txtSleep
             // 
-            this.txtSleep.Location = new System.Drawing.Point(67, 23);
+            this.txtSleep.Location = new System.Drawing.Point(84, 23);
             this.txtSleep.Name = "txtSleep";
             this.txtSleep.Size = new System.Drawing.Size(124, 20);
             this.txtSleep.TabIndex = 61;
@@ -407,7 +430,7 @@
             // 
             // btSaveConfig
             // 
-            this.btSaveConfig.Location = new System.Drawing.Point(12, 231);
+            this.btSaveConfig.Location = new System.Drawing.Point(13, 256);
             this.btSaveConfig.Name = "btSaveConfig";
             this.btSaveConfig.Size = new System.Drawing.Size(75, 37);
             this.btSaveConfig.TabIndex = 60;
@@ -415,28 +438,48 @@
             this.btSaveConfig.UseVisualStyleBackColor = true;
             this.btSaveConfig.Click += new System.EventHandler(this.btSaveConfig_Click);
             // 
-            // txtRoundResetIDFV
+            // button1
             // 
-            this.txtRoundResetIDFV.Location = new System.Drawing.Point(106, 211);
-            this.txtRoundResetIDFV.Name = "txtRoundResetIDFV";
-            this.txtRoundResetIDFV.Size = new System.Drawing.Size(124, 20);
-            this.txtRoundResetIDFV.TabIndex = 79;
-            this.txtRoundResetIDFV.Text = "3";
+            this.button1.Location = new System.Drawing.Point(286, 431);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(83, 42);
+            this.button1.TabIndex = 84;
+            this.button1.Text = "Save List IP";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // label4
+            // label9
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(9, 214);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(91, 13);
-            this.label4.TabIndex = 78;
-            this.label4.Text = "RoundResetIDFV";
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(6, 51);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(72, 13);
+            this.label9.TabIndex = 81;
+            this.label9.Text = "Wait Kill Putty";
+            // 
+            // WaitKillPutty
+            // 
+            this.WaitKillPutty.Location = new System.Drawing.Point(84, 48);
+            this.WaitKillPutty.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.WaitKillPutty.Name = "WaitKillPutty";
+            this.WaitKillPutty.Size = new System.Drawing.Size(120, 20);
+            this.WaitKillPutty.TabIndex = 82;
+            this.WaitKillPutty.Value = new decimal(new int[] {
+            30000,
+            0,
+            0,
+            0});
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(684, 478);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cbStartWindows);
@@ -452,6 +495,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridApps)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.WaitKillPutty)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -496,6 +540,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn AppName;
         private System.Windows.Forms.TextBox txtRoundResetIDFV;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.NumericUpDown WaitKillPutty;
+        private System.Windows.Forms.Label label9;
     }
 }
 
