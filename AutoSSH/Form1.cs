@@ -124,21 +124,24 @@ namespace AutoSSH
 
         public void OpenPutty(string IP, string command)
         {
+            try
+            {
+                string path = @"putty.exe";
 
-            string path = @"putty.exe";
+                amixerMediaProcess.StartInfo.CreateNoWindow = false;
+                amixerMediaProcess.StartInfo.UseShellExecute = false;
+                amixerMediaProcess.StartInfo.ErrorDialog = false;
+                amixerMediaProcess.StartInfo.RedirectStandardOutput = false;
+                amixerMediaProcess.StartInfo.RedirectStandardInput = false;
+                amixerMediaProcess.StartInfo.RedirectStandardError = false;
+                amixerMediaProcess.EnableRaisingEvents = true;
 
-            amixerMediaProcess.StartInfo.CreateNoWindow = false;
-            amixerMediaProcess.StartInfo.UseShellExecute = false;
-            amixerMediaProcess.StartInfo.ErrorDialog = false;
-            amixerMediaProcess.StartInfo.RedirectStandardOutput = false;
-            amixerMediaProcess.StartInfo.RedirectStandardInput = false;
-            amixerMediaProcess.StartInfo.RedirectStandardError = false;
-            amixerMediaProcess.EnableRaisingEvents = true;
+                amixerMediaProcess.StartInfo.Arguments = "-ssh -x -C root@" + IP + " -pw alpine -m " + command;
 
-            amixerMediaProcess.StartInfo.Arguments = "-ssh -x -C root@" + IP + " -pw alpine -m " + command;
-
-            amixerMediaProcess.StartInfo.FileName = path;
-            amixerMediaProcess.Start();
+                amixerMediaProcess.StartInfo.FileName = path;
+                amixerMediaProcess.Start();
+            }
+            catch { }
         }
 
         private void btSaveConfig_Click(object sender, EventArgs e)
