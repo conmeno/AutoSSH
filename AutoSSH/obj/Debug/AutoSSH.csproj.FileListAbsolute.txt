@@ -30,3 +30,11 @@ C:\Users\phuongnt\Desktop\sshauto\AutoSSH\obj\Debug\AutoSSH.csprojResolveAssembl
 C:\Users\phuongnt\Desktop\sshauto\AutoSSH\obj\Debug\AutoSSH.Form1.resources
 C:\Users\phuongnt\Desktop\sshauto\AutoSSH\obj\Debug\AutoSSH.Properties.Resources.resources
 C:\Users\phuongnt\Desktop\sshauto\AutoSSH\obj\Debug\AutoSSH.csproj.GenerateResource.Cache
+C:\Users\phuongnt\Desktop\ssh2\AutoSSH\obj\Debug\AutoSSH.exe
+C:\Users\phuongnt\Desktop\ssh2\AutoSSH\obj\Debug\AutoSSH.pdb
+C:\Users\phuongnt\Desktop\ssh2\AutoSSH\bin\Debug\AutoSSH.exe
+C:\Users\phuongnt\Desktop\ssh2\AutoSSH\bin\Debug\AutoSSH.pdb
+C:\Users\phuongnt\Desktop\ssh2\AutoSSH\obj\Debug\AutoSSH.csprojResolveAssemblyReference.cache
+C:\Users\phuongnt\Desktop\ssh2\AutoSSH\obj\Debug\AutoSSH.Form1.resources
+C:\Users\phuongnt\Desktop\ssh2\AutoSSH\obj\Debug\AutoSSH.Properties.Resources.resources
+C:\Users\phuongnt\Desktop\ssh2\AutoSSH\obj\Debug\AutoSSH.csproj.GenerateResource.Cache

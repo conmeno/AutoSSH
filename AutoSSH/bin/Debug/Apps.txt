@@ -1,17 +1,23 @@
 <ArrayOfApp>
   <App>
     <ID>1</ID>
-    <BundleID>phuongnguyennew.Bird-Jump</BundleID>
-    <AppName>Bird Jump</AppName>
+    <BundleID>phuongnt.Stupid-Snake-Classic</BundleID>
+    <AppName>Stupid Snake Classic</AppName>
   </App>
   <App>
     <ID>2</ID>
-    <BundleID>phuongntnew.Bird-Jump</BundleID>
-    <AppName>Bird Jump</AppName>
+    <BundleID>htmlgame3008.Conway-s-Game-of-Life-1970</BundleID>
+    <AppName>Conway's GOL 1970</AppName>
+  </App>
+    <App>
+    <ID>3</ID>
+<BundleID>newphuongnt3003.Bug-Fighter</BundleID>
+    <AppName>Bug Fighter</AppName>
+    
   </App>
   <App>
-    <ID>3</ID>
-    <BundleID>bundleid3</BundleID>
-    <AppName>appname3</AppName>
+    <ID>4</ID>
+    <BundleID>phuongnt1999.Ladybug-Fighter</BundleID>
+    <AppName>Ladybug Fighter</AppName>
   </App>
 </ArrayOfApp>

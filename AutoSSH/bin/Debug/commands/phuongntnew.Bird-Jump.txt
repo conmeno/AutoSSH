@@ -1,4 +1,4 @@
 killall -c 'Bird Jump'
 sleep 5
-activator send phuongnguyennew.Bird-Jump
+activator send phuongntnew.Bird-Jump
 sleep 10

@@ -7,6 +7,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -29,11 +30,32 @@ namespace AutoSSH
         {
             Apps = Utility.LoadApps();
             List<Iphone> iphones = Utility.LoadIPList();
-            if (iphones != null)
-            {
-                Parallel.ForEach(iphones, iphone =>
-                { 
-                    string[] appstr = iphone.Apps.Split(',');
+            //if (iphones != null)
+            //{
+            //    Parallel.ForEach(iphones, iphone =>
+            //    { 
+            //        string[] appstr = iphone.Apps.Split(',');
+
+            //        string[] appBundleID = new string[appstr.Length];
+            //        for (int i = 0; i < appstr.Length; i++)
+            //        {
+            //            int AppID = int.Parse(appstr[i]);
+            //            App app = new App();
+            //            app = (App)Apps.Where(a => a.ID == AppID).FirstOrDefault();
+            //            appBundleID[i] = app.BundleID;
+            //        }
+
+            //        openApp(iphone, appBundleID);
+
+
+
+            //    }
+            //);
+
+
+                foreach (var item in iphones)
+                {
+                     string[] appstr = item.Apps.Split(',');
 
                     string[] appBundleID = new string[appstr.Length];
                     for (int i = 0; i < appstr.Length; i++)
@@ -44,14 +66,16 @@ namespace AutoSSH
                         appBundleID[i] = app.BundleID;
                     }
 
-                    openApp(iphone, appBundleID);
+                    Thread thread = new Thread(() => openApp(item, appBundleID));
+                    thread.Start();
 
-
-
+                 
                 }
-            );
-            }
+
+           
         }
+
+      
 
         
         public void openApp(Iphone iphone, string[] apps)
@@ -211,7 +235,7 @@ namespace AutoSSH
             {
                 System.IO.StreamWriter sw = new System.IO.StreamWriter(Application.StartupPath + "\\commands\\" + item.BundleID + ".txt");
                 //sw.WriteLine("sleep 10");
-                sw.WriteLine("killall -c '" + item.AppName + "'");
+                sw.WriteLine("killall -c \"" + item.AppName + "\"");
                 sw.WriteLine("sleep 5");
                 sw.WriteLine("activator send " + item.BundleID);
                 sw.WriteLine("sleep 10");

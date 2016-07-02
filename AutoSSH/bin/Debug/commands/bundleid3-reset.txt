@@ -3,5 +3,5 @@ rm /var/db/lsd/com.apple.lsdidentifiers.plist
 sleep 3
 killall -c 'appname3'
 sleep 5
-activator send phuongnguyennew.Bird-Jump
+activator send bundleid3
 sleep 10
