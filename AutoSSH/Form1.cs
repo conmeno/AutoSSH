@@ -340,5 +340,90 @@ namespace AutoSSH
                 item.Delete();
             }
         }
+
+        private void btReset_Click(object sender, EventArgs e)
+        {
+            RunRESET_PHONE();
+        }
+
+        public void RunRESET_PHONE()
+        {
+            Apps = Utility.LoadApps();
+            List<Iphone> iphones = Utility.LoadIPList();
+           
+
+
+            foreach (var item in iphones)
+            {
+                string[] appstr = item.Apps.Split(',');
+
+                string[] appBundleID = new string[appstr.Length];
+                for (int i = 0; i < appstr.Length; i++)
+                {
+                    int AppID = int.Parse(appstr[i]);
+                    App app = new App();
+                    app = (App)Apps.Where(a => a.ID == AppID).FirstOrDefault();
+                    appBundleID[i] = app.BundleID;
+                }
+
+                Thread thread = new Thread(() => ONLYRESET(item, appBundleID));
+                thread.Start();
+
+
+            }
+
+
+        }
+
+        public void ONLYRESET(Iphone iphone, string[] apps)
+        {
+
+            Random rnd = new Random();
+            string commandFile = "reset-phone";// "commands\\" + apps[rnd.Next(0, apps.Length)];
+            iphone.OpenNumber += 1;
+            //if (iphone.OpenNumber % Config.iConfig.RoundResetIDFV == 0)
+            //{
+            //    //reset idfa,idfv
+            //    commandFile = commandFile + "-reset";
+            //}
+            //else if (iphone.OpenNumber % Config.iConfig.RoundClickAd == 0)
+            //{
+            //    commandFile = "click-ad";
+            //}
+            Process p = new Process();
+            OpenPutty(Config.iConfig.DefaultIP + iphone.IP, commandFile + ".txt", ref p);
+            System.Threading.Thread.Sleep(Config.iConfig.WaitKillPutty);
+            //Process[] p = Process.GetProcessesByName("putty");
+            try
+            {
+                p.Kill();
+                
+            }
+            catch
+            {
+            }
+            ONLYRESET(iphone, apps);
+        }
+
+        private void ListIPCopy_Click(object sender, EventArgs e)
+        {
+            BindingList<Iphone> listVNC = new BindingList<Iphone>();
+            string[] listStr = txtListIP.Text.Split('\n');
+
+            foreach (string item in listStr)
+            {
+                string str = item.Replace("\r", "");//System.Environment.NewLine
+                Iphone v = new Iphone();
+                v.IP = str;
+                listVNC.Add(v);
+            }
+            Utility.SaveListIP(listVNC);
+            LoadFirst();
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

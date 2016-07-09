@@ -38,6 +38,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.ListIPCopy = new System.Windows.Forms.Button();
+            this.txtListIP = new System.Windows.Forms.TextBox();
+            this.btClearComand = new System.Windows.Forms.Button();
             this.btGenerateCommand = new System.Windows.Forms.Button();
             this.btSaveAppFromGrid = new System.Windows.Forms.Button();
             this.gridApps = new System.Windows.Forms.DataGridView();
@@ -68,7 +71,7 @@
             this.txtSleep = new System.Windows.Forms.TextBox();
             this.btSaveConfig = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.btClearComand = new System.Windows.Forms.Button();
+            this.btReset = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridlist)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -82,7 +85,7 @@
             this.btStart.BackColor = System.Drawing.SystemColors.InfoText;
             this.btStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btStart.ForeColor = System.Drawing.SystemColors.Control;
-            this.btStart.Location = new System.Drawing.Point(605, 431);
+            this.btStart.Location = new System.Drawing.Point(597, 432);
             this.btStart.Name = "btStart";
             this.btStart.Size = new System.Drawing.Size(75, 42);
             this.btStart.TabIndex = 3;
@@ -127,7 +130,7 @@
             // cbStartWindows
             // 
             this.cbStartWindows.AutoSize = true;
-            this.cbStartWindows.Location = new System.Drawing.Point(507, 446);
+            this.cbStartWindows.Location = new System.Drawing.Point(206, 446);
             this.cbStartWindows.Name = "cbStartWindows";
             this.cbStartWindows.Size = new System.Drawing.Size(92, 17);
             this.cbStartWindows.TabIndex = 56;
@@ -138,7 +141,7 @@
             // cbAutoStart
             // 
             this.cbAutoStart.AutoSize = true;
-            this.cbAutoStart.Location = new System.Drawing.Point(436, 446);
+            this.cbAutoStart.Location = new System.Drawing.Point(135, 446);
             this.cbAutoStart.Name = "cbAutoStart";
             this.cbAutoStart.Size = new System.Drawing.Size(73, 17);
             this.cbAutoStart.TabIndex = 55;
@@ -167,6 +170,8 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.ListIPCopy);
+            this.tabPage1.Controls.Add(this.txtListIP);
             this.tabPage1.Controls.Add(this.btClearComand);
             this.tabPage1.Controls.Add(this.btGenerateCommand);
             this.tabPage1.Controls.Add(this.btSaveAppFromGrid);
@@ -181,6 +186,34 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Main";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // ListIPCopy
+            // 
+            this.ListIPCopy.Location = new System.Drawing.Point(288, 346);
+            this.ListIPCopy.Name = "ListIPCopy";
+            this.ListIPCopy.Size = new System.Drawing.Size(104, 39);
+            this.ListIPCopy.TabIndex = 86;
+            this.ListIPCopy.Text = "Copy List to IP List";
+            this.ListIPCopy.UseVisualStyleBackColor = true;
+            this.ListIPCopy.Click += new System.EventHandler(this.ListIPCopy_Click);
+            // 
+            // txtListIP
+            // 
+            this.txtListIP.Location = new System.Drawing.Point(288, 18);
+            this.txtListIP.Multiline = true;
+            this.txtListIP.Name = "txtListIP";
+            this.txtListIP.Size = new System.Drawing.Size(104, 320);
+            this.txtListIP.TabIndex = 85;
+            // 
+            // btClearComand
+            // 
+            this.btClearComand.Location = new System.Drawing.Point(494, 341);
+            this.btClearComand.Name = "btClearComand";
+            this.btClearComand.Size = new System.Drawing.Size(83, 42);
+            this.btClearComand.TabIndex = 84;
+            this.btClearComand.Text = "Clear Command";
+            this.btClearComand.UseVisualStyleBackColor = true;
+            this.btClearComand.Click += new System.EventHandler(this.btClearComand_Click);
             // 
             // btGenerateCommand
             // 
@@ -213,7 +246,7 @@
             this.gridApps.Location = new System.Drawing.Point(9, 18);
             this.gridApps.Name = "gridApps";
             this.gridApps.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.gridApps.Size = new System.Drawing.Size(337, 320);
+            this.gridApps.Size = new System.Drawing.Size(273, 320);
             this.gridApps.TabIndex = 82;
             // 
             // dataGridViewTextBoxColumn1
@@ -476,21 +509,25 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // btClearComand
+            // btReset
             // 
-            this.btClearComand.Location = new System.Drawing.Point(494, 341);
-            this.btClearComand.Name = "btClearComand";
-            this.btClearComand.Size = new System.Drawing.Size(83, 42);
-            this.btClearComand.TabIndex = 84;
-            this.btClearComand.Text = "Clear Command";
-            this.btClearComand.UseVisualStyleBackColor = true;
-            this.btClearComand.Click += new System.EventHandler(this.btClearComand_Click);
+            this.btReset.BackColor = System.Drawing.SystemColors.InfoText;
+            this.btReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btReset.ForeColor = System.Drawing.SystemColors.Control;
+            this.btReset.Location = new System.Drawing.Point(406, 431);
+            this.btReset.Name = "btReset";
+            this.btReset.Size = new System.Drawing.Size(125, 42);
+            this.btReset.TabIndex = 85;
+            this.btReset.Text = "ONLY RESET ";
+            this.btReset.UseVisualStyleBackColor = false;
+            this.btReset.Click += new System.EventHandler(this.btReset_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(684, 478);
+            this.Controls.Add(this.btReset);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.label2);
@@ -556,6 +593,9 @@
         private System.Windows.Forms.NumericUpDown WaitKillPutty;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btClearComand;
+        private System.Windows.Forms.Button btReset;
+        private System.Windows.Forms.Button ListIPCopy;
+        private System.Windows.Forms.TextBox txtListIP;
     }
 }
 
