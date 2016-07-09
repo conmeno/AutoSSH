@@ -1,1 +1,7 @@
 rm /var/db/lsd/com.apple.lsdidentifiers.plist
+sleep 5
+rm $(find //var/mobile/Applications -name "Caches") -rf
+sleep 5
+rm $(find //var/mobile/Applications -name "Cookies") -rf
+sleep 5
+rm $(find //var/mobile/Applications -name "AmazonAds") -rf

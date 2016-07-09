@@ -320,13 +320,24 @@ namespace AutoSSH
                 {
                     foreach (Process item in p)
                     {
-
-                        MessageBox.Show(item.MainWindowTitle);
+                        item.Kill();
+                        
                     }
                 }
             }
             catch
             {
+            }
+            Environment.Exit(1);
+        }
+
+        private void btClearComand_Click(object sender, EventArgs e)
+        {
+            System.IO.DirectoryInfo dir = new System.IO.DirectoryInfo(Application.StartupPath + "\\commands\\");
+            var files=dir.GetFiles();
+            foreach (var item in files)
+            {
+                item.Delete();
             }
         }
     }

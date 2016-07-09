@@ -1,7 +1,0 @@
-sleep 3
-rm /var/db/lsd/com.apple.lsdidentifiers.plist
-sleep 3
-killall -c 'appname3'
-sleep 5
-activator send bundleid3
-sleep 10

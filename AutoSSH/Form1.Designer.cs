@@ -47,6 +47,8 @@
             this.btSaveListIp = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.WaitKillPutty = new System.Windows.Forms.NumericUpDown();
+            this.label9 = new System.Windows.Forms.Label();
             this.txtRoundResetIDFV = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtRoundClickAd = new System.Windows.Forms.TextBox();
@@ -66,8 +68,7 @@
             this.txtSleep = new System.Windows.Forms.TextBox();
             this.btSaveConfig = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
-            this.WaitKillPutty = new System.Windows.Forms.NumericUpDown();
+            this.btClearComand = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridlist)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -166,6 +167,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.btClearComand);
             this.tabPage1.Controls.Add(this.btGenerateCommand);
             this.tabPage1.Controls.Add(this.btSaveAppFromGrid);
             this.tabPage1.Controls.Add(this.gridApps);
@@ -283,6 +285,32 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Config";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // WaitKillPutty
+            // 
+            this.WaitKillPutty.Location = new System.Drawing.Point(84, 48);
+            this.WaitKillPutty.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.WaitKillPutty.Name = "WaitKillPutty";
+            this.WaitKillPutty.Size = new System.Drawing.Size(120, 20);
+            this.WaitKillPutty.TabIndex = 82;
+            this.WaitKillPutty.Value = new decimal(new int[] {
+            30000,
+            0,
+            0,
+            0});
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(6, 51);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(72, 13);
+            this.label9.TabIndex = 81;
+            this.label9.Text = "Wait Kill Putty";
             // 
             // txtRoundResetIDFV
             // 
@@ -440,39 +468,23 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(286, 431);
+            this.button1.Location = new System.Drawing.Point(8, 432);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(83, 42);
             this.button1.TabIndex = 84;
-            this.button1.Text = "Save List IP";
+            this.button1.Text = "Force Close";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // label9
+            // btClearComand
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(6, 51);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(72, 13);
-            this.label9.TabIndex = 81;
-            this.label9.Text = "Wait Kill Putty";
-            // 
-            // WaitKillPutty
-            // 
-            this.WaitKillPutty.Location = new System.Drawing.Point(84, 48);
-            this.WaitKillPutty.Maximum = new decimal(new int[] {
-            100000,
-            0,
-            0,
-            0});
-            this.WaitKillPutty.Name = "WaitKillPutty";
-            this.WaitKillPutty.Size = new System.Drawing.Size(120, 20);
-            this.WaitKillPutty.TabIndex = 82;
-            this.WaitKillPutty.Value = new decimal(new int[] {
-            30000,
-            0,
-            0,
-            0});
+            this.btClearComand.Location = new System.Drawing.Point(494, 341);
+            this.btClearComand.Name = "btClearComand";
+            this.btClearComand.Size = new System.Drawing.Size(83, 42);
+            this.btClearComand.TabIndex = 84;
+            this.btClearComand.Text = "Clear Command";
+            this.btClearComand.UseVisualStyleBackColor = true;
+            this.btClearComand.Click += new System.EventHandler(this.btClearComand_Click);
             // 
             // Form1
             // 
@@ -543,6 +555,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.NumericUpDown WaitKillPutty;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button btClearComand;
     }
 }
 
