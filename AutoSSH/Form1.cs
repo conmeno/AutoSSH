@@ -237,8 +237,8 @@ namespace AutoSSH
                 //sw.WriteLine("sleep 10");
                 sw.WriteLine("killall -c \"" + item.AppName + "\"");
                 sw.WriteLine("sleep 5");
-                sw.WriteLine("activator send " + item.BundleID);
-                sw.WriteLine("sleep 10");
+                sw.WriteLine("sleep 60");
+                sw.WriteLine("libactivator.system.homebutton");
                 sw.Close();
 
 
@@ -251,7 +251,8 @@ namespace AutoSSH
                 sw1.WriteLine("killall -c '" + item.AppName + "'");
                 sw1.WriteLine("sleep 5");
                 sw1.WriteLine("activator send "+ item.BundleID);
-                sw1.WriteLine("sleep 10");
+                sw1.WriteLine("sleep 60");
+                sw1.WriteLine("libactivator.system.homebutton");
                 sw1.Close();
             }
         }
