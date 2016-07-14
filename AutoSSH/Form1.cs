@@ -574,17 +574,17 @@ namespace AutoSSH
                 if (apps.Count > 0)
                 {
                     temp = temp.Replace("[[[app1]]]", apps[0].BundleID);
-                    temp = temp.Replace("[[[appname1]]]", apps[0].AppName);
+                    temp = temp.Replace("[[[appname1]]]", "'"+ apps[0].AppName + "'");
                 }
                 if (apps.Count > 1)
                 {
                     temp = temp.Replace("[[[app2]]]", apps[1].BundleID);
-                    temp = temp.Replace("[[[appname2]]]", apps[1].AppName);
+                    temp = temp.Replace("[[[appname2]]]", "'"+ apps[1].AppName + "'");
                 }
                 if (apps.Count > 3)
                 {
                     temp = temp.Replace("[[[app3]]]", apps[2].BundleID);
-                    temp = temp.Replace("[[[appname3]]]", apps[2].AppName);
+                    temp = temp.Replace("[[[appname3]]]", "'"+ apps[2].AppName + "'");
                 }
 
 
