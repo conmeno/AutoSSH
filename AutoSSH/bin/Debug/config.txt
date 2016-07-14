@@ -11,5 +11,5 @@
   <Sleep>10000</Sleep>
   <RoundResetIDFV>3</RoundResetIDFV>
   <RoundClickAd>60</RoundClickAd>
-  <WaitKillPutty>30001</WaitKillPutty>
+  <WaitKillPutty>60001</WaitKillPutty>
 </Config>

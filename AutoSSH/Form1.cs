@@ -238,7 +238,7 @@ namespace AutoSSH
 
 
             Utility.SaveListIP(listIP);
-
+            Utility.ListIPtoFiles(listIP);
 
         }
 
@@ -481,6 +481,14 @@ namespace AutoSSH
             BindingList<Iphone> listVNC = (BindingList<Iphone>)gridlist.DataSource;
             if (e.ColumnIndex == 0)
             {
+               
+                string tempIP = Application.StartupPath + "\\vnc\\" + Config.iConfig.DefaultIP + listVNC[e.RowIndex].IP + ".vnc";
+
+
+                Process.Start(tempIP);
+            }
+            else if (e.ColumnIndex == 1)
+            {
 
                 string tempIP = Config.iConfig.DefaultIP + listVNC[e.RowIndex].IP;
                 Process p = new Process();
@@ -497,7 +505,7 @@ namespace AutoSSH
                 p.Start();
 
             }
-            else if (e.ColumnIndex == 1)
+            else if (e.ColumnIndex == 2)
             {
                 Process p = new Process();
                 OpenPSCP("192.168.1.111", "template.sh", Application.StartupPath + "\\bashscript\\" + listVNC[e.RowIndex].IP + ".sh", ref p);
@@ -552,7 +560,16 @@ namespace AutoSSH
 
                 string temp = template;
                 temp = temp.Replace("[[[numapp]]]", numapp.ToString());
+                temp = temp.Replace("[[[numreset]]]", Config.iConfig.RoundResetIDFV.ToString());
 
+                if (cbClearCaches.Checked)
+                {
+                    temp = temp.Replace("[[[caches]]]", "rm $(find //var/mobile/Applications -name 'Caches') -rf");
+                }
+                else
+                {
+                    temp = temp.Replace("[[[caches]]]", "");
+                }
 
                 if (apps.Count > 0)
                 {
@@ -644,6 +661,20 @@ namespace AutoSSH
                 Process p = new Process();
 
                 OpenPutty(Config.iConfig.DefaultIP + item.IP, "homebutton.txt", ref p);
+
+
+            });
+        }
+
+        private void btReboot_Click(object sender, EventArgs e)
+        {
+            List<Iphone> iphones = Utility.LoadIPList();
+            Parallel.ForEach(iphones, item =>
+            {
+
+                Process p = new Process();
+
+                OpenPutty(Config.iConfig.DefaultIP + item.IP, "reboot.txt", ref p);
 
 
             });

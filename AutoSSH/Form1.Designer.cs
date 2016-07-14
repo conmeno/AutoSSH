@@ -30,20 +30,21 @@
         {
             this.btStart = new System.Windows.Forms.Button();
             this.gridlist = new System.Windows.Forms.DataGridView();
-            this.IP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Action = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Run = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Script = new System.Windows.Forms.DataGridViewButtonColumn();
             this.cbStartWindows = new System.Windows.Forms.CheckBox();
             this.cbAutoStart = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btReboot = new System.Windows.Forms.Button();
+            this.btHomeAll = new System.Windows.Forms.Button();
+            this.btRespringAll = new System.Windows.Forms.Button();
+            this.btScriptPermission = new System.Windows.Forms.Button();
+            this.btCopyScript = new System.Windows.Forms.Button();
+            this.btGenBashScript = new System.Windows.Forms.Button();
             this.ListIPCopy = new System.Windows.Forms.Button();
             this.txtListIP = new System.Windows.Forms.TextBox();
             this.btClearComand = new System.Windows.Forms.Button();
             this.btGenerateCommand = new System.Windows.Forms.Button();
-            this.btSaveAppFromGrid = new System.Windows.Forms.Button();
             this.btSaveListIp = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.WaitKillPutty = new System.Windows.Forms.NumericUpDown();
@@ -66,19 +67,21 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtSleep = new System.Windows.Forms.TextBox();
             this.btSaveConfig = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btReset = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.gridApps = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AppName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btSaveAppFromGrid = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btReset = new System.Windows.Forms.Button();
             this.cbClearCaches = new System.Windows.Forms.CheckBox();
-            this.btGenBashScript = new System.Windows.Forms.Button();
-            this.btCopyScript = new System.Windows.Forms.Button();
-            this.btScriptPermission = new System.Windows.Forms.Button();
-            this.btRespringAll = new System.Windows.Forms.Button();
-            this.btHomeAll = new System.Windows.Forms.Button();
+            this.IP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Action = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.VNC = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Run = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Script = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Respring = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridlist)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -108,40 +111,16 @@
             this.gridlist.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IP,
             this.Action,
+            this.VNC,
             this.Run,
-            this.Script});
-            this.gridlist.Location = new System.Drawing.Point(122, 18);
+            this.Script,
+            this.Respring});
+            this.gridlist.Location = new System.Drawing.Point(103, 18);
             this.gridlist.Name = "gridlist";
             this.gridlist.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.gridlist.Size = new System.Drawing.Size(376, 320);
+            this.gridlist.Size = new System.Drawing.Size(456, 320);
             this.gridlist.TabIndex = 19;
             this.gridlist.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridlist_CellContentClick);
-            // 
-            // IP
-            // 
-            this.IP.DataPropertyName = "IP";
-            this.IP.HeaderText = "IP";
-            this.IP.Name = "IP";
-            this.IP.Width = 50;
-            // 
-            // Action
-            // 
-            this.Action.DataPropertyName = "Apps";
-            this.Action.HeaderText = "Apps";
-            this.Action.Name = "Action";
-            // 
-            // Run
-            // 
-            this.Run.HeaderText = "Putty";
-            this.Run.Name = "Run";
-            this.Run.Text = "Putty";
-            this.Run.Width = 70;
-            // 
-            // Script
-            // 
-            this.Script.HeaderText = "Script";
-            this.Script.Name = "Script";
-            this.Script.Text = "Script";
             // 
             // cbStartWindows
             // 
@@ -187,6 +166,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.btReboot);
             this.tabPage1.Controls.Add(this.btHomeAll);
             this.tabPage1.Controls.Add(this.btRespringAll);
             this.tabPage1.Controls.Add(this.btScriptPermission);
@@ -206,11 +186,71 @@
             this.tabPage1.Text = "Main";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // btReboot
+            // 
+            this.btReboot.Location = new System.Drawing.Point(565, 258);
+            this.btReboot.Name = "btReboot";
+            this.btReboot.Size = new System.Drawing.Size(98, 42);
+            this.btReboot.TabIndex = 92;
+            this.btReboot.Text = "Reboot All";
+            this.btReboot.UseVisualStyleBackColor = true;
+            this.btReboot.Click += new System.EventHandler(this.btReboot_Click);
+            // 
+            // btHomeAll
+            // 
+            this.btHomeAll.Location = new System.Drawing.Point(565, 210);
+            this.btHomeAll.Name = "btHomeAll";
+            this.btHomeAll.Size = new System.Drawing.Size(98, 42);
+            this.btHomeAll.TabIndex = 91;
+            this.btHomeAll.Text = "Unlock Device";
+            this.btHomeAll.UseVisualStyleBackColor = true;
+            this.btHomeAll.Click += new System.EventHandler(this.btHomeAll_Click);
+            // 
+            // btRespringAll
+            // 
+            this.btRespringAll.Location = new System.Drawing.Point(565, 162);
+            this.btRespringAll.Name = "btRespringAll";
+            this.btRespringAll.Size = new System.Drawing.Size(98, 42);
+            this.btRespringAll.TabIndex = 90;
+            this.btRespringAll.Text = "Respring All";
+            this.btRespringAll.UseVisualStyleBackColor = true;
+            this.btRespringAll.Click += new System.EventHandler(this.btRespringAll_Click);
+            // 
+            // btScriptPermission
+            // 
+            this.btScriptPermission.Location = new System.Drawing.Point(565, 114);
+            this.btScriptPermission.Name = "btScriptPermission";
+            this.btScriptPermission.Size = new System.Drawing.Size(99, 42);
+            this.btScriptPermission.TabIndex = 89;
+            this.btScriptPermission.Text = "Set Script Permission";
+            this.btScriptPermission.UseVisualStyleBackColor = true;
+            this.btScriptPermission.Click += new System.EventHandler(this.btScriptPermission_Click);
+            // 
+            // btCopyScript
+            // 
+            this.btCopyScript.Location = new System.Drawing.Point(565, 66);
+            this.btCopyScript.Name = "btCopyScript";
+            this.btCopyScript.Size = new System.Drawing.Size(99, 42);
+            this.btCopyScript.TabIndex = 88;
+            this.btCopyScript.Text = "Copy Script to Phone";
+            this.btCopyScript.UseVisualStyleBackColor = true;
+            this.btCopyScript.Click += new System.EventHandler(this.btCopyScript_Click);
+            // 
+            // btGenBashScript
+            // 
+            this.btGenBashScript.Location = new System.Drawing.Point(565, 18);
+            this.btGenBashScript.Name = "btGenBashScript";
+            this.btGenBashScript.Size = new System.Drawing.Size(99, 42);
+            this.btGenBashScript.TabIndex = 87;
+            this.btGenBashScript.Text = "Gen Bash Script";
+            this.btGenBashScript.UseVisualStyleBackColor = true;
+            this.btGenBashScript.Click += new System.EventHandler(this.btGenBashScript_Click);
+            // 
             // ListIPCopy
             // 
-            this.ListIPCopy.Location = new System.Drawing.Point(15, 341);
+            this.ListIPCopy.Location = new System.Drawing.Point(7, 341);
             this.ListIPCopy.Name = "ListIPCopy";
-            this.ListIPCopy.Size = new System.Drawing.Size(104, 39);
+            this.ListIPCopy.Size = new System.Drawing.Size(90, 39);
             this.ListIPCopy.TabIndex = 86;
             this.ListIPCopy.Text = "Copy List to IP List";
             this.ListIPCopy.UseVisualStyleBackColor = true;
@@ -218,17 +258,17 @@
             // 
             // txtListIP
             // 
-            this.txtListIP.Location = new System.Drawing.Point(15, 18);
+            this.txtListIP.Location = new System.Drawing.Point(6, 18);
             this.txtListIP.Multiline = true;
             this.txtListIP.Name = "txtListIP";
-            this.txtListIP.Size = new System.Drawing.Size(104, 320);
+            this.txtListIP.Size = new System.Drawing.Size(90, 320);
             this.txtListIP.TabIndex = 85;
             // 
             // btClearComand
             // 
-            this.btClearComand.Location = new System.Drawing.Point(504, 296);
+            this.btClearComand.Location = new System.Drawing.Point(400, 344);
             this.btClearComand.Name = "btClearComand";
-            this.btClearComand.Size = new System.Drawing.Size(70, 42);
+            this.btClearComand.Size = new System.Drawing.Size(70, 40);
             this.btClearComand.TabIndex = 84;
             this.btClearComand.Text = "Clear Command";
             this.btClearComand.UseVisualStyleBackColor = true;
@@ -236,27 +276,17 @@
             // 
             // btGenerateCommand
             // 
-            this.btGenerateCommand.Location = new System.Drawing.Point(580, 296);
+            this.btGenerateCommand.Location = new System.Drawing.Point(476, 344);
             this.btGenerateCommand.Name = "btGenerateCommand";
-            this.btGenerateCommand.Size = new System.Drawing.Size(83, 42);
+            this.btGenerateCommand.Size = new System.Drawing.Size(83, 40);
             this.btGenerateCommand.TabIndex = 83;
             this.btGenerateCommand.Text = "Gen Command";
             this.btGenerateCommand.UseVisualStyleBackColor = true;
             this.btGenerateCommand.Click += new System.EventHandler(this.btGenerateCommand_Click);
             // 
-            // btSaveAppFromGrid
-            // 
-            this.btSaveAppFromGrid.Location = new System.Drawing.Point(553, 350);
-            this.btSaveAppFromGrid.Name = "btSaveAppFromGrid";
-            this.btSaveAppFromGrid.Size = new System.Drawing.Size(113, 36);
-            this.btSaveAppFromGrid.TabIndex = 60;
-            this.btSaveAppFromGrid.Text = "Save Apps";
-            this.btSaveAppFromGrid.UseVisualStyleBackColor = true;
-            this.btSaveAppFromGrid.Click += new System.EventHandler(this.btSaveAppFromGrid_Click);
-            // 
             // btSaveListIp
             // 
-            this.btSaveListIp.Location = new System.Drawing.Point(415, 344);
+            this.btSaveListIp.Location = new System.Drawing.Point(103, 342);
             this.btSaveListIp.Name = "btSaveListIp";
             this.btSaveListIp.Size = new System.Drawing.Size(83, 36);
             this.btSaveListIp.TabIndex = 81;
@@ -474,29 +504,6 @@
             this.btSaveConfig.UseVisualStyleBackColor = true;
             this.btSaveConfig.Click += new System.EventHandler(this.btSaveConfig_Click);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(377, 435);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(83, 39);
-            this.button1.TabIndex = 84;
-            this.button1.Text = "Force Close";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // btReset
-            // 
-            this.btReset.BackColor = System.Drawing.SystemColors.InfoText;
-            this.btReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btReset.ForeColor = System.Drawing.SystemColors.Control;
-            this.btReset.Location = new System.Drawing.Point(466, 433);
-            this.btReset.Name = "btReset";
-            this.btReset.Size = new System.Drawing.Size(125, 42);
-            this.btReset.TabIndex = 85;
-            this.btReset.Text = "ONLY RESET ";
-            this.btReset.UseVisualStyleBackColor = false;
-            this.btReset.Click += new System.EventHandler(this.btReset_Click);
-            // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.gridApps);
@@ -544,6 +551,39 @@
             this.AppName.Name = "AppName";
             this.AppName.Width = 150;
             // 
+            // btSaveAppFromGrid
+            // 
+            this.btSaveAppFromGrid.Location = new System.Drawing.Point(553, 350);
+            this.btSaveAppFromGrid.Name = "btSaveAppFromGrid";
+            this.btSaveAppFromGrid.Size = new System.Drawing.Size(113, 36);
+            this.btSaveAppFromGrid.TabIndex = 60;
+            this.btSaveAppFromGrid.Text = "Save Apps";
+            this.btSaveAppFromGrid.UseVisualStyleBackColor = true;
+            this.btSaveAppFromGrid.Click += new System.EventHandler(this.btSaveAppFromGrid_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(377, 435);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(83, 39);
+            this.button1.TabIndex = 84;
+            this.button1.Text = "Force Close";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btReset
+            // 
+            this.btReset.BackColor = System.Drawing.SystemColors.InfoText;
+            this.btReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btReset.ForeColor = System.Drawing.SystemColors.Control;
+            this.btReset.Location = new System.Drawing.Point(466, 433);
+            this.btReset.Name = "btReset";
+            this.btReset.Size = new System.Drawing.Size(125, 42);
+            this.btReset.TabIndex = 85;
+            this.btReset.Text = "ONLY RESET ";
+            this.btReset.UseVisualStyleBackColor = false;
+            this.btReset.Click += new System.EventHandler(this.btReset_Click);
+            // 
             // cbClearCaches
             // 
             this.cbClearCaches.AutoSize = true;
@@ -554,55 +594,44 @@
             this.cbClearCaches.Text = "Clear Caches";
             this.cbClearCaches.UseVisualStyleBackColor = true;
             // 
-            // btGenBashScript
+            // IP
             // 
-            this.btGenBashScript.Location = new System.Drawing.Point(505, 18);
-            this.btGenBashScript.Name = "btGenBashScript";
-            this.btGenBashScript.Size = new System.Drawing.Size(159, 42);
-            this.btGenBashScript.TabIndex = 87;
-            this.btGenBashScript.Text = "Gen Bash Script";
-            this.btGenBashScript.UseVisualStyleBackColor = true;
-            this.btGenBashScript.Click += new System.EventHandler(this.btGenBashScript_Click);
+            this.IP.DataPropertyName = "IP";
+            this.IP.HeaderText = "IP";
+            this.IP.Name = "IP";
+            this.IP.Width = 50;
             // 
-            // btCopyScript
+            // Action
             // 
-            this.btCopyScript.Location = new System.Drawing.Point(505, 66);
-            this.btCopyScript.Name = "btCopyScript";
-            this.btCopyScript.Size = new System.Drawing.Size(159, 42);
-            this.btCopyScript.TabIndex = 88;
-            this.btCopyScript.Text = "Copy Script to Phone";
-            this.btCopyScript.UseVisualStyleBackColor = true;
-            this.btCopyScript.Click += new System.EventHandler(this.btCopyScript_Click);
+            this.Action.DataPropertyName = "Apps";
+            this.Action.HeaderText = "Apps";
+            this.Action.Name = "Action";
             // 
-            // btScriptPermission
+            // VNC
             // 
-            this.btScriptPermission.Location = new System.Drawing.Point(505, 114);
-            this.btScriptPermission.Name = "btScriptPermission";
-            this.btScriptPermission.Size = new System.Drawing.Size(159, 42);
-            this.btScriptPermission.TabIndex = 89;
-            this.btScriptPermission.Text = "Set Script Permission";
-            this.btScriptPermission.UseVisualStyleBackColor = true;
-            this.btScriptPermission.Click += new System.EventHandler(this.btScriptPermission_Click);
+            this.VNC.HeaderText = "VNC";
+            this.VNC.Name = "VNC";
+            this.VNC.Width = 40;
             // 
-            // btRespringAll
+            // Run
             // 
-            this.btRespringAll.Location = new System.Drawing.Point(504, 162);
-            this.btRespringAll.Name = "btRespringAll";
-            this.btRespringAll.Size = new System.Drawing.Size(159, 42);
-            this.btRespringAll.TabIndex = 90;
-            this.btRespringAll.Text = "Respring All";
-            this.btRespringAll.UseVisualStyleBackColor = true;
-            this.btRespringAll.Click += new System.EventHandler(this.btRespringAll_Click);
+            this.Run.HeaderText = "Putty";
+            this.Run.Name = "Run";
+            this.Run.Text = "Putty";
+            this.Run.Width = 50;
             // 
-            // btHomeAll
+            // Script
             // 
-            this.btHomeAll.Location = new System.Drawing.Point(504, 210);
-            this.btHomeAll.Name = "btHomeAll";
-            this.btHomeAll.Size = new System.Drawing.Size(159, 42);
-            this.btHomeAll.TabIndex = 91;
-            this.btHomeAll.Text = "Home Button All";
-            this.btHomeAll.UseVisualStyleBackColor = true;
-            this.btHomeAll.Click += new System.EventHandler(this.btHomeAll_Click);
+            this.Script.HeaderText = "Script";
+            this.Script.Name = "Script";
+            this.Script.Text = "Script";
+            this.Script.Width = 50;
+            // 
+            // Respring
+            // 
+            this.Respring.HeaderText = "Respring";
+            this.Respring.Name = "Respring";
+            this.Respring.Width = 60;
             // 
             // Form1
             // 
@@ -672,10 +701,6 @@
         private System.Windows.Forms.Button btReset;
         private System.Windows.Forms.Button ListIPCopy;
         private System.Windows.Forms.TextBox txtListIP;
-        private System.Windows.Forms.DataGridViewButtonColumn Script;
-        private System.Windows.Forms.DataGridViewButtonColumn Run;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Action;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IP;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.DataGridViewTextBoxColumn AppName;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
@@ -687,6 +712,13 @@
         private System.Windows.Forms.Button btScriptPermission;
         private System.Windows.Forms.Button btHomeAll;
         private System.Windows.Forms.Button btRespringAll;
+        private System.Windows.Forms.Button btReboot;
+        private System.Windows.Forms.DataGridViewButtonColumn Respring;
+        private System.Windows.Forms.DataGridViewButtonColumn Script;
+        private System.Windows.Forms.DataGridViewButtonColumn Run;
+        private System.Windows.Forms.DataGridViewButtonColumn VNC;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Action;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IP;
     }
 }
 

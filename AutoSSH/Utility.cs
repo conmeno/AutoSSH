@@ -207,7 +207,34 @@ namespace AutoSSH
         }
 
 
-      
+        public static void ListIPtoFiles(BindingList<Iphone> VNCList)
+        {
+            string VNCPath = Application.StartupPath + "\\vnc";
+            DirectoryInfo VNC = new DirectoryInfo(VNCPath);
+            if (!Directory.Exists(VNCPath))
+                Directory.CreateDirectory(VNCPath);
+            string VNCConfigTextFile = Application.StartupPath + "vnc\\VNCConfigFile.txt";
+            string VNCConfigText = "";
+            if (File.Exists(VNCConfigTextFile))
+            {
+                VNCConfigText = File.ReadAllText(VNCConfigTextFile);
+            }
+            foreach (var item in VNCList)
+            {
+                if (item.IP != null && item.IP != string.Empty)
+                {
+                    string fileName = VNCPath + "\\" + Config.iConfig.DefaultIP + item.IP + ".vnc";
+                    StreamWriter sw = new StreamWriter(fileName);
+                    sw.WriteLine("[Connection]");
+                    sw.WriteLine("Host=" + Config.iConfig.DefaultIP + item.IP);
+                    sw.WriteLine("Password=b4d90014103bde54");
+                    sw.WriteLine(VNCConfigText);
+                    sw.Close();
+                }
+
+            }
+
+        }
 
 
 
