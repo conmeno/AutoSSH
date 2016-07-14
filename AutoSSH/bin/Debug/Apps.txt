@@ -9,15 +9,19 @@
     <BundleID>htmlgame3008.Conway-s-Game-of-Life-1970</BundleID>
     <AppName>Conway's GOL 1970</AppName>
   </App>
-    <App>
+  <App>
     <ID>3</ID>
-<BundleID>newphuongnt3003.Bug-Fighter</BundleID>
+    <BundleID>newphuongnt3003.Bug-Fighter</BundleID>
     <AppName>Bug Fighter</AppName>
-    
   </App>
   <App>
     <ID>4</ID>
     <BundleID>phuongnt1999.Ladybug-Fighter</BundleID>
     <AppName>Ladybug Fighter</AppName>
+  </App>
+  <App>
+    <ID>5</ID>
+    <BundleID>phuongnguyennew.Bird-Jump</BundleID>
+    <AppName>Bird Jump</AppName>
   </App>
 </ArrayOfApp>

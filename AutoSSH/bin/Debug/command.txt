@@ -1,5 +1,0 @@
-sleep 20
-activator send phuongnguyennew.Bird-Jump
-sleep 20
-killall -c 'Bird Jump'
-sleep 20

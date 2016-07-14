@@ -19,7 +19,7 @@ namespace AutoSSH
         {
             InitializeComponent();
         }
-        
+
         public List<App> Apps = new List<App>();
         private void btStart_Click(object sender, EventArgs e)
         {
@@ -28,7 +28,7 @@ namespace AutoSSH
         }
         public void RunAutoGame()
         {
-            Apps = Utility.LoadApps();
+           
             List<Iphone> iphones = Utility.LoadIPList();
             //if (iphones != null)
             //{
@@ -53,48 +53,48 @@ namespace AutoSSH
             //);
 
 
-                foreach (var item in iphones)
+            foreach (var item in iphones)
+            {
+                string[] appstr = item.Apps.Split(',');
+
+                string[] appBundleID = new string[appstr.Length];
+                for (int i = 0; i < appstr.Length; i++)
                 {
-                     string[] appstr = item.Apps.Split(',');
-
-                    string[] appBundleID = new string[appstr.Length];
-                    for (int i = 0; i < appstr.Length; i++)
-                    {
-                        int AppID = int.Parse(appstr[i]);
-                        App app = new App();
-                        app = (App)Apps.Where(a => a.ID == AppID).FirstOrDefault();
-                        appBundleID[i] = app.BundleID;
-                    }
-
-                    Thread thread = new Thread(() => openApp(item, appBundleID));
-                    thread.Start();
-
-                 
+                    int AppID = int.Parse(appstr[i]);
+                    App app = new App();
+                    app = (App)Apps.Where(a => a.ID == AppID).FirstOrDefault();
+                    appBundleID[i] = app.BundleID;
                 }
 
-           
+                Thread thread = new Thread(() => openApp(item, appBundleID));
+                thread.Start();
+
+
+            }
+
+
         }
 
-      
 
-        
+
+
         public void openApp(Iphone iphone, string[] apps)
         {
-             
+
             Random rnd = new Random();
-            string commandFile ="commands\\" + apps[rnd.Next(0, apps.Length)];
+            string commandFile = "commands\\" + apps[rnd.Next(0, apps.Length)];
             iphone.OpenNumber += 1;
-            if (iphone.OpenNumber%Config.iConfig.RoundResetIDFV == 0)
-            { 
+            if (iphone.OpenNumber % Config.iConfig.RoundResetIDFV == 0)
+            {
                 //reset idfa,idfv
-                commandFile=commandFile+"-reset";
+                commandFile = commandFile + "-reset";
             }
-            else if (iphone.OpenNumber%Config.iConfig.RoundClickAd==0)
+            else if (iphone.OpenNumber % Config.iConfig.RoundClickAd == 0)
             {
                 commandFile = "click-ad";
             }
             Process p = new Process();
-            OpenPutty(Config.iConfig.DefaultIP + iphone.IP,  commandFile + ".txt",ref p);
+            OpenPutty(Config.iConfig.DefaultIP + iphone.IP, commandFile + ".txt", ref p);
             System.Threading.Thread.Sleep(Config.iConfig.WaitKillPutty);
             //Process[] p = Process.GetProcessesByName("putty");
             try
@@ -104,13 +104,13 @@ namespace AutoSSH
                 //{
                 //    foreach (Process item in p)
                 //    {
-                        
+
                 //        //item.Kill();
                 //    }
                 //}
             }
             catch
-            { 
+            {
             }
             openApp(iphone, apps);
         }
@@ -136,7 +136,7 @@ namespace AutoSSH
             LoadConfigtoForm();
             LoadListAppsToForm();
             starWithWindows();
-
+            Apps = Utility.LoadApps();
             if (Config.iConfig.AutoStart)
             {
                 RunAutoGame();
@@ -148,12 +148,12 @@ namespace AutoSSH
             gridApps.DataSource = Utility.LoadListAppstoGrid();
         }
 
-        public void OpenPutty(string IP, string command,ref Process p)
+        public void OpenPutty(string IP, string command, ref Process p)
         {
             try
             {
                 string path = @"putty.exe";
-              
+
                 p.StartInfo.CreateNoWindow = false;
                 p.StartInfo.UseShellExecute = false;
                 p.StartInfo.ErrorDialog = false;
@@ -161,8 +161,30 @@ namespace AutoSSH
                 p.StartInfo.RedirectStandardInput = false;
                 p.StartInfo.RedirectStandardError = false;
                 p.EnableRaisingEvents = true;
-                
+
                 p.StartInfo.Arguments = "-ssh -x -C root@" + IP + " -pw alpine -m " + command;
+
+                p.StartInfo.FileName = path;
+                p.Start();
+            }
+            catch { }
+        }
+
+        public void OpenPuttyCommand(string IP, string command, ref Process p)
+        {
+            try
+            {
+                string path = @"putty.exe";
+
+                p.StartInfo.CreateNoWindow = false;
+                p.StartInfo.UseShellExecute = false;
+                p.StartInfo.ErrorDialog = false;
+                p.StartInfo.RedirectStandardOutput = false;
+                p.StartInfo.RedirectStandardInput = false;
+                p.StartInfo.RedirectStandardError = false;
+                p.EnableRaisingEvents = true;
+
+                p.StartInfo.Arguments = "-ssh -x -C root@" + IP + " -pw alpine " + command;
 
                 p.StartInfo.FileName = path;
                 p.Start();
@@ -181,7 +203,7 @@ namespace AutoSSH
             cf.DefaultIP = txtDefaultIP.Text;
             cf.RoundClickAd = int.Parse(txtRoundClickAd.Text.ToString());
             cf.AdPoint = new Point(int.Parse(txtPointX.Text.ToString()), int.Parse(txtPointY.Text.ToString()));
-            cf.RoundResetIDFV=int.Parse(txtRoundResetIDFV.Text);
+            cf.RoundResetIDFV = int.Parse(txtRoundResetIDFV.Text);
             cf.WaitKillPutty = (int)WaitKillPutty.Value;
             Utility.SaveConfig(cf);
         }
@@ -237,8 +259,9 @@ namespace AutoSSH
                 //sw.WriteLine("sleep 10");
                 sw.WriteLine("killall -c \"" + item.AppName + "\"");
                 sw.WriteLine("sleep 5");
-                sw.WriteLine("sleep 60");
-                sw.WriteLine("libactivator.system.homebutton");
+                sw.WriteLine("activator send " + item.BundleID);
+                sw.WriteLine("sleep 30");
+                sw.WriteLine("activator send libactivator.system.homebutton");
                 sw.Close();
 
 
@@ -247,12 +270,12 @@ namespace AutoSSH
 
                 sw1.WriteLine("rm /var/db/lsd/com.apple.lsdidentifiers.plist");
                 sw1.WriteLine("sleep 3");
-                
+
                 sw1.WriteLine("killall -c '" + item.AppName + "'");
                 sw1.WriteLine("sleep 5");
-                sw1.WriteLine("activator send "+ item.BundleID);
-                sw1.WriteLine("sleep 60");
-                sw1.WriteLine("libactivator.system.homebutton");
+                sw1.WriteLine("activator send " + item.BundleID);
+                sw1.WriteLine("sleep 30");
+                sw1.WriteLine("activator send libactivator.system.homebutton");
                 sw1.Close();
             }
         }
@@ -322,7 +345,7 @@ namespace AutoSSH
                     foreach (Process item in p)
                     {
                         item.Kill();
-                        
+
                     }
                 }
             }
@@ -335,11 +358,12 @@ namespace AutoSSH
         private void btClearComand_Click(object sender, EventArgs e)
         {
             System.IO.DirectoryInfo dir = new System.IO.DirectoryInfo(Application.StartupPath + "\\commands\\");
-            var files=dir.GetFiles();
-            foreach (var item in files)
-            {
-                item.Delete();
-            }
+            var files = dir.GetFiles();
+            if (files != null)
+                foreach (var item in files)
+                {
+                    item.Delete();
+                }
         }
 
         private void btReset_Click(object sender, EventArgs e)
@@ -351,7 +375,7 @@ namespace AutoSSH
         {
             Apps = Utility.LoadApps();
             List<Iphone> iphones = Utility.LoadIPList();
-           
+
 
 
             foreach (var item in iphones)
@@ -398,7 +422,7 @@ namespace AutoSSH
             try
             {
                 p.Kill();
-                
+
             }
             catch
             {
@@ -425,6 +449,204 @@ namespace AutoSSH
         private void tabPage1_Click(object sender, EventArgs e)
         {
 
+        }
+
+
+
+
+        public void OpenPSCP(string IP, string fileName, string Filepath, ref Process p)
+        {
+            try
+            {
+                string path = @"pscp.exe";
+
+                p.StartInfo.CreateNoWindow = false;
+                p.StartInfo.UseShellExecute = false;
+                p.StartInfo.ErrorDialog = false;
+                p.StartInfo.RedirectStandardOutput = false;
+                p.StartInfo.RedirectStandardInput = false;
+                p.StartInfo.RedirectStandardError = false;
+                p.EnableRaisingEvents = true;
+
+                p.StartInfo.Arguments = "-pw alpine " + Filepath + " root@" + IP + ":/User/Library/runbatch/scripts/" + fileName;
+
+                p.StartInfo.FileName = path;
+                p.Start();
+            }
+            catch { }
+        }
+
+        private void gridlist_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            BindingList<Iphone> listVNC = (BindingList<Iphone>)gridlist.DataSource;
+            if (e.ColumnIndex == 0)
+            {
+
+                string tempIP = Config.iConfig.DefaultIP + listVNC[e.RowIndex].IP;
+                Process p = new Process();
+
+
+
+                string path = @"putty.exe";
+
+
+
+                p.StartInfo.Arguments = "-ssh -x -C root@" + tempIP + " -pw alpine";
+
+                p.StartInfo.FileName = path;
+                p.Start();
+
+            }
+            else if (e.ColumnIndex == 1)
+            {
+                Process p = new Process();
+                OpenPSCP("192.168.1.111", "template.sh", Application.StartupPath + "\\bashscript\\" + listVNC[e.RowIndex].IP + ".sh", ref p);
+
+            }
+
+
+
+
+        }
+
+        private void btGenBashScript_Click(object sender, EventArgs e)
+        {
+            var scriptPath = Application.StartupPath + "\\bashscript";
+            System.IO.DirectoryInfo dir = new System.IO.DirectoryInfo(scriptPath);
+            if (!dir.Exists)
+            {
+                dir.Create();
+            }
+            List<Iphone> iphones = Utility.LoadIPList();
+            string template = System.IO.File.ReadAllText(scriptPath + "\\template.txt");
+            foreach (Iphone item in iphones)
+            {
+                System.IO.StreamWriter sw = new System.IO.StreamWriter(scriptPath + "\\" + item.IP + ".sh");
+                //sw.WriteLine("sleep 10");
+                int numapp = 1;
+                //string app1 = "", app2 = "", app3 = "";
+                //string appname1 = "", appname2 = "", appname3 = "";
+
+
+
+                string[] appstr = item.Apps.Split(',');
+
+                // string[] appBundleID = new string[appstr.Length];
+                List<App> apps = new List<App>();
+                for (int i = 0; i < appstr.Length; i++)
+                {
+                    int AppID = int.Parse(appstr[i]);
+                    App app = new App();
+                    app = (App)Apps.Where(a => a.ID == AppID).FirstOrDefault();
+                    apps.Add(app);
+                }
+
+
+
+                numapp = apps.Count;
+               // app1 = apps[0].BundleID;
+               
+
+
+
+
+                string temp = template;
+                temp = temp.Replace("[[[numapp]]]", numapp.ToString());
+
+
+                if (apps.Count > 0)
+                {
+                    temp = temp.Replace("[[[app1]]]", apps[0].BundleID);
+                    temp = temp.Replace("[[[appname1]]]", apps[0].AppName);
+                }
+                if (apps.Count > 1)
+                {
+                    temp = temp.Replace("[[[app2]]]", apps[1].BundleID);
+                    temp = temp.Replace("[[[appname2]]]", apps[1].AppName);
+                }
+                if (apps.Count > 3)
+                {
+                    temp = temp.Replace("[[[app3]]]", apps[2].BundleID);
+                    temp = temp.Replace("[[[appname3]]]", apps[2].AppName);
+                }
+
+
+                sw.WriteLine(temp);
+                sw.Close();
+
+
+
+                System.IO.StreamWriter sw1 = new System.IO.StreamWriter(scriptPath + "\\" + item.IP+ "-command" + ".txt");
+                sw1.WriteLine("chmod 777 /User/Library/runbatch/scripts/" + item.IP + ".sh");
+                sw1.Close();
+
+            }
+        }
+
+        private void btCopyScript_Click(object sender, EventArgs e)
+        {
+            List<Iphone> iphones = Utility.LoadIPList();
+           // var scriptPath = Application.StartupPath + "\\bashscript";
+
+            Parallel.ForEach(iphones, item =>
+            {
+
+                Process p = new Process();
+                OpenPSCP(Config.iConfig.DefaultIP + item.IP, item.IP+ ".sh", Application.StartupPath + "\\bashscript\\" + item.IP + ".sh", ref p);
+
+
+            }
+        );
+
+
+          
+        }
+
+        private void btScriptPermission_Click(object sender, EventArgs e)
+        {
+            List<Iphone> iphones = Utility.LoadIPList();
+            // var scriptPath = Application.StartupPath + "\\bashscript";
+
+            Parallel.ForEach(iphones, item =>
+            {
+
+                Process p = new Process();
+               // OpenPSCP("192.168.1.111", item.IP + ".sh", Application.StartupPath + "\\bashscript\\" + item.IP + ".sh", ref p);
+
+            //OpenPuttyCommand(Config.iConfig.DefaultIP + item.IP, "; sleep 10; chmod 777 /User/Library/runbatch/scripts/"+ item.IP + ".sh", ref p);
+
+                OpenPutty(Config.iConfig.DefaultIP + item.IP,"bashscript\\"+ item.IP + "-command.txt", ref p);
+                
+
+            });
+        }
+
+        private void btRespringAll_Click(object sender, EventArgs e)
+        {
+            List<Iphone> iphones = Utility.LoadIPList(); 
+            Parallel.ForEach(iphones, item =>
+            {
+
+                Process p = new Process();
+               
+                OpenPutty(Config.iConfig.DefaultIP + item.IP, "respring.txt", ref p);
+
+
+            });
+        }
+
+        private void btHomeAll_Click(object sender, EventArgs e)
+        {
+            List<Iphone> iphones = Utility.LoadIPList();
+            Parallel.ForEach(iphones, item =>
+            {
+
+                Process p = new Process();
+
+                OpenPutty(Config.iConfig.DefaultIP + item.IP, "homebutton.txt", ref p);
+
+
+            });
         }
     }
 }
