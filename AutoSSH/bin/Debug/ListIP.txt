@@ -1,6 +1,12 @@
 <ArrayOfIphone>
   <Iphone>
+    <Select>true</Select>
     <IP>111</IP>
+    <Apps>5</Apps>
+  </Iphone>
+  <Iphone>
+    <Select>true</Select>
+    <IP>113</IP>
     <Apps>5</Apps>
   </Iphone>
 </ArrayOfIphone>

@@ -28,8 +28,8 @@ namespace AutoSSH
         }
         public void RunAutoGame()
         {
-           
-            List<Iphone> iphones = Utility.LoadIPList();
+
+            List<Iphone> iphones = GetListIPFromGrid();
             //if (iphones != null)
             //{
             //    Parallel.ForEach(iphones, iphone =>
@@ -77,7 +77,19 @@ namespace AutoSSH
 
 
 
-
+        public List<Iphone> GetListIPFromGrid()
+        {
+            List<Iphone> realList = new List<Iphone>();
+            BindingList<Iphone> listIP = (BindingList<Iphone>)gridlist.DataSource;
+            foreach (var item in listIP)
+            {
+                if (item.Select)
+                {
+                    realList.Add(item);
+                }
+            }
+            return realList;
+        }
         public void openApp(Iphone iphone, string[] apps)
         {
 
@@ -127,7 +139,7 @@ namespace AutoSSH
         public void LoadIphoneGrid()
         {
             gridlist.DataSource = Utility.LoadIPListBind();
-
+            
         }
         public void LoadFirst()
         {
@@ -374,7 +386,7 @@ namespace AutoSSH
         public void RunRESET_PHONE()
         {
             Apps = Utility.LoadApps();
-            List<Iphone> iphones = Utility.LoadIPList();
+            List<Iphone> iphones = GetListIPFromGrid();
 
 
 
@@ -440,6 +452,7 @@ namespace AutoSSH
                 string str = item.Replace("\r", "");//System.Environment.NewLine
                 Iphone v = new Iphone();
                 v.IP = str;
+                v.Select = true;
                 listVNC.Add(v);
             }
             Utility.SaveListIP(listVNC);
@@ -476,46 +489,7 @@ namespace AutoSSH
             catch { }
         }
 
-        private void gridlist_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            BindingList<Iphone> listVNC = (BindingList<Iphone>)gridlist.DataSource;
-            if (e.ColumnIndex == 0)
-            {
-               
-                string tempIP = Application.StartupPath + "\\vnc\\" + Config.iConfig.DefaultIP + listVNC[e.RowIndex].IP + ".vnc";
-
-
-                Process.Start(tempIP);
-            }
-            else if (e.ColumnIndex == 1)
-            {
-
-                string tempIP = Config.iConfig.DefaultIP + listVNC[e.RowIndex].IP;
-                Process p = new Process();
-
-
-
-                string path = @"putty.exe";
-
-
-
-                p.StartInfo.Arguments = "-ssh -x -C root@" + tempIP + " -pw alpine";
-
-                p.StartInfo.FileName = path;
-                p.Start();
-
-            }
-            else if (e.ColumnIndex == 2)
-            {
-                Process p = new Process();
-                OpenPSCP("192.168.1.111", "template.sh", Application.StartupPath + "\\bashscript\\" + listVNC[e.RowIndex].IP + ".sh", ref p);
-
-            }
-
-
-
-
-        }
+       
 
         private void btGenBashScript_Click(object sender, EventArgs e)
         {
@@ -525,7 +499,7 @@ namespace AutoSSH
             {
                 dir.Create();
             }
-            List<Iphone> iphones = Utility.LoadIPList();
+            List<Iphone> iphones = GetListIPFromGrid();
             string template = System.IO.File.ReadAllText(scriptPath + "\\template.txt");
             foreach (Iphone item in iphones)
             {
@@ -593,17 +567,21 @@ namespace AutoSSH
 
 
 
-                System.IO.StreamWriter sw1 = new System.IO.StreamWriter(scriptPath + "\\" + item.IP+ "-command" + ".txt");
+                System.IO.StreamWriter sw1 = new System.IO.StreamWriter(scriptPath + "\\" + item.IP+ "-permission" + ".txt");
                 sw1.WriteLine("chmod 777 /User/Library/runbatch/scripts/" + item.IP + ".sh");
                 sw1.Close();
+
+                System.IO.StreamWriter sw2 = new System.IO.StreamWriter(scriptPath + "\\" + item.IP + "-run" + ".txt");
+                sw2.WriteLine("bash /User/Library/runbatch/scripts/" + item.IP + ".sh");
+                sw2.Close();
 
             }
         }
 
         private void btCopyScript_Click(object sender, EventArgs e)
         {
-            List<Iphone> iphones = Utility.LoadIPList();
-           // var scriptPath = Application.StartupPath + "\\bashscript";
+            List<Iphone> iphones = GetListIPFromGrid();
+            // var scriptPath = Application.StartupPath + "\\bashscript";
 
             Parallel.ForEach(iphones, item =>
             {
@@ -621,7 +599,7 @@ namespace AutoSSH
 
         private void btScriptPermission_Click(object sender, EventArgs e)
         {
-            List<Iphone> iphones = Utility.LoadIPList();
+            List<Iphone> iphones = GetListIPFromGrid();
             // var scriptPath = Application.StartupPath + "\\bashscript";
 
             Parallel.ForEach(iphones, item =>
@@ -632,7 +610,7 @@ namespace AutoSSH
 
             //OpenPuttyCommand(Config.iConfig.DefaultIP + item.IP, "; sleep 10; chmod 777 /User/Library/runbatch/scripts/"+ item.IP + ".sh", ref p);
 
-                OpenPutty(Config.iConfig.DefaultIP + item.IP,"bashscript\\"+ item.IP + "-command.txt", ref p);
+                OpenPutty(Config.iConfig.DefaultIP + item.IP,"bashscript\\"+ item.IP + "-permission.txt", ref p);
                 
 
             });
@@ -640,7 +618,7 @@ namespace AutoSSH
 
         private void btRespringAll_Click(object sender, EventArgs e)
         {
-            List<Iphone> iphones = Utility.LoadIPList(); 
+            List<Iphone> iphones = GetListIPFromGrid();
             Parallel.ForEach(iphones, item =>
             {
 
@@ -654,7 +632,7 @@ namespace AutoSSH
 
         private void btHomeAll_Click(object sender, EventArgs e)
         {
-            List<Iphone> iphones = Utility.LoadIPList();
+            List<Iphone> iphones = GetListIPFromGrid();
             Parallel.ForEach(iphones, item =>
             {
 
@@ -668,13 +646,98 @@ namespace AutoSSH
 
         private void btReboot_Click(object sender, EventArgs e)
         {
-            List<Iphone> iphones = Utility.LoadIPList();
+            List<Iphone> iphones = GetListIPFromGrid();
             Parallel.ForEach(iphones, item =>
             {
 
                 Process p = new Process();
 
                 OpenPutty(Config.iConfig.DefaultIP + item.IP, "reboot.txt", ref p);
+
+
+            });
+        }
+
+        private void gridlist_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //if (e.ColumnIndex != 0)
+            //{
+            //    DataGridView dgv = sender as DataGridView;
+            //    var abcd = dgv.Rows[0].Cells[e.ColumnIndex].Value.ToString();
+            //}
+        }
+
+        private void gridlist_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            BindingList<Iphone> listVNC = (BindingList<Iphone>)gridlist.DataSource;
+            // DataGridView dgv = sender as DataGridView;
+            //var abcd = dgv.Rows[0].Cells[0].Value.ToString();
+            string fullIP = Config.iConfig.DefaultIP + listVNC[e.RowIndex].IP;
+            if (e.ColumnIndex == 0)
+            {
+
+                string tempIP = Application.StartupPath + "\\vnc\\" + fullIP + ".vnc";
+
+
+                Process.Start(tempIP);
+            }
+            else if (e.ColumnIndex == 1)
+            {
+
+                string tempIP = Config.iConfig.DefaultIP + listVNC[e.RowIndex].IP;
+                Process p = new Process();
+
+
+
+                string path = @"putty.exe";
+
+
+
+                p.StartInfo.Arguments = "-ssh -x -C root@" + tempIP + " -pw alpine";
+
+                p.StartInfo.FileName = path;
+                p.Start();
+
+            }
+            else if (e.ColumnIndex == 2)
+            {
+                Process p = new Process();
+                OpenPSCP(fullIP, "template.sh", Application.StartupPath + "\\bashscript\\" + listVNC[e.RowIndex].IP + ".sh", ref p);
+
+            }
+            else if (e.ColumnIndex == 3)
+            {
+                Process p = new Process();
+                OpenPutty(fullIP,  Application.StartupPath + "\\reboot.txt", ref p);
+
+            }
+            else if (e.ColumnIndex == 4)
+            {
+                Process p = new Process();
+                OpenPutty(fullIP, Application.StartupPath + "\\respring.txt", ref p);
+
+            }
+            else if (e.ColumnIndex == 5)
+            {
+                Process p = new Process();
+                OpenPutty(fullIP,  Application.StartupPath + "\\reset-phone.txt", ref p);
+
+            }
+
+
+
+        }
+
+        private void btRunScript_Click(object sender, EventArgs e)
+        {
+            List<Iphone> iphones = GetListIPFromGrid();
+            // var scriptPath = Application.StartupPath + "\\bashscript";
+
+            Parallel.ForEach(iphones, item =>
+            {
+
+                Process p = new Process();
+                OpenPutty(Config.iConfig.DefaultIP + item.IP, "bashscript\\" + item.IP + "-run.txt", ref p);
 
 
             });

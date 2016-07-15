@@ -30,11 +30,22 @@
         {
             this.btStart = new System.Windows.Forms.Button();
             this.gridlist = new System.Windows.Forms.DataGridView();
+            this.select = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Script = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.IP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Action = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.VNC = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Run = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Reboot = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Respring = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Reset = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.OpenNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cbStartWindows = new System.Windows.Forms.CheckBox();
             this.cbAutoStart = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btRunScript = new System.Windows.Forms.Button();
             this.btReboot = new System.Windows.Forms.Button();
             this.btHomeAll = new System.Windows.Forms.Button();
             this.btRespringAll = new System.Windows.Forms.Button();
@@ -76,12 +87,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.btReset = new System.Windows.Forms.Button();
             this.cbClearCaches = new System.Windows.Forms.CheckBox();
-            this.IP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Action = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.VNC = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Run = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Script = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Respring = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridlist)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -109,18 +114,89 @@
             this.gridlist.BackgroundColor = System.Drawing.Color.AliceBlue;
             this.gridlist.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridlist.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.select,
+            this.Script,
             this.IP,
             this.Action,
             this.VNC,
             this.Run,
-            this.Script,
-            this.Respring});
-            this.gridlist.Location = new System.Drawing.Point(103, 18);
+            this.Reboot,
+            this.Respring,
+            this.Reset,
+            this.OpenNumber});
+            this.gridlist.Location = new System.Drawing.Point(103, 8);
             this.gridlist.Name = "gridlist";
             this.gridlist.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.gridlist.Size = new System.Drawing.Size(456, 320);
+            this.gridlist.Size = new System.Drawing.Size(480, 330);
             this.gridlist.TabIndex = 19;
+            this.gridlist.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridlist_CellClick);
             this.gridlist.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridlist_CellContentClick);
+            // 
+            // select
+            // 
+            this.select.DataPropertyName = "Select";
+            this.select.HeaderText = "select";
+            this.select.Name = "select";
+            this.select.Width = 40;
+            // 
+            // Script
+            // 
+            this.Script.HeaderText = "Script";
+            this.Script.Name = "Script";
+            this.Script.Width = 50;
+            // 
+            // IP
+            // 
+            this.IP.DataPropertyName = "IP";
+            this.IP.HeaderText = "IP";
+            this.IP.Name = "IP";
+            this.IP.Width = 40;
+            // 
+            // Action
+            // 
+            this.Action.DataPropertyName = "Apps";
+            this.Action.HeaderText = "Apps";
+            this.Action.Name = "Action";
+            this.Action.Width = 75;
+            // 
+            // VNC
+            // 
+            this.VNC.HeaderText = "VNC";
+            this.VNC.Name = "VNC";
+            this.VNC.Width = 35;
+            // 
+            // Run
+            // 
+            this.Run.HeaderText = "Putty";
+            this.Run.Name = "Run";
+            this.Run.Text = "Putty";
+            this.Run.Width = 40;
+            // 
+            // Reboot
+            // 
+            this.Reboot.HeaderText = "Reboot";
+            this.Reboot.Name = "Reboot";
+            this.Reboot.Text = "Reboot";
+            this.Reboot.Width = 50;
+            // 
+            // Respring
+            // 
+            this.Respring.HeaderText = "Respring";
+            this.Respring.Name = "Respring";
+            this.Respring.Width = 60;
+            // 
+            // Reset
+            // 
+            this.Reset.HeaderText = "Reset";
+            this.Reset.Name = "Reset";
+            this.Reset.Width = 40;
+            // 
+            // OpenNumber
+            // 
+            this.OpenNumber.DataPropertyName = "OpenNumber";
+            this.OpenNumber.HeaderText = "OpenNumber";
+            this.OpenNumber.Name = "OpenNumber";
+            this.OpenNumber.Visible = false;
             // 
             // cbStartWindows
             // 
@@ -158,7 +234,7 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Location = new System.Drawing.Point(4, 11);
+            this.tabControl1.Location = new System.Drawing.Point(4, 3);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(680, 418);
@@ -166,6 +242,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.btRunScript);
             this.tabPage1.Controls.Add(this.btReboot);
             this.tabPage1.Controls.Add(this.btHomeAll);
             this.tabPage1.Controls.Add(this.btRespringAll);
@@ -186,11 +263,21 @@
             this.tabPage1.Text = "Main";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // btRunScript
+            // 
+            this.btRunScript.Location = new System.Drawing.Point(589, 144);
+            this.btRunScript.Name = "btRunScript";
+            this.btRunScript.Size = new System.Drawing.Size(74, 42);
+            this.btRunScript.TabIndex = 93;
+            this.btRunScript.Text = "Run Script Iphone";
+            this.btRunScript.UseVisualStyleBackColor = true;
+            this.btRunScript.Click += new System.EventHandler(this.btRunScript_Click);
+            // 
             // btReboot
             // 
-            this.btReboot.Location = new System.Drawing.Point(565, 258);
+            this.btReboot.Location = new System.Drawing.Point(589, 294);
             this.btReboot.Name = "btReboot";
-            this.btReboot.Size = new System.Drawing.Size(98, 42);
+            this.btReboot.Size = new System.Drawing.Size(74, 42);
             this.btReboot.TabIndex = 92;
             this.btReboot.Text = "Reboot All";
             this.btReboot.UseVisualStyleBackColor = true;
@@ -198,9 +285,9 @@
             // 
             // btHomeAll
             // 
-            this.btHomeAll.Location = new System.Drawing.Point(565, 210);
+            this.btHomeAll.Location = new System.Drawing.Point(589, 246);
             this.btHomeAll.Name = "btHomeAll";
-            this.btHomeAll.Size = new System.Drawing.Size(98, 42);
+            this.btHomeAll.Size = new System.Drawing.Size(74, 42);
             this.btHomeAll.TabIndex = 91;
             this.btHomeAll.Text = "Unlock Device";
             this.btHomeAll.UseVisualStyleBackColor = true;
@@ -208,9 +295,9 @@
             // 
             // btRespringAll
             // 
-            this.btRespringAll.Location = new System.Drawing.Point(565, 162);
+            this.btRespringAll.Location = new System.Drawing.Point(589, 198);
             this.btRespringAll.Name = "btRespringAll";
-            this.btRespringAll.Size = new System.Drawing.Size(98, 42);
+            this.btRespringAll.Size = new System.Drawing.Size(74, 42);
             this.btRespringAll.TabIndex = 90;
             this.btRespringAll.Text = "Respring All";
             this.btRespringAll.UseVisualStyleBackColor = true;
@@ -218,9 +305,9 @@
             // 
             // btScriptPermission
             // 
-            this.btScriptPermission.Location = new System.Drawing.Point(565, 114);
+            this.btScriptPermission.Location = new System.Drawing.Point(589, 98);
             this.btScriptPermission.Name = "btScriptPermission";
-            this.btScriptPermission.Size = new System.Drawing.Size(99, 42);
+            this.btScriptPermission.Size = new System.Drawing.Size(75, 42);
             this.btScriptPermission.TabIndex = 89;
             this.btScriptPermission.Text = "Set Script Permission";
             this.btScriptPermission.UseVisualStyleBackColor = true;
@@ -228,9 +315,9 @@
             // 
             // btCopyScript
             // 
-            this.btCopyScript.Location = new System.Drawing.Point(565, 66);
+            this.btCopyScript.Location = new System.Drawing.Point(589, 53);
             this.btCopyScript.Name = "btCopyScript";
-            this.btCopyScript.Size = new System.Drawing.Size(99, 42);
+            this.btCopyScript.Size = new System.Drawing.Size(75, 42);
             this.btCopyScript.TabIndex = 88;
             this.btCopyScript.Text = "Copy Script to Phone";
             this.btCopyScript.UseVisualStyleBackColor = true;
@@ -238,9 +325,9 @@
             // 
             // btGenBashScript
             // 
-            this.btGenBashScript.Location = new System.Drawing.Point(565, 18);
+            this.btGenBashScript.Location = new System.Drawing.Point(589, 8);
             this.btGenBashScript.Name = "btGenBashScript";
-            this.btGenBashScript.Size = new System.Drawing.Size(99, 42);
+            this.btGenBashScript.Size = new System.Drawing.Size(75, 42);
             this.btGenBashScript.TabIndex = 87;
             this.btGenBashScript.Text = "Gen Bash Script";
             this.btGenBashScript.UseVisualStyleBackColor = true;
@@ -258,10 +345,10 @@
             // 
             // txtListIP
             // 
-            this.txtListIP.Location = new System.Drawing.Point(6, 18);
+            this.txtListIP.Location = new System.Drawing.Point(6, 6);
             this.txtListIP.Multiline = true;
             this.txtListIP.Name = "txtListIP";
-            this.txtListIP.Size = new System.Drawing.Size(90, 320);
+            this.txtListIP.Size = new System.Drawing.Size(90, 332);
             this.txtListIP.TabIndex = 85;
             // 
             // btClearComand
@@ -594,45 +681,6 @@
             this.cbClearCaches.Text = "Clear Caches";
             this.cbClearCaches.UseVisualStyleBackColor = true;
             // 
-            // IP
-            // 
-            this.IP.DataPropertyName = "IP";
-            this.IP.HeaderText = "IP";
-            this.IP.Name = "IP";
-            this.IP.Width = 50;
-            // 
-            // Action
-            // 
-            this.Action.DataPropertyName = "Apps";
-            this.Action.HeaderText = "Apps";
-            this.Action.Name = "Action";
-            // 
-            // VNC
-            // 
-            this.VNC.HeaderText = "VNC";
-            this.VNC.Name = "VNC";
-            this.VNC.Width = 40;
-            // 
-            // Run
-            // 
-            this.Run.HeaderText = "Putty";
-            this.Run.Name = "Run";
-            this.Run.Text = "Putty";
-            this.Run.Width = 50;
-            // 
-            // Script
-            // 
-            this.Script.HeaderText = "Script";
-            this.Script.Name = "Script";
-            this.Script.Text = "Script";
-            this.Script.Width = 50;
-            // 
-            // Respring
-            // 
-            this.Respring.HeaderText = "Respring";
-            this.Respring.Name = "Respring";
-            this.Respring.Width = 60;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -713,12 +761,17 @@
         private System.Windows.Forms.Button btHomeAll;
         private System.Windows.Forms.Button btRespringAll;
         private System.Windows.Forms.Button btReboot;
+        private System.Windows.Forms.Button btRunScript;
+        private System.Windows.Forms.DataGridViewTextBoxColumn OpenNumber;
+        private System.Windows.Forms.DataGridViewButtonColumn Reset;
         private System.Windows.Forms.DataGridViewButtonColumn Respring;
-        private System.Windows.Forms.DataGridViewButtonColumn Script;
+        private System.Windows.Forms.DataGridViewButtonColumn Reboot;
         private System.Windows.Forms.DataGridViewButtonColumn Run;
         private System.Windows.Forms.DataGridViewButtonColumn VNC;
         private System.Windows.Forms.DataGridViewTextBoxColumn Action;
         private System.Windows.Forms.DataGridViewTextBoxColumn IP;
+        private System.Windows.Forms.DataGridViewButtonColumn Script;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn select;
     }
 }
 

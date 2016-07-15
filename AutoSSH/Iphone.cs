@@ -10,13 +10,14 @@ namespace AutoSSH
         public int ID { get; set; }
         public string BundleID { get; set; }
         public string AppName { get; set; }
-       
+     
     }
 
     public class Iphone
-    {
+    {  public bool Select { get; set; }
         public string IP { get; set; }
         public string Apps { get; set; }
+      
         [XmlIgnore]
         public int OpenNumber { get; set; }
         //public List<App> Apps { get; set; } 
