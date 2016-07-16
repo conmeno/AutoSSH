@@ -30,16 +30,6 @@
         {
             this.btStart = new System.Windows.Forms.Button();
             this.gridlist = new System.Windows.Forms.DataGridView();
-            this.select = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Script = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.IP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Action = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.VNC = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Run = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Reboot = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Respring = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Reset = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.OpenNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cbStartWindows = new System.Windows.Forms.CheckBox();
             this.cbAutoStart = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -87,6 +77,16 @@
             this.button1 = new System.Windows.Forms.Button();
             this.btReset = new System.Windows.Forms.Button();
             this.cbClearCaches = new System.Windows.Forms.CheckBox();
+            this.select = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.IP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Action = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.VNC = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Run = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Script = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Reboot = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Respring = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Reset = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.OpenNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridlist)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -115,11 +115,11 @@
             this.gridlist.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridlist.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.select,
-            this.Script,
             this.IP,
             this.Action,
             this.VNC,
             this.Run,
+            this.Script,
             this.Reboot,
             this.Respring,
             this.Reset,
@@ -131,72 +131,6 @@
             this.gridlist.TabIndex = 19;
             this.gridlist.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridlist_CellClick);
             this.gridlist.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridlist_CellContentClick);
-            // 
-            // select
-            // 
-            this.select.DataPropertyName = "Select";
-            this.select.HeaderText = "select";
-            this.select.Name = "select";
-            this.select.Width = 40;
-            // 
-            // Script
-            // 
-            this.Script.HeaderText = "Script";
-            this.Script.Name = "Script";
-            this.Script.Width = 50;
-            // 
-            // IP
-            // 
-            this.IP.DataPropertyName = "IP";
-            this.IP.HeaderText = "IP";
-            this.IP.Name = "IP";
-            this.IP.Width = 40;
-            // 
-            // Action
-            // 
-            this.Action.DataPropertyName = "Apps";
-            this.Action.HeaderText = "Apps";
-            this.Action.Name = "Action";
-            this.Action.Width = 75;
-            // 
-            // VNC
-            // 
-            this.VNC.HeaderText = "VNC";
-            this.VNC.Name = "VNC";
-            this.VNC.Width = 35;
-            // 
-            // Run
-            // 
-            this.Run.HeaderText = "Putty";
-            this.Run.Name = "Run";
-            this.Run.Text = "Putty";
-            this.Run.Width = 40;
-            // 
-            // Reboot
-            // 
-            this.Reboot.HeaderText = "Reboot";
-            this.Reboot.Name = "Reboot";
-            this.Reboot.Text = "Reboot";
-            this.Reboot.Width = 50;
-            // 
-            // Respring
-            // 
-            this.Respring.HeaderText = "Respring";
-            this.Respring.Name = "Respring";
-            this.Respring.Width = 60;
-            // 
-            // Reset
-            // 
-            this.Reset.HeaderText = "Reset";
-            this.Reset.Name = "Reset";
-            this.Reset.Width = 40;
-            // 
-            // OpenNumber
-            // 
-            this.OpenNumber.DataPropertyName = "OpenNumber";
-            this.OpenNumber.HeaderText = "OpenNumber";
-            this.OpenNumber.Name = "OpenNumber";
-            this.OpenNumber.Visible = false;
             // 
             // cbStartWindows
             // 
@@ -681,6 +615,72 @@
             this.cbClearCaches.Text = "Clear Caches";
             this.cbClearCaches.UseVisualStyleBackColor = true;
             // 
+            // select
+            // 
+            this.select.DataPropertyName = "Select";
+            this.select.HeaderText = "select";
+            this.select.Name = "select";
+            this.select.Width = 40;
+            // 
+            // IP
+            // 
+            this.IP.DataPropertyName = "IP";
+            this.IP.HeaderText = "IP";
+            this.IP.Name = "IP";
+            this.IP.Width = 40;
+            // 
+            // Action
+            // 
+            this.Action.DataPropertyName = "Apps";
+            this.Action.HeaderText = "Apps";
+            this.Action.Name = "Action";
+            this.Action.Width = 75;
+            // 
+            // VNC
+            // 
+            this.VNC.HeaderText = "VNC";
+            this.VNC.Name = "VNC";
+            this.VNC.Width = 35;
+            // 
+            // Run
+            // 
+            this.Run.HeaderText = "Putty";
+            this.Run.Name = "Run";
+            this.Run.Text = "Putty";
+            this.Run.Width = 40;
+            // 
+            // Script
+            // 
+            this.Script.HeaderText = "Script";
+            this.Script.Name = "Script";
+            this.Script.Width = 50;
+            // 
+            // Reboot
+            // 
+            this.Reboot.HeaderText = "Reboot";
+            this.Reboot.Name = "Reboot";
+            this.Reboot.Text = "Reboot";
+            this.Reboot.Width = 50;
+            // 
+            // Respring
+            // 
+            this.Respring.HeaderText = "Respring";
+            this.Respring.Name = "Respring";
+            this.Respring.Width = 60;
+            // 
+            // Reset
+            // 
+            this.Reset.HeaderText = "Reset";
+            this.Reset.Name = "Reset";
+            this.Reset.Width = 40;
+            // 
+            // OpenNumber
+            // 
+            this.OpenNumber.DataPropertyName = "OpenNumber";
+            this.OpenNumber.HeaderText = "OpenNumber";
+            this.OpenNumber.Name = "OpenNumber";
+            this.OpenNumber.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -766,11 +766,11 @@
         private System.Windows.Forms.DataGridViewButtonColumn Reset;
         private System.Windows.Forms.DataGridViewButtonColumn Respring;
         private System.Windows.Forms.DataGridViewButtonColumn Reboot;
+        private System.Windows.Forms.DataGridViewButtonColumn Script;
         private System.Windows.Forms.DataGridViewButtonColumn Run;
         private System.Windows.Forms.DataGridViewButtonColumn VNC;
         private System.Windows.Forms.DataGridViewTextBoxColumn Action;
         private System.Windows.Forms.DataGridViewTextBoxColumn IP;
-        private System.Windows.Forms.DataGridViewButtonColumn Script;
         private System.Windows.Forms.DataGridViewCheckBoxColumn select;
     }
 }
