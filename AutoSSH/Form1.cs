@@ -702,7 +702,7 @@ namespace AutoSSH
             else if (e.ColumnIndex == 2)
             {
                 Process p = new Process();
-                OpenPSCP(fullIP, "template.sh", Application.StartupPath + "\\bashscript\\" + listVNC[e.RowIndex].IP + ".sh", ref p);
+                OpenPSCP(fullIP, listVNC[e.RowIndex].IP+ ".sh", Application.StartupPath + "\\bashscript\\" + listVNC[e.RowIndex].IP + ".sh", ref p);
 
             }
             else if (e.ColumnIndex == 3)
@@ -721,6 +721,13 @@ namespace AutoSSH
             {
                 Process p = new Process();
                 OpenPutty(fullIP,  Application.StartupPath + "\\reset-phone.txt", ref p);
+
+            }
+
+            else if (e.ColumnIndex == 6)
+            {
+                Process p = new Process();
+                OpenPutty(fullIP, "bashscript\\" + listVNC[e.RowIndex].IP + "-run.txt", ref p);
 
             }
 
