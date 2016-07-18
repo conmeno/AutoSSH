@@ -86,6 +86,7 @@
             this.Reboot = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Respring = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Reset = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.RunBash = new System.Windows.Forms.DataGridViewButtonColumn();
             this.OpenNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridlist)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -123,11 +124,12 @@
             this.Reboot,
             this.Respring,
             this.Reset,
+            this.RunBash,
             this.OpenNumber});
             this.gridlist.Location = new System.Drawing.Point(103, 8);
             this.gridlist.Name = "gridlist";
             this.gridlist.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.gridlist.Size = new System.Drawing.Size(480, 330);
+            this.gridlist.Size = new System.Drawing.Size(484, 330);
             this.gridlist.TabIndex = 19;
             this.gridlist.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridlist_CellClick);
             this.gridlist.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridlist_CellContentClick);
@@ -199,7 +201,7 @@
             // 
             // btRunScript
             // 
-            this.btRunScript.Location = new System.Drawing.Point(589, 144);
+            this.btRunScript.Location = new System.Drawing.Point(593, 144);
             this.btRunScript.Name = "btRunScript";
             this.btRunScript.Size = new System.Drawing.Size(74, 42);
             this.btRunScript.TabIndex = 93;
@@ -209,7 +211,7 @@
             // 
             // btReboot
             // 
-            this.btReboot.Location = new System.Drawing.Point(589, 294);
+            this.btReboot.Location = new System.Drawing.Point(593, 294);
             this.btReboot.Name = "btReboot";
             this.btReboot.Size = new System.Drawing.Size(74, 42);
             this.btReboot.TabIndex = 92;
@@ -219,7 +221,7 @@
             // 
             // btHomeAll
             // 
-            this.btHomeAll.Location = new System.Drawing.Point(589, 246);
+            this.btHomeAll.Location = new System.Drawing.Point(593, 246);
             this.btHomeAll.Name = "btHomeAll";
             this.btHomeAll.Size = new System.Drawing.Size(74, 42);
             this.btHomeAll.TabIndex = 91;
@@ -229,7 +231,7 @@
             // 
             // btRespringAll
             // 
-            this.btRespringAll.Location = new System.Drawing.Point(589, 198);
+            this.btRespringAll.Location = new System.Drawing.Point(593, 198);
             this.btRespringAll.Name = "btRespringAll";
             this.btRespringAll.Size = new System.Drawing.Size(74, 42);
             this.btRespringAll.TabIndex = 90;
@@ -239,7 +241,7 @@
             // 
             // btScriptPermission
             // 
-            this.btScriptPermission.Location = new System.Drawing.Point(589, 98);
+            this.btScriptPermission.Location = new System.Drawing.Point(593, 98);
             this.btScriptPermission.Name = "btScriptPermission";
             this.btScriptPermission.Size = new System.Drawing.Size(75, 42);
             this.btScriptPermission.TabIndex = 89;
@@ -249,7 +251,7 @@
             // 
             // btCopyScript
             // 
-            this.btCopyScript.Location = new System.Drawing.Point(589, 53);
+            this.btCopyScript.Location = new System.Drawing.Point(593, 53);
             this.btCopyScript.Name = "btCopyScript";
             this.btCopyScript.Size = new System.Drawing.Size(75, 42);
             this.btCopyScript.TabIndex = 88;
@@ -259,7 +261,7 @@
             // 
             // btGenBashScript
             // 
-            this.btGenBashScript.Location = new System.Drawing.Point(589, 8);
+            this.btGenBashScript.Location = new System.Drawing.Point(593, 8);
             this.btGenBashScript.Name = "btGenBashScript";
             this.btGenBashScript.Size = new System.Drawing.Size(75, 42);
             this.btGenBashScript.TabIndex = 87;
@@ -287,7 +289,7 @@
             // 
             // btClearComand
             // 
-            this.btClearComand.Location = new System.Drawing.Point(400, 344);
+            this.btClearComand.Location = new System.Drawing.Point(428, 342);
             this.btClearComand.Name = "btClearComand";
             this.btClearComand.Size = new System.Drawing.Size(70, 40);
             this.btClearComand.TabIndex = 84;
@@ -297,7 +299,7 @@
             // 
             // btGenerateCommand
             // 
-            this.btGenerateCommand.Location = new System.Drawing.Point(476, 344);
+            this.btGenerateCommand.Location = new System.Drawing.Point(504, 342);
             this.btGenerateCommand.Name = "btGenerateCommand";
             this.btGenerateCommand.Size = new System.Drawing.Size(83, 40);
             this.btGenerateCommand.TabIndex = 83;
@@ -634,7 +636,7 @@
             this.Action.DataPropertyName = "Apps";
             this.Action.HeaderText = "Apps";
             this.Action.Name = "Action";
-            this.Action.Width = 75;
+            this.Action.Width = 50;
             // 
             // VNC
             // 
@@ -653,26 +655,32 @@
             // 
             this.Script.HeaderText = "Script";
             this.Script.Name = "Script";
-            this.Script.Width = 50;
+            this.Script.Width = 40;
             // 
             // Reboot
             // 
             this.Reboot.HeaderText = "Reboot";
             this.Reboot.Name = "Reboot";
             this.Reboot.Text = "Reboot";
-            this.Reboot.Width = 50;
+            this.Reboot.Width = 45;
             // 
             // Respring
             // 
             this.Respring.HeaderText = "Respring";
             this.Respring.Name = "Respring";
-            this.Respring.Width = 60;
+            this.Respring.Width = 50;
             // 
             // Reset
             // 
             this.Reset.HeaderText = "Reset";
             this.Reset.Name = "Reset";
             this.Reset.Width = 40;
+            // 
+            // RunBash
+            // 
+            this.RunBash.HeaderText = "RunBash";
+            this.RunBash.Name = "RunBash";
+            this.RunBash.Width = 53;
             // 
             // OpenNumber
             // 
@@ -762,16 +770,17 @@
         private System.Windows.Forms.Button btRespringAll;
         private System.Windows.Forms.Button btReboot;
         private System.Windows.Forms.Button btRunScript;
-        private System.Windows.Forms.DataGridViewTextBoxColumn OpenNumber;
-        private System.Windows.Forms.DataGridViewButtonColumn Reset;
-        private System.Windows.Forms.DataGridViewButtonColumn Respring;
-        private System.Windows.Forms.DataGridViewButtonColumn Reboot;
-        private System.Windows.Forms.DataGridViewButtonColumn Script;
-        private System.Windows.Forms.DataGridViewButtonColumn Run;
-        private System.Windows.Forms.DataGridViewButtonColumn VNC;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Action;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IP;
         private System.Windows.Forms.DataGridViewCheckBoxColumn select;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Action;
+        private System.Windows.Forms.DataGridViewButtonColumn VNC;
+        private System.Windows.Forms.DataGridViewButtonColumn Run;
+        private System.Windows.Forms.DataGridViewButtonColumn Script;
+        private System.Windows.Forms.DataGridViewButtonColumn Reboot;
+        private System.Windows.Forms.DataGridViewButtonColumn Respring;
+        private System.Windows.Forms.DataGridViewButtonColumn Reset;
+        private System.Windows.Forms.DataGridViewButtonColumn RunBash;
+        private System.Windows.Forms.DataGridViewTextBoxColumn OpenNumber;
     }
 }
 
