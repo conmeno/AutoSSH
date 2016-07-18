@@ -1,15 +1,13 @@
 reset=0
+click=0
 for((a=1;a<10000;a++))
 do
-
 if [ $reset -eq [[[numreset]]] ]; then
 	rm /var/db/lsd/com.apple.lsdidentifiers.plist
 	[[[caches]]]
 	rm $(find //var/mobile/Applications -name 'Cookies') -rf
 	let "reset = 0 "
 fi
-
-
 let "reset += 1 "
 numapp=[[[numapp]]]
 num=$((RANDOM%$numapp))
@@ -19,20 +17,24 @@ app3=[[[app3]]]
 appname1=[[[appname1]]]
 appname2=[[[appname2]]]
 appname3=[[[appname3]]]
+killall -m $appname1
+killall -m $appname2
+killall -m $appname3
 if [ $num -eq 0 ]; then
 	activator send $app1
 	sleep 60
-	killall -m $appname1
-else if [ $num -eq 1 ]; then
+else 
+if [ $num -eq 1 ]; then
 	activator send $app2
 	sleep 60
-	killall -m $appname2
 else
 	activator send $app3
 	sleep 60
-	killall -m $appname3
 fi
-
+fi
+if [ $click -eq [[[numclick]]] ]; then
+	stouch touch 100 125 1
+	let "click = 0 "
 fi
 sleep 1
 done

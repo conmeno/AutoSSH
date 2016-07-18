@@ -535,7 +535,7 @@ namespace AutoSSH
                 string temp = template;
                 temp = temp.Replace("[[[numapp]]]", numapp.ToString());
                 temp = temp.Replace("[[[numreset]]]", Config.iConfig.RoundResetIDFV.ToString());
-
+                temp = temp.Replace("[[[numclick]]]",Config.iConfig.RoundClickAd.ToString());
                 if (cbClearCaches.Checked)
                 {
                     temp = temp.Replace("[[[caches]]]", "rm $(find //var/mobile/Applications -name 'Caches') -rf");
