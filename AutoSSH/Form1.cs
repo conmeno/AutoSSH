@@ -749,5 +749,39 @@ namespace AutoSSH
 
             });
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            List<Iphone> iphones = GetListIPFromGrid();
+            Parallel.ForEach(iphones, item =>
+            {
+
+                Process p = new Process();
+
+                OpenPutty(Config.iConfig.DefaultIP + item.IP, "reboot.txt", ref p);
+
+
+            });
+
+            Thread.Sleep(180000);
+            Parallel.ForEach(iphones, item =>
+            {
+
+                Process p = new Process();
+
+                OpenPutty(Config.iConfig.DefaultIP + item.IP, "homebutton.txt", ref p);
+
+
+            });
+            Thread.Sleep(15000);
+            Parallel.ForEach(iphones, item =>
+            {
+
+                Process p = new Process();
+                OpenPutty(Config.iConfig.DefaultIP + item.IP, "bashscript\\" + item.IP + "-run.txt", ref p);
+
+
+            });
+        }
     }
 }

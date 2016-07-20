@@ -30,6 +30,17 @@
         {
             this.btStart = new System.Windows.Forms.Button();
             this.gridlist = new System.Windows.Forms.DataGridView();
+            this.select = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.IP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Action = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.VNC = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Run = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Script = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Reboot = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Respring = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Reset = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.RunBash = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.OpenNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cbStartWindows = new System.Windows.Forms.CheckBox();
             this.cbAutoStart = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -74,20 +85,10 @@
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AppName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btSaveAppFromGrid = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btReRun = new System.Windows.Forms.Button();
             this.btReset = new System.Windows.Forms.Button();
             this.cbClearCaches = new System.Windows.Forms.CheckBox();
-            this.select = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.IP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Action = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.VNC = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Run = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Script = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Reboot = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Respring = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Reset = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.RunBash = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.OpenNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridlist)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -133,6 +134,78 @@
             this.gridlist.TabIndex = 19;
             this.gridlist.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridlist_CellClick);
             this.gridlist.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridlist_CellContentClick);
+            // 
+            // select
+            // 
+            this.select.DataPropertyName = "Select";
+            this.select.HeaderText = "select";
+            this.select.Name = "select";
+            this.select.Width = 40;
+            // 
+            // IP
+            // 
+            this.IP.DataPropertyName = "IP";
+            this.IP.HeaderText = "IP";
+            this.IP.Name = "IP";
+            this.IP.Width = 40;
+            // 
+            // Action
+            // 
+            this.Action.DataPropertyName = "Apps";
+            this.Action.HeaderText = "Apps";
+            this.Action.Name = "Action";
+            this.Action.Width = 50;
+            // 
+            // VNC
+            // 
+            this.VNC.HeaderText = "VNC";
+            this.VNC.Name = "VNC";
+            this.VNC.Width = 35;
+            // 
+            // Run
+            // 
+            this.Run.HeaderText = "Putty";
+            this.Run.Name = "Run";
+            this.Run.Text = "Putty";
+            this.Run.Width = 40;
+            // 
+            // Script
+            // 
+            this.Script.HeaderText = "Script";
+            this.Script.Name = "Script";
+            this.Script.Width = 40;
+            // 
+            // Reboot
+            // 
+            this.Reboot.HeaderText = "Reboot";
+            this.Reboot.Name = "Reboot";
+            this.Reboot.Text = "Reboot";
+            this.Reboot.Width = 45;
+            // 
+            // Respring
+            // 
+            this.Respring.HeaderText = "Respring";
+            this.Respring.Name = "Respring";
+            this.Respring.Width = 50;
+            // 
+            // Reset
+            // 
+            this.Reset.HeaderText = "Reset";
+            this.Reset.Name = "Reset";
+            this.Reset.Width = 40;
+            // 
+            // RunBash
+            // 
+            this.RunBash.HeaderText = "RunBash";
+            this.RunBash.Name = "RunBash";
+            this.RunBash.Width = 53;
+            // 
+            // OpenNumber
+            // 
+            this.OpenNumber.DataPropertyName = "OpenNumber";
+            this.OpenNumber.HeaderText = "OpenNumber";
+            this.OpenNumber.Name = "OpenNumber";
+            this.OpenNumber.Visible = false;
             // 
             // cbStartWindows
             // 
@@ -584,15 +657,15 @@
             this.btSaveAppFromGrid.UseVisualStyleBackColor = true;
             this.btSaveAppFromGrid.Click += new System.EventHandler(this.btSaveAppFromGrid_Click);
             // 
-            // button1
+            // btReRun
             // 
-            this.button1.Location = new System.Drawing.Point(377, 435);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(83, 39);
-            this.button1.TabIndex = 84;
-            this.button1.Text = "Force Close";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btReRun.Location = new System.Drawing.Point(377, 435);
+            this.btReRun.Name = "btReRun";
+            this.btReRun.Size = new System.Drawing.Size(83, 39);
+            this.btReRun.TabIndex = 84;
+            this.btReRun.Text = "Force Close";
+            this.btReRun.UseVisualStyleBackColor = true;
+            this.btReRun.Click += new System.EventHandler(this.button1_Click);
             // 
             // btReset
             // 
@@ -617,88 +690,27 @@
             this.cbClearCaches.Text = "Clear Caches";
             this.cbClearCaches.UseVisualStyleBackColor = true;
             // 
-            // select
+            // button2
             // 
-            this.select.DataPropertyName = "Select";
-            this.select.HeaderText = "select";
-            this.select.Name = "select";
-            this.select.Width = 40;
-            // 
-            // IP
-            // 
-            this.IP.DataPropertyName = "IP";
-            this.IP.HeaderText = "IP";
-            this.IP.Name = "IP";
-            this.IP.Width = 40;
-            // 
-            // Action
-            // 
-            this.Action.DataPropertyName = "Apps";
-            this.Action.HeaderText = "Apps";
-            this.Action.Name = "Action";
-            this.Action.Width = 50;
-            // 
-            // VNC
-            // 
-            this.VNC.HeaderText = "VNC";
-            this.VNC.Name = "VNC";
-            this.VNC.Width = 35;
-            // 
-            // Run
-            // 
-            this.Run.HeaderText = "Putty";
-            this.Run.Name = "Run";
-            this.Run.Text = "Putty";
-            this.Run.Width = 40;
-            // 
-            // Script
-            // 
-            this.Script.HeaderText = "Script";
-            this.Script.Name = "Script";
-            this.Script.Width = 40;
-            // 
-            // Reboot
-            // 
-            this.Reboot.HeaderText = "Reboot";
-            this.Reboot.Name = "Reboot";
-            this.Reboot.Text = "Reboot";
-            this.Reboot.Width = 45;
-            // 
-            // Respring
-            // 
-            this.Respring.HeaderText = "Respring";
-            this.Respring.Name = "Respring";
-            this.Respring.Width = 50;
-            // 
-            // Reset
-            // 
-            this.Reset.HeaderText = "Reset";
-            this.Reset.Name = "Reset";
-            this.Reset.Width = 40;
-            // 
-            // RunBash
-            // 
-            this.RunBash.HeaderText = "RunBash";
-            this.RunBash.Name = "RunBash";
-            this.RunBash.Width = 53;
-            // 
-            // OpenNumber
-            // 
-            this.OpenNumber.DataPropertyName = "OpenNumber";
-            this.OpenNumber.HeaderText = "OpenNumber";
-            this.OpenNumber.Name = "OpenNumber";
-            this.OpenNumber.Visible = false;
+            this.button2.Location = new System.Drawing.Point(287, 432);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(84, 42);
+            this.button2.TabIndex = 94;
+            this.button2.Text = "Reboot And Run";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(684, 478);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.cbClearCaches);
             this.Controls.Add(this.btReset);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btReRun);
             this.Controls.Add(this.cbStartWindows);
             this.Controls.Add(this.cbAutoStart);
             this.Controls.Add(this.btStart);
@@ -750,7 +762,7 @@
         private System.Windows.Forms.Button btGenerateCommand;
         private System.Windows.Forms.TextBox txtRoundResetIDFV;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btReRun;
         private System.Windows.Forms.NumericUpDown WaitKillPutty;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btClearComand;
@@ -781,6 +793,7 @@
         private System.Windows.Forms.DataGridViewButtonColumn Reset;
         private System.Windows.Forms.DataGridViewButtonColumn RunBash;
         private System.Windows.Forms.DataGridViewTextBoxColumn OpenNumber;
+        private System.Windows.Forms.Button button2;
     }
 }
 
