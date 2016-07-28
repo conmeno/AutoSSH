@@ -47,6 +47,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.cbAll = new System.Windows.Forms.CheckBox();
             this.btRunScript = new System.Windows.Forms.Button();
             this.btReboot = new System.Windows.Forms.Button();
             this.btHomeAll = new System.Windows.Forms.Button();
@@ -60,6 +61,8 @@
             this.btGenerateCommand = new System.Windows.Forms.Button();
             this.btSaveListIp = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.txtVNCName = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.WaitKillPutty = new System.Windows.Forms.NumericUpDown();
             this.label9 = new System.Windows.Forms.Label();
             this.txtRoundResetIDFV = new System.Windows.Forms.TextBox();
@@ -86,18 +89,15 @@
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AppName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btSaveAppFromGrid = new System.Windows.Forms.Button();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.btkillFirefox = new System.Windows.Forms.Button();
+            this.btKillChrome = new System.Windows.Forms.Button();
+            this.btKillCocCoc = new System.Windows.Forms.Button();
+            this.btKillPutty = new System.Windows.Forms.Button();
             this.btReRun = new System.Windows.Forms.Button();
             this.btReset = new System.Windows.Forms.Button();
             this.cbClearCaches = new System.Windows.Forms.CheckBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.cbAll = new System.Windows.Forms.CheckBox();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.btKillPutty = new System.Windows.Forms.Button();
-            this.btKillCocCoc = new System.Windows.Forms.Button();
-            this.txtVNCName = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.btKillChrome = new System.Windows.Forms.Button();
-            this.btkillFirefox = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridlist)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -262,6 +262,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.button2);
             this.tabPage1.Controls.Add(this.cbAll);
             this.tabPage1.Controls.Add(this.btRunScript);
             this.tabPage1.Controls.Add(this.btReboot);
@@ -284,6 +285,17 @@
             this.tabPage1.Text = "Main";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // cbAll
+            // 
+            this.cbAll.AutoSize = true;
+            this.cbAll.Location = new System.Drawing.Point(156, 6);
+            this.cbAll.Name = "cbAll";
+            this.cbAll.Size = new System.Drawing.Size(83, 17);
+            this.cbAll.TabIndex = 95;
+            this.cbAll.Text = "Checked All";
+            this.cbAll.UseVisualStyleBackColor = true;
+            this.cbAll.CheckedChanged += new System.EventHandler(this.cbAll_CheckedChanged);
+            // 
             // btRunScript
             // 
             this.btRunScript.Location = new System.Drawing.Point(593, 144);
@@ -296,7 +308,7 @@
             // 
             // btReboot
             // 
-            this.btReboot.Location = new System.Drawing.Point(593, 294);
+            this.btReboot.Location = new System.Drawing.Point(593, 288);
             this.btReboot.Name = "btReboot";
             this.btReboot.Size = new System.Drawing.Size(74, 42);
             this.btReboot.TabIndex = 92;
@@ -306,7 +318,7 @@
             // 
             // btHomeAll
             // 
-            this.btHomeAll.Location = new System.Drawing.Point(593, 246);
+            this.btHomeAll.Location = new System.Drawing.Point(592, 192);
             this.btHomeAll.Name = "btHomeAll";
             this.btHomeAll.Size = new System.Drawing.Size(74, 42);
             this.btHomeAll.TabIndex = 91;
@@ -316,7 +328,7 @@
             // 
             // btRespringAll
             // 
-            this.btRespringAll.Location = new System.Drawing.Point(593, 198);
+            this.btRespringAll.Location = new System.Drawing.Point(592, 240);
             this.btRespringAll.Name = "btRespringAll";
             this.btRespringAll.Size = new System.Drawing.Size(74, 42);
             this.btRespringAll.TabIndex = 90;
@@ -374,9 +386,9 @@
             // 
             // btClearComand
             // 
-            this.btClearComand.Location = new System.Drawing.Point(428, 342);
+            this.btClearComand.Location = new System.Drawing.Point(191, 342);
             this.btClearComand.Name = "btClearComand";
-            this.btClearComand.Size = new System.Drawing.Size(70, 40);
+            this.btClearComand.Size = new System.Drawing.Size(70, 36);
             this.btClearComand.TabIndex = 84;
             this.btClearComand.Text = "Clear Command";
             this.btClearComand.UseVisualStyleBackColor = true;
@@ -384,9 +396,9 @@
             // 
             // btGenerateCommand
             // 
-            this.btGenerateCommand.Location = new System.Drawing.Point(504, 342);
+            this.btGenerateCommand.Location = new System.Drawing.Point(267, 342);
             this.btGenerateCommand.Name = "btGenerateCommand";
-            this.btGenerateCommand.Size = new System.Drawing.Size(83, 40);
+            this.btGenerateCommand.Size = new System.Drawing.Size(83, 36);
             this.btGenerateCommand.TabIndex = 83;
             this.btGenerateCommand.Text = "Gen Command";
             this.btGenerateCommand.UseVisualStyleBackColor = true;
@@ -433,6 +445,23 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Config";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // txtVNCName
+            // 
+            this.txtVNCName.Location = new System.Drawing.Point(341, 239);
+            this.txtVNCName.Name = "txtVNCName";
+            this.txtVNCName.Size = new System.Drawing.Size(124, 20);
+            this.txtVNCName.TabIndex = 84;
+            this.txtVNCName.Text = "vncviewer";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(244, 242);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(60, 13);
+            this.label10.TabIndex = 83;
+            this.label10.Text = "VNC Name";
             // 
             // WaitKillPutty
             // 
@@ -671,14 +700,71 @@
             this.btSaveAppFromGrid.UseVisualStyleBackColor = true;
             this.btSaveAppFromGrid.Click += new System.EventHandler(this.btSaveAppFromGrid_Click);
             // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.btkillFirefox);
+            this.tabPage4.Controls.Add(this.btKillChrome);
+            this.tabPage4.Controls.Add(this.btKillCocCoc);
+            this.tabPage4.Controls.Add(this.btKillPutty);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(672, 392);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Kill";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // btkillFirefox
+            // 
+            this.btkillFirefox.Location = new System.Drawing.Point(277, 17);
+            this.btkillFirefox.Name = "btkillFirefox";
+            this.btkillFirefox.Size = new System.Drawing.Size(84, 42);
+            this.btkillFirefox.TabIndex = 98;
+            this.btkillFirefox.Text = "Kill Firefox";
+            this.btkillFirefox.UseVisualStyleBackColor = true;
+            this.btkillFirefox.Click += new System.EventHandler(this.btkillFirefox_Click);
+            // 
+            // btKillChrome
+            // 
+            this.btKillChrome.Location = new System.Drawing.Point(187, 17);
+            this.btKillChrome.Name = "btKillChrome";
+            this.btKillChrome.Size = new System.Drawing.Size(84, 42);
+            this.btKillChrome.TabIndex = 97;
+            this.btKillChrome.Text = "Kill Chrome";
+            this.btKillChrome.UseVisualStyleBackColor = true;
+            this.btKillChrome.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // btKillCocCoc
+            // 
+            this.btKillCocCoc.Location = new System.Drawing.Point(97, 17);
+            this.btKillCocCoc.Name = "btKillCocCoc";
+            this.btKillCocCoc.Size = new System.Drawing.Size(84, 42);
+            this.btKillCocCoc.TabIndex = 96;
+            this.btKillCocCoc.Text = "Kill CocCoc";
+            this.btKillCocCoc.UseVisualStyleBackColor = true;
+            this.btKillCocCoc.Click += new System.EventHandler(this.btKillCocCoc_Click);
+            // 
+            // btKillPutty
+            // 
+            this.btKillPutty.Location = new System.Drawing.Point(7, 17);
+            this.btKillPutty.Name = "btKillPutty";
+            this.btKillPutty.Size = new System.Drawing.Size(84, 42);
+            this.btKillPutty.TabIndex = 95;
+            this.btKillPutty.Text = "Kill Putty VNC";
+            this.btKillPutty.UseVisualStyleBackColor = true;
+            this.btKillPutty.Click += new System.EventHandler(this.btKillPutty_Click);
+            // 
             // btReRun
             // 
-            this.btReRun.Location = new System.Drawing.Point(377, 435);
+            this.btReRun.BackColor = System.Drawing.Color.OrangeRed;
+            this.btReRun.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btReRun.ForeColor = System.Drawing.SystemColors.Window;
+            this.btReRun.Location = new System.Drawing.Point(324, 435);
             this.btReRun.Name = "btReRun";
-            this.btReRun.Size = new System.Drawing.Size(83, 39);
+            this.btReRun.Size = new System.Drawing.Size(136, 39);
             this.btReRun.TabIndex = 84;
             this.btReRun.Text = "Force Close";
-            this.btReRun.UseVisualStyleBackColor = true;
+            this.btReRun.UseVisualStyleBackColor = false;
             this.btReRun.Click += new System.EventHandler(this.button1_Click);
             // 
             // btReset
@@ -706,102 +792,19 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(287, 432);
+            this.button2.Location = new System.Drawing.Point(593, 336);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(84, 42);
+            this.button2.Size = new System.Drawing.Size(73, 42);
             this.button2.TabIndex = 94;
             this.button2.Text = "Reboot And Run";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // cbAll
-            // 
-            this.cbAll.AutoSize = true;
-            this.cbAll.Location = new System.Drawing.Point(156, 6);
-            this.cbAll.Name = "cbAll";
-            this.cbAll.Size = new System.Drawing.Size(83, 17);
-            this.cbAll.TabIndex = 95;
-            this.cbAll.Text = "Checked All";
-            this.cbAll.UseVisualStyleBackColor = true;
-            this.cbAll.CheckedChanged += new System.EventHandler(this.cbAll_CheckedChanged);
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.Controls.Add(this.btkillFirefox);
-            this.tabPage4.Controls.Add(this.btKillChrome);
-            this.tabPage4.Controls.Add(this.btKillCocCoc);
-            this.tabPage4.Controls.Add(this.btKillPutty);
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(672, 392);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Kill";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // btKillPutty
-            // 
-            this.btKillPutty.Location = new System.Drawing.Point(7, 17);
-            this.btKillPutty.Name = "btKillPutty";
-            this.btKillPutty.Size = new System.Drawing.Size(84, 42);
-            this.btKillPutty.TabIndex = 95;
-            this.btKillPutty.Text = "Kill Putty VNC";
-            this.btKillPutty.UseVisualStyleBackColor = true;
-            this.btKillPutty.Click += new System.EventHandler(this.btKillPutty_Click);
-            // 
-            // btKillCocCoc
-            // 
-            this.btKillCocCoc.Location = new System.Drawing.Point(97, 17);
-            this.btKillCocCoc.Name = "btKillCocCoc";
-            this.btKillCocCoc.Size = new System.Drawing.Size(84, 42);
-            this.btKillCocCoc.TabIndex = 96;
-            this.btKillCocCoc.Text = "Kill CocCoc";
-            this.btKillCocCoc.UseVisualStyleBackColor = true;
-            this.btKillCocCoc.Click += new System.EventHandler(this.btKillCocCoc_Click);
-            // 
-            // txtVNCName
-            // 
-            this.txtVNCName.Location = new System.Drawing.Point(341, 239);
-            this.txtVNCName.Name = "txtVNCName";
-            this.txtVNCName.Size = new System.Drawing.Size(124, 20);
-            this.txtVNCName.TabIndex = 84;
-            this.txtVNCName.Text = "vncviewer";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(244, 242);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(60, 13);
-            this.label10.TabIndex = 83;
-            this.label10.Text = "VNC Name";
-            // 
-            // btKillChrome
-            // 
-            this.btKillChrome.Location = new System.Drawing.Point(187, 17);
-            this.btKillChrome.Name = "btKillChrome";
-            this.btKillChrome.Size = new System.Drawing.Size(84, 42);
-            this.btKillChrome.TabIndex = 97;
-            this.btKillChrome.Text = "Kill Chrome";
-            this.btKillChrome.UseVisualStyleBackColor = true;
-            this.btKillChrome.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // btkillFirefox
-            // 
-            this.btkillFirefox.Location = new System.Drawing.Point(277, 17);
-            this.btkillFirefox.Name = "btkillFirefox";
-            this.btkillFirefox.Size = new System.Drawing.Size(84, 42);
-            this.btkillFirefox.TabIndex = 98;
-            this.btkillFirefox.Text = "Kill Firefox";
-            this.btkillFirefox.UseVisualStyleBackColor = true;
-            this.btkillFirefox.Click += new System.EventHandler(this.btkillFirefox_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(684, 478);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.cbClearCaches);
             this.Controls.Add(this.btReset);
             this.Controls.Add(this.tabControl1);
