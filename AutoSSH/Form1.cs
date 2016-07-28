@@ -217,6 +217,7 @@ namespace AutoSSH
             cf.AdPoint = new Point(int.Parse(txtPointX.Text.ToString()), int.Parse(txtPointY.Text.ToString()));
             cf.RoundResetIDFV = int.Parse(txtRoundResetIDFV.Text);
             cf.WaitKillPutty = (int)WaitKillPutty.Value;
+            cf.VNCName = txtVNCName.Text;
             Utility.SaveConfig(cf);
         }
         public void LoadConfigtoForm()
@@ -234,6 +235,7 @@ namespace AutoSSH
 
             txtRoundClickAd.Text = cf.RoundClickAd.ToString();
             txtRoundResetIDFV.Text = cf.RoundResetIDFV.ToString();
+            txtVNCName.Text = cf.VNCName;
         }
 
 
@@ -782,6 +784,123 @@ namespace AutoSSH
 
 
             });
+        }
+
+        private void cbAll_CheckedChanged(object sender, EventArgs e)
+        {
+            BindingList<Iphone> listVNC = (BindingList<Iphone>)gridlist.DataSource;
+            if (cbAll.Checked)
+            {
+                foreach (var item in listVNC)
+                {
+                    item.Select = true;
+                }
+            }
+            else
+            {
+                foreach (var item in listVNC)
+                {
+                    item.Select = false;
+                }
+            }
+            gridlist.DataSource = listVNC;
+           
+            
+        }
+
+        private void btKillPutty_Click(object sender, EventArgs e)
+        {
+            Process[] p = Process.GetProcessesByName("putty");
+            try
+            {
+                if (p != null)
+                {
+                    foreach (Process item in p)
+                    {
+                        item.Kill();
+
+                    }
+                }
+            }
+            catch
+            {
+            }
+
+
+
+            Process[] p2 = Process.GetProcessesByName(Config.iConfig.VNCName);
+            try
+            {
+                if (p2 != null)
+                {
+                    foreach (Process item in p2)
+                    {
+                        item.Kill();
+
+                    }
+                }
+            }
+            catch
+            {
+            }
+        }
+
+        private void btKillCocCoc_Click(object sender, EventArgs e)
+        {
+            Process[] p = Process.GetProcessesByName("browser");
+            try
+            {
+                if (p != null)
+                {
+                    foreach (Process item in p)
+                    {
+                        item.Kill();
+
+                    }
+                }
+            }
+            catch
+            {
+            }
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Process[] p = Process.GetProcessesByName("Chrome");
+            try
+            {
+                if (p != null)
+                {
+                    foreach (Process item in p)
+                    {
+                        item.Kill();
+
+                    }
+                }
+            }
+            catch
+            {
+            }
+        }
+
+        private void btkillFirefox_Click(object sender, EventArgs e)
+        {
+            Process[] p = Process.GetProcessesByName("Firefox");
+            try
+            {
+                if (p != null)
+                {
+                    foreach (Process item in p)
+                    {
+                        item.Kill();
+
+                    }
+                }
+            }
+            catch
+            {
+            }
         }
     }
 }

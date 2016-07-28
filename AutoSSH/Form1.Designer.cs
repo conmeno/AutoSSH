@@ -90,6 +90,14 @@
             this.btReset = new System.Windows.Forms.Button();
             this.cbClearCaches = new System.Windows.Forms.CheckBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.cbAll = new System.Windows.Forms.CheckBox();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.btKillPutty = new System.Windows.Forms.Button();
+            this.btKillCocCoc = new System.Windows.Forms.Button();
+            this.txtVNCName = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.btKillChrome = new System.Windows.Forms.Button();
+            this.btkillFirefox = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridlist)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -97,6 +105,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.WaitKillPutty)).BeginInit();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridApps)).BeginInit();
+            this.tabPage4.SuspendLayout();
             this.SuspendLayout();
             // 
             // btStart
@@ -128,10 +137,10 @@
             this.Reset,
             this.RunBash,
             this.OpenNumber});
-            this.gridlist.Location = new System.Drawing.Point(103, 8);
+            this.gridlist.Location = new System.Drawing.Point(103, 27);
             this.gridlist.Name = "gridlist";
             this.gridlist.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.gridlist.Size = new System.Drawing.Size(484, 330);
+            this.gridlist.Size = new System.Drawing.Size(484, 311);
             this.gridlist.TabIndex = 19;
             this.gridlist.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridlist_CellClick);
             this.gridlist.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridlist_CellContentClick);
@@ -244,6 +253,7 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Location = new System.Drawing.Point(4, 3);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -252,6 +262,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.cbAll);
             this.tabPage1.Controls.Add(this.btRunScript);
             this.tabPage1.Controls.Add(this.btReboot);
             this.tabPage1.Controls.Add(this.btHomeAll);
@@ -393,6 +404,8 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.txtVNCName);
+            this.tabPage2.Controls.Add(this.label10);
             this.tabPage2.Controls.Add(this.WaitKillPutty);
             this.tabPage2.Controls.Add(this.label9);
             this.tabPage2.Controls.Add(this.txtRoundResetIDFV);
@@ -701,6 +714,88 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // cbAll
+            // 
+            this.cbAll.AutoSize = true;
+            this.cbAll.Location = new System.Drawing.Point(156, 6);
+            this.cbAll.Name = "cbAll";
+            this.cbAll.Size = new System.Drawing.Size(83, 17);
+            this.cbAll.TabIndex = 95;
+            this.cbAll.Text = "Checked All";
+            this.cbAll.UseVisualStyleBackColor = true;
+            this.cbAll.CheckedChanged += new System.EventHandler(this.cbAll_CheckedChanged);
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.btkillFirefox);
+            this.tabPage4.Controls.Add(this.btKillChrome);
+            this.tabPage4.Controls.Add(this.btKillCocCoc);
+            this.tabPage4.Controls.Add(this.btKillPutty);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(672, 392);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Kill";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // btKillPutty
+            // 
+            this.btKillPutty.Location = new System.Drawing.Point(7, 17);
+            this.btKillPutty.Name = "btKillPutty";
+            this.btKillPutty.Size = new System.Drawing.Size(84, 42);
+            this.btKillPutty.TabIndex = 95;
+            this.btKillPutty.Text = "Kill Putty VNC";
+            this.btKillPutty.UseVisualStyleBackColor = true;
+            this.btKillPutty.Click += new System.EventHandler(this.btKillPutty_Click);
+            // 
+            // btKillCocCoc
+            // 
+            this.btKillCocCoc.Location = new System.Drawing.Point(97, 17);
+            this.btKillCocCoc.Name = "btKillCocCoc";
+            this.btKillCocCoc.Size = new System.Drawing.Size(84, 42);
+            this.btKillCocCoc.TabIndex = 96;
+            this.btKillCocCoc.Text = "Kill CocCoc";
+            this.btKillCocCoc.UseVisualStyleBackColor = true;
+            this.btKillCocCoc.Click += new System.EventHandler(this.btKillCocCoc_Click);
+            // 
+            // txtVNCName
+            // 
+            this.txtVNCName.Location = new System.Drawing.Point(341, 239);
+            this.txtVNCName.Name = "txtVNCName";
+            this.txtVNCName.Size = new System.Drawing.Size(124, 20);
+            this.txtVNCName.TabIndex = 84;
+            this.txtVNCName.Text = "vncviewer";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(244, 242);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(60, 13);
+            this.label10.TabIndex = 83;
+            this.label10.Text = "VNC Name";
+            // 
+            // btKillChrome
+            // 
+            this.btKillChrome.Location = new System.Drawing.Point(187, 17);
+            this.btKillChrome.Name = "btKillChrome";
+            this.btKillChrome.Size = new System.Drawing.Size(84, 42);
+            this.btKillChrome.TabIndex = 97;
+            this.btKillChrome.Text = "Kill Chrome";
+            this.btKillChrome.UseVisualStyleBackColor = true;
+            this.btKillChrome.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // btkillFirefox
+            // 
+            this.btkillFirefox.Location = new System.Drawing.Point(277, 17);
+            this.btkillFirefox.Name = "btkillFirefox";
+            this.btkillFirefox.Size = new System.Drawing.Size(84, 42);
+            this.btkillFirefox.TabIndex = 98;
+            this.btkillFirefox.Text = "Kill Firefox";
+            this.btkillFirefox.UseVisualStyleBackColor = true;
+            this.btkillFirefox.Click += new System.EventHandler(this.btkillFirefox_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -728,6 +823,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.WaitKillPutty)).EndInit();
             this.tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridApps)).EndInit();
+            this.tabPage4.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -796,6 +892,14 @@
         private System.Windows.Forms.DataGridViewButtonColumn RunBash;
         private System.Windows.Forms.DataGridViewTextBoxColumn OpenNumber;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.CheckBox cbAll;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.Button btKillCocCoc;
+        private System.Windows.Forms.Button btKillPutty;
+        private System.Windows.Forms.TextBox txtVNCName;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button btKillChrome;
+        private System.Windows.Forms.Button btkillFirefox;
     }
 }
 

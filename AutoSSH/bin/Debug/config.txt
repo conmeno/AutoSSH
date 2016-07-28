@@ -12,4 +12,5 @@
   <RoundResetIDFV>3</RoundResetIDFV>
   <RoundClickAd>60</RoundClickAd>
   <WaitKillPutty>60001</WaitKillPutty>
+  <VNCName>vncviewer</VNCName>
 </Config>

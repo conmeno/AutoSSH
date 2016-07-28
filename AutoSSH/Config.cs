@@ -24,7 +24,7 @@ namespace AutoSSH
         public int WaitKillPutty { get; set; }
         [XmlIgnore]
         public static Config iConfig { get; set; }
-
+        public string VNCName { get; set; }
     }
  
 }
