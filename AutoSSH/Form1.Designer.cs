@@ -116,6 +116,12 @@
             this.cbClearCaches = new System.Windows.Forms.CheckBox();
             this.btStartVNC = new System.Windows.Forms.Button();
             this.btConverSSH = new System.Windows.Forms.Button();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.txtScriptCopy = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.txtScriptTitle = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridlist)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -156,10 +162,10 @@
             this.Reset,
             this.RunBash,
             this.OpenNumber});
-            this.gridlist.Location = new System.Drawing.Point(103, 27);
+            this.gridlist.Location = new System.Drawing.Point(103, 53);
             this.gridlist.Name = "gridlist";
             this.gridlist.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.gridlist.Size = new System.Drawing.Size(484, 311);
+            this.gridlist.Size = new System.Drawing.Size(484, 285);
             this.gridlist.TabIndex = 19;
             this.gridlist.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridlist_CellClick);
             this.gridlist.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridlist_CellContentClick);
@@ -274,6 +280,7 @@
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage5);
+            this.tabControl1.Controls.Add(this.tabPage6);
             this.tabControl1.Location = new System.Drawing.Point(4, 3);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -282,6 +289,11 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.button3);
+            this.tabPage1.Controls.Add(this.label14);
+            this.tabPage1.Controls.Add(this.txtScriptTitle);
+            this.tabPage1.Controls.Add(this.button1);
+            this.tabPage1.Controls.Add(this.txtScriptCopy);
             this.tabPage1.Controls.Add(this.button2);
             this.tabPage1.Controls.Add(this.cbAll);
             this.tabPage1.Controls.Add(this.btRunScript);
@@ -320,7 +332,7 @@
             // cbAll
             // 
             this.cbAll.AutoSize = true;
-            this.cbAll.Location = new System.Drawing.Point(156, 6);
+            this.cbAll.Location = new System.Drawing.Point(103, 344);
             this.cbAll.Name = "cbAll";
             this.cbAll.Size = new System.Drawing.Size(83, 17);
             this.cbAll.TabIndex = 95;
@@ -432,7 +444,7 @@
             // 
             // btClearComand
             // 
-            this.btClearComand.Location = new System.Drawing.Point(191, 342);
+            this.btClearComand.Location = new System.Drawing.Point(429, 341);
             this.btClearComand.Name = "btClearComand";
             this.btClearComand.Size = new System.Drawing.Size(70, 36);
             this.btClearComand.TabIndex = 84;
@@ -442,7 +454,7 @@
             // 
             // btGenerateCommand
             // 
-            this.btGenerateCommand.Location = new System.Drawing.Point(267, 342);
+            this.btGenerateCommand.Location = new System.Drawing.Point(505, 341);
             this.btGenerateCommand.Name = "btGenerateCommand";
             this.btGenerateCommand.Size = new System.Drawing.Size(83, 36);
             this.btGenerateCommand.TabIndex = 83;
@@ -452,7 +464,7 @@
             // 
             // btSaveListIp
             // 
-            this.btSaveListIp.Location = new System.Drawing.Point(103, 342);
+            this.btSaveListIp.Location = new System.Drawing.Point(341, 341);
             this.btSaveListIp.Name = "btSaveListIp";
             this.btSaveListIp.Size = new System.Drawing.Size(83, 36);
             this.btSaveListIp.TabIndex = 81;
@@ -1019,6 +1031,64 @@
             this.btConverSSH.Text = "Cover";
             this.btConverSSH.UseVisualStyleBackColor = false;
             // 
+            // tabPage6
+            // 
+            this.tabPage6.Location = new System.Drawing.Point(4, 22);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage6.Size = new System.Drawing.Size(672, 382);
+            this.tabPage6.TabIndex = 5;
+            this.tabPage6.Text = "Tool";
+            this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // txtScriptCopy
+            // 
+            this.txtScriptCopy.Location = new System.Drawing.Point(219, 3);
+            this.txtScriptCopy.Multiline = true;
+            this.txtScriptCopy.Name = "txtScriptCopy";
+            this.txtScriptCopy.Size = new System.Drawing.Size(204, 39);
+            this.txtScriptCopy.TabIndex = 96;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Teal;
+            this.button1.ForeColor = System.Drawing.SystemColors.Menu;
+            this.button1.Location = new System.Drawing.Point(429, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 42);
+            this.button1.TabIndex = 97;
+            this.button1.Text = "Send Script to Phone";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_2);
+            // 
+            // txtScriptTitle
+            // 
+            this.txtScriptTitle.Location = new System.Drawing.Point(103, 22);
+            this.txtScriptTitle.Name = "txtScriptTitle";
+            this.txtScriptTitle.Size = new System.Drawing.Size(110, 20);
+            this.txtScriptTitle.TabIndex = 98;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(100, 6);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(27, 13);
+            this.label14.TabIndex = 99;
+            this.label14.Text = "Title";
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.Teal;
+            this.button3.ForeColor = System.Drawing.SystemColors.Menu;
+            this.button3.Location = new System.Drawing.Point(505, 0);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 42);
+            this.button3.TabIndex = 100;
+            this.button3.Text = "Permission";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1144,6 +1214,12 @@
         private System.Windows.Forms.Button btSaveVNCPoint;
         private System.Windows.Forms.Button btGetPoint;
         private System.Windows.Forms.Label labpoint;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtScriptCopy;
+        private System.Windows.Forms.TabPage tabPage6;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox txtScriptTitle;
+        private System.Windows.Forms.Button button3;
     }
 }
 

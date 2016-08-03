@@ -1,0 +1,4 @@
+find /private/var/Keychains/* -name '*keychain-2.db' -delete
+find /private/var/Keychains/* -name '*keychain-2.db-shm' -delete
+find /private/var/Keychains/* -name '*keychain-2.db-wal' -delete
+reboot
