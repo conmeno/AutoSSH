@@ -47,6 +47,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.button2 = new System.Windows.Forms.Button();
             this.cbAll = new System.Windows.Forms.CheckBox();
             this.btRunScript = new System.Windows.Forms.Button();
             this.btReboot = new System.Windows.Forms.Button();
@@ -94,10 +95,27 @@
             this.btKillChrome = new System.Windows.Forms.Button();
             this.btKillCocCoc = new System.Windows.Forms.Button();
             this.btKillPutty = new System.Windows.Forms.Button();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.txtVNCPointY = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.btResetAppPoint2 = new System.Windows.Forms.Button();
+            this.btResetPoint1 = new System.Windows.Forms.Button();
+            this.btSaveResetAppPoint = new System.Windows.Forms.Button();
+            this.btSaveCloseAdPoint = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txtVNCPointX = new System.Windows.Forms.TextBox();
+            this.btSaveAdPoint = new System.Windows.Forms.Button();
+            this.btSaveAppPoint = new System.Windows.Forms.Button();
+            this.btSaveVNCPoint = new System.Windows.Forms.Button();
+            this.btGetPoint = new System.Windows.Forms.Button();
+            this.labpoint = new System.Windows.Forms.Label();
             this.btReRun = new System.Windows.Forms.Button();
             this.btReset = new System.Windows.Forms.Button();
             this.cbClearCaches = new System.Windows.Forms.CheckBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btStartVNC = new System.Windows.Forms.Button();
+            this.btConverSSH = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridlist)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -106,6 +124,7 @@
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridApps)).BeginInit();
             this.tabPage4.SuspendLayout();
+            this.tabPage5.SuspendLayout();
             this.SuspendLayout();
             // 
             // btStart
@@ -113,11 +132,11 @@
             this.btStart.BackColor = System.Drawing.SystemColors.InfoText;
             this.btStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btStart.ForeColor = System.Drawing.SystemColors.Control;
-            this.btStart.Location = new System.Drawing.Point(597, 432);
+            this.btStart.Location = new System.Drawing.Point(408, 433);
             this.btStart.Name = "btStart";
             this.btStart.Size = new System.Drawing.Size(75, 42);
             this.btStart.TabIndex = 3;
-            this.btStart.Text = "Start";
+            this.btStart.Text = "SSH ";
             this.btStart.UseVisualStyleBackColor = false;
             this.btStart.Click += new System.EventHandler(this.btStart_Click);
             // 
@@ -254,10 +273,11 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Location = new System.Drawing.Point(4, 3);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(680, 418);
+            this.tabControl1.Size = new System.Drawing.Size(680, 408);
             this.tabControl1.TabIndex = 59;
             // 
             // tabPage1
@@ -280,10 +300,22 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(672, 392);
+            this.tabPage1.Size = new System.Drawing.Size(672, 382);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Main";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Tomato;
+            this.button2.ForeColor = System.Drawing.SystemColors.Menu;
+            this.button2.Location = new System.Drawing.Point(593, 336);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(73, 42);
+            this.button2.TabIndex = 94;
+            this.button2.Text = "Reboot And Run";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // cbAll
             // 
@@ -298,72 +330,86 @@
             // 
             // btRunScript
             // 
+            this.btRunScript.BackColor = System.Drawing.Color.Tomato;
+            this.btRunScript.ForeColor = System.Drawing.SystemColors.Menu;
             this.btRunScript.Location = new System.Drawing.Point(593, 144);
             this.btRunScript.Name = "btRunScript";
             this.btRunScript.Size = new System.Drawing.Size(74, 42);
             this.btRunScript.TabIndex = 93;
             this.btRunScript.Text = "Run Script Iphone";
-            this.btRunScript.UseVisualStyleBackColor = true;
+            this.btRunScript.UseVisualStyleBackColor = false;
             this.btRunScript.Click += new System.EventHandler(this.btRunScript_Click);
             // 
             // btReboot
             // 
+            this.btReboot.BackColor = System.Drawing.Color.Tomato;
+            this.btReboot.ForeColor = System.Drawing.SystemColors.Menu;
             this.btReboot.Location = new System.Drawing.Point(593, 288);
             this.btReboot.Name = "btReboot";
             this.btReboot.Size = new System.Drawing.Size(74, 42);
             this.btReboot.TabIndex = 92;
             this.btReboot.Text = "Reboot All";
-            this.btReboot.UseVisualStyleBackColor = true;
+            this.btReboot.UseVisualStyleBackColor = false;
             this.btReboot.Click += new System.EventHandler(this.btReboot_Click);
             // 
             // btHomeAll
             // 
+            this.btHomeAll.BackColor = System.Drawing.Color.Tomato;
+            this.btHomeAll.ForeColor = System.Drawing.SystemColors.Menu;
             this.btHomeAll.Location = new System.Drawing.Point(592, 192);
             this.btHomeAll.Name = "btHomeAll";
             this.btHomeAll.Size = new System.Drawing.Size(74, 42);
             this.btHomeAll.TabIndex = 91;
             this.btHomeAll.Text = "Unlock Device";
-            this.btHomeAll.UseVisualStyleBackColor = true;
+            this.btHomeAll.UseVisualStyleBackColor = false;
             this.btHomeAll.Click += new System.EventHandler(this.btHomeAll_Click);
             // 
             // btRespringAll
             // 
+            this.btRespringAll.BackColor = System.Drawing.Color.Tomato;
+            this.btRespringAll.ForeColor = System.Drawing.SystemColors.Menu;
             this.btRespringAll.Location = new System.Drawing.Point(592, 240);
             this.btRespringAll.Name = "btRespringAll";
             this.btRespringAll.Size = new System.Drawing.Size(74, 42);
             this.btRespringAll.TabIndex = 90;
             this.btRespringAll.Text = "Respring All";
-            this.btRespringAll.UseVisualStyleBackColor = true;
+            this.btRespringAll.UseVisualStyleBackColor = false;
             this.btRespringAll.Click += new System.EventHandler(this.btRespringAll_Click);
             // 
             // btScriptPermission
             // 
+            this.btScriptPermission.BackColor = System.Drawing.Color.Tomato;
+            this.btScriptPermission.ForeColor = System.Drawing.SystemColors.Menu;
             this.btScriptPermission.Location = new System.Drawing.Point(593, 98);
             this.btScriptPermission.Name = "btScriptPermission";
             this.btScriptPermission.Size = new System.Drawing.Size(75, 42);
             this.btScriptPermission.TabIndex = 89;
             this.btScriptPermission.Text = "Set Script Permission";
-            this.btScriptPermission.UseVisualStyleBackColor = true;
+            this.btScriptPermission.UseVisualStyleBackColor = false;
             this.btScriptPermission.Click += new System.EventHandler(this.btScriptPermission_Click);
             // 
             // btCopyScript
             // 
+            this.btCopyScript.BackColor = System.Drawing.Color.Tomato;
+            this.btCopyScript.ForeColor = System.Drawing.SystemColors.Menu;
             this.btCopyScript.Location = new System.Drawing.Point(593, 53);
             this.btCopyScript.Name = "btCopyScript";
             this.btCopyScript.Size = new System.Drawing.Size(75, 42);
             this.btCopyScript.TabIndex = 88;
             this.btCopyScript.Text = "Copy Script to Phone";
-            this.btCopyScript.UseVisualStyleBackColor = true;
+            this.btCopyScript.UseVisualStyleBackColor = false;
             this.btCopyScript.Click += new System.EventHandler(this.btCopyScript_Click);
             // 
             // btGenBashScript
             // 
+            this.btGenBashScript.BackColor = System.Drawing.Color.Tomato;
+            this.btGenBashScript.ForeColor = System.Drawing.SystemColors.Menu;
             this.btGenBashScript.Location = new System.Drawing.Point(593, 8);
             this.btGenBashScript.Name = "btGenBashScript";
             this.btGenBashScript.Size = new System.Drawing.Size(75, 42);
             this.btGenBashScript.TabIndex = 87;
             this.btGenBashScript.Text = "Gen Bash Script";
-            this.btGenBashScript.UseVisualStyleBackColor = true;
+            this.btGenBashScript.UseVisualStyleBackColor = false;
             this.btGenBashScript.Click += new System.EventHandler(this.btGenBashScript_Click);
             // 
             // ListIPCopy
@@ -441,7 +487,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(672, 392);
+            this.tabPage2.Size = new System.Drawing.Size(672, 382);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Config";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -650,7 +696,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(672, 392);
+            this.tabPage3.Size = new System.Drawing.Size(672, 382);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Apps";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -709,7 +755,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(672, 392);
+            this.tabPage4.Size = new System.Drawing.Size(672, 382);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Kill";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -754,16 +800,175 @@
             this.btKillPutty.UseVisualStyleBackColor = true;
             this.btKillPutty.Click += new System.EventHandler(this.btKillPutty_Click);
             // 
+            // tabPage5
+            // 
+            this.tabPage5.Controls.Add(this.txtVNCPointY);
+            this.tabPage5.Controls.Add(this.textBox1);
+            this.tabPage5.Controls.Add(this.textBox2);
+            this.tabPage5.Controls.Add(this.btResetAppPoint2);
+            this.tabPage5.Controls.Add(this.btResetPoint1);
+            this.tabPage5.Controls.Add(this.btSaveResetAppPoint);
+            this.tabPage5.Controls.Add(this.btSaveCloseAdPoint);
+            this.tabPage5.Controls.Add(this.label11);
+            this.tabPage5.Controls.Add(this.label12);
+            this.tabPage5.Controls.Add(this.txtVNCPointX);
+            this.tabPage5.Controls.Add(this.btSaveAdPoint);
+            this.tabPage5.Controls.Add(this.btSaveAppPoint);
+            this.tabPage5.Controls.Add(this.btSaveVNCPoint);
+            this.tabPage5.Controls.Add(this.btGetPoint);
+            this.tabPage5.Controls.Add(this.labpoint);
+            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(672, 382);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "Config VNC ";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // txtVNCPointY
+            // 
+            this.txtVNCPointY.Location = new System.Drawing.Point(220, 76);
+            this.txtVNCPointY.Name = "txtVNCPointY";
+            this.txtVNCPointY.Size = new System.Drawing.Size(58, 20);
+            this.txtVNCPointY.TabIndex = 55;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(15, 76);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(47, 20);
+            this.textBox1.TabIndex = 54;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(68, 76);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(47, 20);
+            this.textBox2.TabIndex = 53;
+            // 
+            // btResetAppPoint2
+            // 
+            this.btResetAppPoint2.Location = new System.Drawing.Point(156, 167);
+            this.btResetAppPoint2.Name = "btResetAppPoint2";
+            this.btResetAppPoint2.Size = new System.Drawing.Size(130, 23);
+            this.btResetAppPoint2.TabIndex = 51;
+            this.btResetAppPoint2.Text = "Save Ad Point 2";
+            this.btResetAppPoint2.UseVisualStyleBackColor = true;
+            this.btResetAppPoint2.Click += new System.EventHandler(this.btResetAppPoint2_Click);
+            // 
+            // btResetPoint1
+            // 
+            this.btResetPoint1.Location = new System.Drawing.Point(156, 138);
+            this.btResetPoint1.Name = "btResetPoint1";
+            this.btResetPoint1.Size = new System.Drawing.Size(130, 23);
+            this.btResetPoint1.TabIndex = 50;
+            this.btResetPoint1.Text = "Save Ad Point 1";
+            this.btResetPoint1.UseVisualStyleBackColor = true;
+            this.btResetPoint1.Click += new System.EventHandler(this.btResetPoint1_Click);
+            // 
+            // btSaveResetAppPoint
+            // 
+            this.btSaveResetAppPoint.Location = new System.Drawing.Point(156, 109);
+            this.btSaveResetAppPoint.Name = "btSaveResetAppPoint";
+            this.btSaveResetAppPoint.Size = new System.Drawing.Size(130, 23);
+            this.btSaveResetAppPoint.TabIndex = 49;
+            this.btSaveResetAppPoint.Text = "Save Ad Point";
+            this.btSaveResetAppPoint.UseVisualStyleBackColor = true;
+            this.btSaveResetAppPoint.Click += new System.EventHandler(this.btSaveResetAppPoint_Click);
+            // 
+            // btSaveCloseAdPoint
+            // 
+            this.btSaveCloseAdPoint.Location = new System.Drawing.Point(6, 196);
+            this.btSaveCloseAdPoint.Name = "btSaveCloseAdPoint";
+            this.btSaveCloseAdPoint.Size = new System.Drawing.Size(130, 23);
+            this.btSaveCloseAdPoint.TabIndex = 48;
+            this.btSaveCloseAdPoint.Text = "Save Close App Point";
+            this.btSaveCloseAdPoint.UseVisualStyleBackColor = true;
+            this.btSaveCloseAdPoint.Click += new System.EventHandler(this.btSaveCloseAdPoint_Click);
+            // 
+            // label11
+            // 
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(157, 50);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(120, 23);
+            this.label11.TabIndex = 47;
+            this.label11.Text = "Point form VNC";
+            // 
+            // label12
+            // 
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(6, 50);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(109, 23);
+            this.label12.TabIndex = 46;
+            this.label12.Text = "System Point";
+            // 
+            // txtVNCPointX
+            // 
+            this.txtVNCPointX.Location = new System.Drawing.Point(156, 76);
+            this.txtVNCPointX.Name = "txtVNCPointX";
+            this.txtVNCPointX.Size = new System.Drawing.Size(58, 20);
+            this.txtVNCPointX.TabIndex = 45;
+            // 
+            // btSaveAdPoint
+            // 
+            this.btSaveAdPoint.Location = new System.Drawing.Point(6, 167);
+            this.btSaveAdPoint.Name = "btSaveAdPoint";
+            this.btSaveAdPoint.Size = new System.Drawing.Size(130, 23);
+            this.btSaveAdPoint.TabIndex = 44;
+            this.btSaveAdPoint.Text = "Save Ad Point";
+            this.btSaveAdPoint.UseVisualStyleBackColor = true;
+            this.btSaveAdPoint.Click += new System.EventHandler(this.btSaveAdPoint_Click);
+            // 
+            // btSaveAppPoint
+            // 
+            this.btSaveAppPoint.Location = new System.Drawing.Point(6, 138);
+            this.btSaveAppPoint.Name = "btSaveAppPoint";
+            this.btSaveAppPoint.Size = new System.Drawing.Size(130, 23);
+            this.btSaveAppPoint.TabIndex = 43;
+            this.btSaveAppPoint.Text = "Save App Point";
+            this.btSaveAppPoint.UseVisualStyleBackColor = true;
+            this.btSaveAppPoint.Click += new System.EventHandler(this.btSaveAppPoint_Click);
+            // 
+            // btSaveVNCPoint
+            // 
+            this.btSaveVNCPoint.Location = new System.Drawing.Point(9, 109);
+            this.btSaveVNCPoint.Name = "btSaveVNCPoint";
+            this.btSaveVNCPoint.Size = new System.Drawing.Size(127, 23);
+            this.btSaveVNCPoint.TabIndex = 42;
+            this.btSaveVNCPoint.Text = "Save VNC Point";
+            this.btSaveVNCPoint.UseVisualStyleBackColor = true;
+            this.btSaveVNCPoint.Click += new System.EventHandler(this.btSaveVNCPoint_Click);
+            // 
+            // btGetPoint
+            // 
+            this.btGetPoint.Location = new System.Drawing.Point(6, 7);
+            this.btGetPoint.Name = "btGetPoint";
+            this.btGetPoint.Size = new System.Drawing.Size(75, 23);
+            this.btGetPoint.TabIndex = 41;
+            this.btGetPoint.Text = "GetPoint";
+            this.btGetPoint.UseVisualStyleBackColor = true;
+            this.btGetPoint.Click += new System.EventHandler(this.btGetPoint_Click);
+            // 
+            // labpoint
+            // 
+            this.labpoint.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labpoint.Location = new System.Drawing.Point(87, 10);
+            this.labpoint.Name = "labpoint";
+            this.labpoint.Size = new System.Drawing.Size(109, 23);
+            this.labpoint.TabIndex = 40;
+            // 
             // btReRun
             // 
             this.btReRun.BackColor = System.Drawing.Color.OrangeRed;
             this.btReRun.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btReRun.ForeColor = System.Drawing.SystemColors.Window;
-            this.btReRun.Location = new System.Drawing.Point(324, 435);
+            this.btReRun.Location = new System.Drawing.Point(185, 432);
             this.btReRun.Name = "btReRun";
-            this.btReRun.Size = new System.Drawing.Size(136, 39);
+            this.btReRun.Size = new System.Drawing.Size(86, 39);
             this.btReRun.TabIndex = 84;
-            this.btReRun.Text = "Force Close";
+            this.btReRun.Text = "Close";
             this.btReRun.UseVisualStyleBackColor = false;
             this.btReRun.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -772,7 +977,7 @@
             this.btReset.BackColor = System.Drawing.SystemColors.InfoText;
             this.btReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btReset.ForeColor = System.Drawing.SystemColors.Control;
-            this.btReset.Location = new System.Drawing.Point(466, 433);
+            this.btReset.Location = new System.Drawing.Point(277, 432);
             this.btReset.Name = "btReset";
             this.btReset.Size = new System.Drawing.Size(125, 42);
             this.btReset.TabIndex = 85;
@@ -790,21 +995,37 @@
             this.cbClearCaches.Text = "Clear Caches";
             this.cbClearCaches.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btStartVNC
             // 
-            this.button2.Location = new System.Drawing.Point(593, 336);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(73, 42);
-            this.button2.TabIndex = 94;
-            this.button2.Text = "Reboot And Run";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btStartVNC.BackColor = System.Drawing.Color.DarkOrange;
+            this.btStartVNC.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btStartVNC.ForeColor = System.Drawing.SystemColors.Control;
+            this.btStartVNC.Location = new System.Drawing.Point(601, 433);
+            this.btStartVNC.Name = "btStartVNC";
+            this.btStartVNC.Size = new System.Drawing.Size(75, 42);
+            this.btStartVNC.TabIndex = 87;
+            this.btStartVNC.Text = "VNC";
+            this.btStartVNC.UseVisualStyleBackColor = false;
+            // 
+            // btConverSSH
+            // 
+            this.btConverSSH.BackColor = System.Drawing.Color.DarkOrange;
+            this.btConverSSH.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btConverSSH.ForeColor = System.Drawing.SystemColors.Control;
+            this.btConverSSH.Location = new System.Drawing.Point(520, 433);
+            this.btConverSSH.Name = "btConverSSH";
+            this.btConverSSH.Size = new System.Drawing.Size(75, 42);
+            this.btConverSSH.TabIndex = 88;
+            this.btConverSSH.Text = "Cover";
+            this.btConverSSH.UseVisualStyleBackColor = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(684, 478);
+            this.Controls.Add(this.btConverSSH);
+            this.Controls.Add(this.btStartVNC);
             this.Controls.Add(this.cbClearCaches);
             this.Controls.Add(this.btReset);
             this.Controls.Add(this.tabControl1);
@@ -827,6 +1048,8 @@
             this.tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridApps)).EndInit();
             this.tabPage4.ResumeLayout(false);
+            this.tabPage5.ResumeLayout(false);
+            this.tabPage5.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -903,6 +1126,24 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btKillChrome;
         private System.Windows.Forms.Button btkillFirefox;
+        private System.Windows.Forms.Button btStartVNC;
+        private System.Windows.Forms.Button btConverSSH;
+        private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.TextBox txtVNCPointY;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button btResetAppPoint2;
+        private System.Windows.Forms.Button btResetPoint1;
+        private System.Windows.Forms.Button btSaveResetAppPoint;
+        private System.Windows.Forms.Button btSaveCloseAdPoint;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox txtVNCPointX;
+        private System.Windows.Forms.Button btSaveAdPoint;
+        private System.Windows.Forms.Button btSaveAppPoint;
+        private System.Windows.Forms.Button btSaveVNCPoint;
+        private System.Windows.Forms.Button btGetPoint;
+        private System.Windows.Forms.Label labpoint;
     }
 }
 

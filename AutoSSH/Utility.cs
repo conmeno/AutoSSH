@@ -13,10 +13,80 @@ using System.Windows.Forms;
 using System.Xml;
 namespace AutoSSH
 {
+    [StructLayout(LayoutKind.Sequential)]
+    public struct MousePoint
+    {
+        public int X;
+        public int Y;
+
+        public MousePoint(int x, int y)
+        {
+            X = x;
+            Y = y;
+        }
+
+    }
     class Utility
     {
- 
- 
+
+        #region VNC
+
+        private const int WM_CLOSE = 16;
+        private const int BN_CLICKED = 245;
+
+        [DllImport("user32.dll")]
+        public static extern int FindWindow(string lpClassName, String lpWindowName);
+        [DllImport("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int wMsg, IntPtr wParam, IntPtr lParam);
+        [DllImport("user32.dll")]
+        private static extern IntPtr FindWindowEx(IntPtr parentHandle, IntPtr childAfter, string className, string windowTitle);
+        [DllImport("user32.dll")]
+        public static extern int GetDlgCtrlID(IntPtr hwnd);
+        //mouse
+        [DllImport("user32.dll")]
+        public static extern bool GetCursorPos(out Point lpPoint);
+
+        [DllImport("user32.dll")]
+        public static extern bool GetWindowRect(IntPtr hwnd, ref Rect rectangle);
+
+        public struct Rect
+        {
+            public int Left { get; set; }
+            public int Top { get; set; }
+            public int Right { get; set; }
+            public int Bottom { get; set; }
+        }
+
+
+
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        public static extern void mouse_event(int dwFlags, int dx, int dy, int cButtons, int dwExtraInfo);
+
+        [DllImport("user32.dll", EntryPoint = "SetCursorPos")]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        private static extern bool SetCursorPos(int X, int Y);
+
+        [DllImport("user32.dll")]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        private static extern bool GetCursorPos(out MousePoint lpMousePoin);
+
+        public const int MOUSEEVENTF_LEFTDOWN = 0x02;
+        public const int MOUSEEVENTF_LEFTUP = 0x04;
+
+        public const int MOUSEEVENTF_MIDDLEDOWN = 0x0020;
+        public const int MOUSEEVENTF_MIDDLEUP = 0x0040;
+
+        public const int MOUSEEVENTF_RIGHTDOWN = 0x0008;
+        public const int MOUSEEVENTF_RIGHTUP = 0x0010;
+
+        //
+        System.Data.Odbc.OdbcDataAdapter obj_oledb_da;
+
+      
+
+        #endregion
+
+
         public static string Serialize(object oObject, bool Indent = false)
         {
             System.Xml.Serialization.XmlSerializer oXmlSerializer = null;
@@ -74,14 +144,31 @@ namespace AutoSSH
         }
      
 
-        public static Config LoadConfig()
+        public static Config LoadConfig(bool vncPoint = true)
         {
             string ConfigPath = Application.StartupPath + "\\config.txt";
             Config Config = new Config();
             try
             {
                 Config = (Config)DeSerialize(System.IO.File.ReadAllText(ConfigPath), typeof(Config));
- 
+
+                if (vncPoint)
+                {
+                    Config.AppPoint = new Point(Config.VNCPoint.X + Config.AppPoint.X, Config.VNCPoint.Y + Config.AppPoint.Y); 
+
+                    Config.AdPoint = new Point(Config.VNCPoint.X + Config.AdPoint.X, Config.VNCPoint.Y + Config.AdPoint.Y);
+
+                    Config.ClosePoint = new Point(Config.VNCPoint.X + Config.ClosePoint.X, Config.VNCPoint.Y + Config.ClosePoint.Y); 
+
+                    Config.AdvertisingPoint = new Point(Config.VNCPoint.X + Config.AdvertisingPoint.X, Config.VNCPoint.Y + Config.AdvertisingPoint.Y);
+
+                    Config.AdvertisingPoint1 = new Point(Config.VNCPoint.X + Config.AdvertisingPoint1.X, Config.VNCPoint.Y + Config.AdvertisingPoint1.Y);
+
+                    Config.AdvertisingPoint2 = new Point(Config.VNCPoint.X + Config.AdvertisingPoint2.X, Config.VNCPoint.Y + Config.AdvertisingPoint2.Y);
+
+
+
+                }
             }
             catch
             {

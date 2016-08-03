@@ -25,6 +25,19 @@ namespace AutoSSH
         [XmlIgnore]
         public static Config iConfig { get; set; }
         public string VNCName { get; set; }
+
+
+
+        //vnc config
+        public Point VNCPoint { get; set; }
+        public Point AppPoint { get; set; } 
+        public Point ClosePoint { get; set; }  
+        public decimal waitTimeVNC { get; set; }
+        public decimal WaitEachRound { get; set; }  
+        public Point AdvertisingPoint { get; set; }
+        public Point AdvertisingPoint1 { get; set; }
+        public Point AdvertisingPoint2 { get; set; }  
+        public string VNCPasswordCode { get; set; }
     }
  
 }
