@@ -506,11 +506,6 @@ namespace AutoSSH
             LoadFirst();
         }
 
-        private void tabPage1_Click(object sender, EventArgs e)
-        {
-
-        }
-
 
 
 
@@ -1053,60 +1048,7 @@ namespace AutoSSH
         //}
         #endregion
 
-        private void button1_Click_2(object sender, EventArgs e)
-        {
-            var scriptPath = Application.StartupPath + "\\bashscript\\";
-            string title = txtScriptTitle.Text;
-            if (title == string.Empty)
-                title = "Coppy";
-            System.IO.StreamWriter sw = new System.IO.StreamWriter(scriptPath + title + ".txt" );
-            sw.WriteLine(txtScriptCopy.Text);
-            sw.Close();
-
-            Thread.Sleep(2000);
-
-            List<Iphone> iphones = GetListIPFromGrid();
-            // var scriptPath = Application.StartupPath + "\\bashscript";
-
-            Parallel.ForEach(iphones, item =>
-            {
-
-                Process p = new Process();
-                OpenPSCP(Config.iConfig.DefaultIP + item.IP, title + ".sh", scriptPath + title + ".txt", ref p);
-
-
-            });
-
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            var scriptPath = Application.StartupPath + "\\bashscript\\";
-            string title = txtScriptTitle.Text;
-            if (title == string.Empty)
-                title = "Coppy";
-
-
-            System.IO.StreamWriter sw = new System.IO.StreamWriter(scriptPath  + "TempPermissiong.txt");
-            sw.WriteLine("chmod 777 /User/Library/runbatch/scripts/"+title+".sh");
-            sw.Close();
-
-            Thread.Sleep(2000);
-
-
-
-            List<Iphone> iphones = GetListIPFromGrid();
-            // var scriptPath = Application.StartupPath + "\\bashscript";
-
-            Parallel.ForEach(iphones, item =>
-            {
-
-                Process p = new Process();
-                OpenPutty(Config.iConfig.DefaultIP + item.IP, "bashscript\\" + "TempPermissiong.txt", ref p);
-
-
-            });
-        }
+  
 
         private void btPrivateVPN_Click(object sender, EventArgs e)
         {
@@ -1131,6 +1073,118 @@ namespace AutoSSH
 
                 Process p = new Process();
                 OpenPutty(Config.iConfig.DefaultIP + item.IP, "bashscript\\" + "privateVPN.txt", ref p);
+
+
+            });
+        }
+
+        private void button1_Click_3(object sender, EventArgs e)
+        {
+            var scriptPath = Application.StartupPath + "\\bashscript\\";
+            string title = txtScriptTitle.Text;
+            if (title == string.Empty)
+                title = "Coppy";
+            System.IO.StreamWriter sw = new System.IO.StreamWriter(scriptPath + title + ".txt");
+            sw.WriteLine(txtScriptCopy.Text);
+            sw.Close();
+
+            Thread.Sleep(2000);
+
+            List<Iphone> iphones = GetListIPFromGrid();
+            // var scriptPath = Application.StartupPath + "\\bashscript";
+
+            Parallel.ForEach(iphones, item =>
+            {
+
+                Process p = new Process();
+                OpenPSCP(Config.iConfig.DefaultIP + item.IP, title + ".sh", scriptPath + title + ".txt", ref p);
+
+
+            });
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            var scriptPath = Application.StartupPath + "\\bashscript\\";
+            string title = txtScriptTitle.Text;
+            if (title == string.Empty)
+                title = "Coppy";
+
+
+            System.IO.StreamWriter sw = new System.IO.StreamWriter(scriptPath + "TempPermissiong.txt");
+            sw.WriteLine("chmod 777 /User/Library/runbatch/scripts/" + title + ".sh");
+            sw.Close();
+
+            Thread.Sleep(2000);
+
+
+
+            List<Iphone> iphones = GetListIPFromGrid();
+            // var scriptPath = Application.StartupPath + "\\bashscript";
+
+            Parallel.ForEach(iphones, item =>
+            {
+
+                Process p = new Process();
+                OpenPutty(Config.iConfig.DefaultIP + item.IP, "bashscript\\" + "TempPermissiong.txt", ref p);
+
+
+            });
+        }
+
+        private void btVPNOn_Click(object sender, EventArgs e)
+        {
+            var scriptPath = Application.StartupPath + "\\bashscript\\";
+
+            if (!System.IO.File.Exists(scriptPath + "VPNON.txt"))
+            {
+                System.IO.StreamWriter sw = new System.IO.StreamWriter(scriptPath + "VPNON.txt");
+                sw.WriteLine("activator send switch-on.com.a3tweaks.switch.vpn");
+                sw.Close();
+
+                Thread.Sleep(2000);
+            }
+
+
+
+            List<Iphone> iphones = GetListIPFromGrid();
+            // var scriptPath = Application.StartupPath + "\\bashscript";
+
+            Parallel.ForEach(iphones, item =>
+            {
+
+                Process p = new Process();
+                OpenPutty(Config.iConfig.DefaultIP + item.IP, "bashscript\\" + "VPNON.txt", ref p);
+
+
+            });
+        }
+
+        private void btFlipWifi_Click(object sender, EventArgs e)
+        {
+            var scriptPath = Application.StartupPath + "\\bashscript\\";
+
+            if (!System.IO.File.Exists(scriptPath + "FlipWifi.txt"))
+            {
+                System.IO.StreamWriter sw = new System.IO.StreamWriter(scriptPath + "FlipWifi.txt");
+                sw.WriteLine("activator send switch-off.com.a3tweaks.switch.wifi");
+                sw.WriteLine("sleep 10");
+                sw.WriteLine("activator send switch-on.com.a3tweaks.switch.wifi");
+                sw.Close();
+
+                Thread.Sleep(2000);
+            }
+
+
+
+            List<Iphone> iphones = GetListIPFromGrid();
+            // var scriptPath = Application.StartupPath + "\\bashscript";
+
+            Parallel.ForEach(iphones, item =>
+            {
+
+                Process p = new Process();
+                OpenPutty(Config.iConfig.DefaultIP + item.IP, "bashscript\\" + "FlipWifi.txt", ref p);
 
 
             });

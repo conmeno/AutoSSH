@@ -47,12 +47,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.button3 = new System.Windows.Forms.Button();
-            this.label14 = new System.Windows.Forms.Label();
-            this.txtScriptTitle = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.txtScriptCopy = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
             this.cbAll = new System.Windows.Forms.CheckBox();
             this.btRunScript = new System.Windows.Forms.Button();
             this.btReboot = new System.Windows.Forms.Button();
@@ -65,6 +59,13 @@
             this.txtListIP = new System.Windows.Forms.TextBox();
             this.btSaveListIp = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.button2 = new System.Windows.Forms.Button();
+            this.btConverSSH = new System.Windows.Forms.Button();
+            this.label15 = new System.Windows.Forms.Label();
+            this.btStartVNC = new System.Windows.Forms.Button();
+            this.btClearComand = new System.Windows.Forms.Button();
+            this.btReset = new System.Windows.Forms.Button();
+            this.btGenerateCommand = new System.Windows.Forms.Button();
             this.txtVNCName = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.WaitKillPutty = new System.Windows.Forms.NumericUpDown();
@@ -116,14 +117,15 @@
             this.btGetPoint = new System.Windows.Forms.Button();
             this.labpoint = new System.Windows.Forms.Label();
             this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.button3 = new System.Windows.Forms.Button();
+            this.label14 = new System.Windows.Forms.Label();
+            this.txtScriptTitle = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.txtScriptCopy = new System.Windows.Forms.TextBox();
             this.btReRun = new System.Windows.Forms.Button();
-            this.btReset = new System.Windows.Forms.Button();
             this.cbClearCaches = new System.Windows.Forms.CheckBox();
-            this.btStartVNC = new System.Windows.Forms.Button();
-            this.btConverSSH = new System.Windows.Forms.Button();
-            this.btClearComand = new System.Windows.Forms.Button();
-            this.btGenerateCommand = new System.Windows.Forms.Button();
-            this.label15 = new System.Windows.Forms.Label();
+            this.btVPNOn = new System.Windows.Forms.Button();
+            this.btFlipWifi = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridlist)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -133,6 +135,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridApps)).BeginInit();
             this.tabPage4.SuspendLayout();
             this.tabPage5.SuspendLayout();
+            this.tabPage6.SuspendLayout();
             this.SuspendLayout();
             // 
             // btStart
@@ -140,7 +143,7 @@
             this.btStart.BackColor = System.Drawing.SystemColors.InfoText;
             this.btStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btStart.ForeColor = System.Drawing.SystemColors.Control;
-            this.btStart.Location = new System.Drawing.Point(408, 433);
+            this.btStart.Location = new System.Drawing.Point(569, 189);
             this.btStart.Name = "btStart";
             this.btStart.Size = new System.Drawing.Size(75, 42);
             this.btStart.TabIndex = 3;
@@ -164,10 +167,10 @@
             this.Reset,
             this.RunBash,
             this.OpenNumber});
-            this.gridlist.Location = new System.Drawing.Point(103, 53);
+            this.gridlist.Location = new System.Drawing.Point(103, 24);
             this.gridlist.Name = "gridlist";
             this.gridlist.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.gridlist.Size = new System.Drawing.Size(484, 285);
+            this.gridlist.Size = new System.Drawing.Size(484, 382);
             this.gridlist.TabIndex = 19;
             this.gridlist.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridlist_CellClick);
             this.gridlist.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridlist_CellContentClick);
@@ -247,7 +250,7 @@
             // cbStartWindows
             // 
             this.cbStartWindows.AutoSize = true;
-            this.cbStartWindows.Location = new System.Drawing.Point(80, 435);
+            this.cbStartWindows.Location = new System.Drawing.Point(78, 492);
             this.cbStartWindows.Name = "cbStartWindows";
             this.cbStartWindows.Size = new System.Drawing.Size(92, 17);
             this.cbStartWindows.TabIndex = 56;
@@ -258,7 +261,7 @@
             // cbAutoStart
             // 
             this.cbAutoStart.AutoSize = true;
-            this.cbAutoStart.Location = new System.Drawing.Point(9, 435);
+            this.cbAutoStart.Location = new System.Drawing.Point(7, 492);
             this.cbAutoStart.Name = "cbAutoStart";
             this.cbAutoStart.Size = new System.Drawing.Size(73, 17);
             this.cbAutoStart.TabIndex = 55;
@@ -286,17 +289,13 @@
             this.tabControl1.Location = new System.Drawing.Point(4, 3);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(680, 408);
+            this.tabControl1.Size = new System.Drawing.Size(680, 483);
             this.tabControl1.TabIndex = 59;
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.button3);
-            this.tabPage1.Controls.Add(this.label14);
-            this.tabPage1.Controls.Add(this.txtScriptTitle);
-            this.tabPage1.Controls.Add(this.button1);
-            this.tabPage1.Controls.Add(this.txtScriptCopy);
-            this.tabPage1.Controls.Add(this.button2);
+            this.tabPage1.Controls.Add(this.btFlipWifi);
+            this.tabPage1.Controls.Add(this.btVPNOn);
             this.tabPage1.Controls.Add(this.cbAll);
             this.tabPage1.Controls.Add(this.btRunScript);
             this.tabPage1.Controls.Add(this.btReboot);
@@ -312,75 +311,15 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(672, 382);
+            this.tabPage1.Size = new System.Drawing.Size(672, 457);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Main";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.Teal;
-            this.button3.ForeColor = System.Drawing.SystemColors.Menu;
-            this.button3.Location = new System.Drawing.Point(505, 0);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 42);
-            this.button3.TabIndex = 100;
-            this.button3.Text = "Permission";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(100, 6);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(27, 13);
-            this.label14.TabIndex = 99;
-            this.label14.Text = "Title";
-            // 
-            // txtScriptTitle
-            // 
-            this.txtScriptTitle.Location = new System.Drawing.Point(103, 22);
-            this.txtScriptTitle.Name = "txtScriptTitle";
-            this.txtScriptTitle.Size = new System.Drawing.Size(110, 20);
-            this.txtScriptTitle.TabIndex = 98;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Teal;
-            this.button1.ForeColor = System.Drawing.SystemColors.Menu;
-            this.button1.Location = new System.Drawing.Point(429, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 42);
-            this.button1.TabIndex = 97;
-            this.button1.Text = "Send Script to Phone";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click_2);
-            // 
-            // txtScriptCopy
-            // 
-            this.txtScriptCopy.Location = new System.Drawing.Point(219, 3);
-            this.txtScriptCopy.Multiline = true;
-            this.txtScriptCopy.Name = "txtScriptCopy";
-            this.txtScriptCopy.Size = new System.Drawing.Size(204, 39);
-            this.txtScriptCopy.TabIndex = 96;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.Tomato;
-            this.button2.ForeColor = System.Drawing.SystemColors.Menu;
-            this.button2.Location = new System.Drawing.Point(593, 336);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(73, 42);
-            this.button2.TabIndex = 94;
-            this.button2.Text = "Reboot And Run";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // cbAll
             // 
             this.cbAll.AutoSize = true;
-            this.cbAll.Location = new System.Drawing.Point(103, 344);
+            this.cbAll.Location = new System.Drawing.Point(103, 6);
             this.cbAll.Name = "cbAll";
             this.cbAll.Size = new System.Drawing.Size(83, 17);
             this.cbAll.TabIndex = 95;
@@ -392,7 +331,7 @@
             // 
             this.btRunScript.BackColor = System.Drawing.Color.Black;
             this.btRunScript.ForeColor = System.Drawing.SystemColors.Menu;
-            this.btRunScript.Location = new System.Drawing.Point(593, 144);
+            this.btRunScript.Location = new System.Drawing.Point(432, 412);
             this.btRunScript.Name = "btRunScript";
             this.btRunScript.Size = new System.Drawing.Size(74, 42);
             this.btRunScript.TabIndex = 93;
@@ -404,7 +343,7 @@
             // 
             this.btReboot.BackColor = System.Drawing.Color.Crimson;
             this.btReboot.ForeColor = System.Drawing.SystemColors.Menu;
-            this.btReboot.Location = new System.Drawing.Point(593, 288);
+            this.btReboot.Location = new System.Drawing.Point(272, 412);
             this.btReboot.Name = "btReboot";
             this.btReboot.Size = new System.Drawing.Size(74, 42);
             this.btReboot.TabIndex = 92;
@@ -416,7 +355,7 @@
             // 
             this.btHomeAll.BackColor = System.Drawing.Color.Tomato;
             this.btHomeAll.ForeColor = System.Drawing.SystemColors.Menu;
-            this.btHomeAll.Location = new System.Drawing.Point(592, 192);
+            this.btHomeAll.Location = new System.Drawing.Point(352, 412);
             this.btHomeAll.Name = "btHomeAll";
             this.btHomeAll.Size = new System.Drawing.Size(74, 42);
             this.btHomeAll.TabIndex = 91;
@@ -428,7 +367,7 @@
             // 
             this.btRespringAll.BackColor = System.Drawing.Color.Tomato;
             this.btRespringAll.ForeColor = System.Drawing.SystemColors.Menu;
-            this.btRespringAll.Location = new System.Drawing.Point(592, 240);
+            this.btRespringAll.Location = new System.Drawing.Point(192, 412);
             this.btRespringAll.Name = "btRespringAll";
             this.btRespringAll.Size = new System.Drawing.Size(74, 42);
             this.btRespringAll.TabIndex = 90;
@@ -438,9 +377,9 @@
             // 
             // btScriptPermission
             // 
-            this.btScriptPermission.BackColor = System.Drawing.Color.Tomato;
+            this.btScriptPermission.BackColor = System.Drawing.Color.Maroon;
             this.btScriptPermission.ForeColor = System.Drawing.SystemColors.Menu;
-            this.btScriptPermission.Location = new System.Drawing.Point(593, 98);
+            this.btScriptPermission.Location = new System.Drawing.Point(593, 137);
             this.btScriptPermission.Name = "btScriptPermission";
             this.btScriptPermission.Size = new System.Drawing.Size(75, 42);
             this.btScriptPermission.TabIndex = 89;
@@ -450,9 +389,9 @@
             // 
             // btCopyScript
             // 
-            this.btCopyScript.BackColor = System.Drawing.Color.Tomato;
+            this.btCopyScript.BackColor = System.Drawing.Color.Maroon;
             this.btCopyScript.ForeColor = System.Drawing.SystemColors.Menu;
-            this.btCopyScript.Location = new System.Drawing.Point(593, 53);
+            this.btCopyScript.Location = new System.Drawing.Point(593, 92);
             this.btCopyScript.Name = "btCopyScript";
             this.btCopyScript.Size = new System.Drawing.Size(75, 42);
             this.btCopyScript.TabIndex = 88;
@@ -462,9 +401,9 @@
             // 
             // btGenBashScript
             // 
-            this.btGenBashScript.BackColor = System.Drawing.Color.Tomato;
+            this.btGenBashScript.BackColor = System.Drawing.Color.Maroon;
             this.btGenBashScript.ForeColor = System.Drawing.SystemColors.Menu;
-            this.btGenBashScript.Location = new System.Drawing.Point(593, 8);
+            this.btGenBashScript.Location = new System.Drawing.Point(593, 47);
             this.btGenBashScript.Name = "btGenBashScript";
             this.btGenBashScript.Size = new System.Drawing.Size(75, 42);
             this.btGenBashScript.TabIndex = 87;
@@ -474,7 +413,7 @@
             // 
             // ListIPCopy
             // 
-            this.ListIPCopy.Location = new System.Drawing.Point(7, 341);
+            this.ListIPCopy.Location = new System.Drawing.Point(6, 412);
             this.ListIPCopy.Name = "ListIPCopy";
             this.ListIPCopy.Size = new System.Drawing.Size(90, 39);
             this.ListIPCopy.TabIndex = 86;
@@ -487,14 +426,14 @@
             this.txtListIP.Location = new System.Drawing.Point(6, 6);
             this.txtListIP.Multiline = true;
             this.txtListIP.Name = "txtListIP";
-            this.txtListIP.Size = new System.Drawing.Size(90, 332);
+            this.txtListIP.Size = new System.Drawing.Size(90, 400);
             this.txtListIP.TabIndex = 85;
             // 
             // btSaveListIp
             // 
-            this.btSaveListIp.Location = new System.Drawing.Point(192, 342);
+            this.btSaveListIp.Location = new System.Drawing.Point(103, 412);
             this.btSaveListIp.Name = "btSaveListIp";
-            this.btSaveListIp.Size = new System.Drawing.Size(83, 36);
+            this.btSaveListIp.Size = new System.Drawing.Size(83, 39);
             this.btSaveListIp.TabIndex = 81;
             this.btSaveListIp.Text = "Save List IP";
             this.btSaveListIp.UseVisualStyleBackColor = true;
@@ -502,14 +441,19 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.button2);
+            this.tabPage2.Controls.Add(this.btConverSSH);
             this.tabPage2.Controls.Add(this.label15);
+            this.tabPage2.Controls.Add(this.btStartVNC);
             this.tabPage2.Controls.Add(this.btClearComand);
+            this.tabPage2.Controls.Add(this.btReset);
             this.tabPage2.Controls.Add(this.btGenerateCommand);
             this.tabPage2.Controls.Add(this.txtVNCName);
             this.tabPage2.Controls.Add(this.label10);
             this.tabPage2.Controls.Add(this.WaitKillPutty);
             this.tabPage2.Controls.Add(this.label9);
             this.tabPage2.Controls.Add(this.txtRoundResetIDFV);
+            this.tabPage2.Controls.Add(this.btStart);
             this.tabPage2.Controls.Add(this.label4);
             this.tabPage2.Controls.Add(this.txtRoundClickAd);
             this.tabPage2.Controls.Add(this.label13);
@@ -530,14 +474,93 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(672, 382);
+            this.tabPage2.Size = new System.Drawing.Size(672, 457);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Config";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Tomato;
+            this.button2.ForeColor = System.Drawing.SystemColors.Menu;
+            this.button2.Location = new System.Drawing.Point(539, 265);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(73, 42);
+            this.button2.TabIndex = 95;
+            this.button2.Text = "Reboot And Run";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // btConverSSH
+            // 
+            this.btConverSSH.BackColor = System.Drawing.Color.DarkOrange;
+            this.btConverSSH.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btConverSSH.ForeColor = System.Drawing.SystemColors.Control;
+            this.btConverSSH.Location = new System.Drawing.Point(520, 119);
+            this.btConverSSH.Name = "btConverSSH";
+            this.btConverSSH.Size = new System.Drawing.Size(75, 42);
+            this.btConverSSH.TabIndex = 88;
+            this.btConverSSH.Text = "Cover";
+            this.btConverSSH.UseVisualStyleBackColor = false;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.ForeColor = System.Drawing.Color.OrangeRed;
+            this.label15.Location = new System.Drawing.Point(493, 17);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(87, 13);
+            this.label15.TabIndex = 87;
+            this.label15.Text = "OLD FUNCTION";
+            // 
+            // btStartVNC
+            // 
+            this.btStartVNC.BackColor = System.Drawing.Color.DarkOrange;
+            this.btStartVNC.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btStartVNC.ForeColor = System.Drawing.SystemColors.Control;
+            this.btStartVNC.Location = new System.Drawing.Point(601, 119);
+            this.btStartVNC.Name = "btStartVNC";
+            this.btStartVNC.Size = new System.Drawing.Size(75, 42);
+            this.btStartVNC.TabIndex = 87;
+            this.btStartVNC.Text = "VNC";
+            this.btStartVNC.UseVisualStyleBackColor = false;
+            // 
+            // btClearComand
+            // 
+            this.btClearComand.Location = new System.Drawing.Point(493, 39);
+            this.btClearComand.Name = "btClearComand";
+            this.btClearComand.Size = new System.Drawing.Size(70, 36);
+            this.btClearComand.TabIndex = 86;
+            this.btClearComand.Text = "Clear Command";
+            this.btClearComand.UseVisualStyleBackColor = true;
+            this.btClearComand.Click += new System.EventHandler(this.btClearComand_Click);
+            // 
+            // btReset
+            // 
+            this.btReset.BackColor = System.Drawing.SystemColors.InfoText;
+            this.btReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btReset.ForeColor = System.Drawing.SystemColors.Control;
+            this.btReset.Location = new System.Drawing.Point(438, 188);
+            this.btReset.Name = "btReset";
+            this.btReset.Size = new System.Drawing.Size(125, 42);
+            this.btReset.TabIndex = 85;
+            this.btReset.Text = "ONLY RESET ";
+            this.btReset.UseVisualStyleBackColor = false;
+            this.btReset.Click += new System.EventHandler(this.btReset_Click);
+            // 
+            // btGenerateCommand
+            // 
+            this.btGenerateCommand.Location = new System.Drawing.Point(569, 39);
+            this.btGenerateCommand.Name = "btGenerateCommand";
+            this.btGenerateCommand.Size = new System.Drawing.Size(83, 36);
+            this.btGenerateCommand.TabIndex = 85;
+            this.btGenerateCommand.Text = "Gen Command";
+            this.btGenerateCommand.UseVisualStyleBackColor = true;
+            this.btGenerateCommand.Click += new System.EventHandler(this.btGenBashScript_Click);
+            // 
             // txtVNCName
             // 
-            this.txtVNCName.Location = new System.Drawing.Point(341, 239);
+            this.txtVNCName.Location = new System.Drawing.Point(107, 303);
             this.txtVNCName.Name = "txtVNCName";
             this.txtVNCName.Size = new System.Drawing.Size(124, 20);
             this.txtVNCName.TabIndex = 84;
@@ -546,7 +569,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(244, 242);
+            this.label10.Location = new System.Drawing.Point(10, 306);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(60, 13);
             this.label10.TabIndex = 83;
@@ -739,7 +762,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(672, 382);
+            this.tabPage3.Size = new System.Drawing.Size(672, 457);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Apps";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -799,7 +822,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(672, 382);
+            this.tabPage4.Size = new System.Drawing.Size(672, 457);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Kill";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -874,7 +897,7 @@
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(672, 382);
+            this.tabPage5.Size = new System.Drawing.Size(672, 457);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Config VNC ";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -1015,20 +1038,73 @@
             // 
             // tabPage6
             // 
+            this.tabPage6.Controls.Add(this.button3);
+            this.tabPage6.Controls.Add(this.label14);
+            this.tabPage6.Controls.Add(this.txtScriptTitle);
+            this.tabPage6.Controls.Add(this.button1);
+            this.tabPage6.Controls.Add(this.txtScriptCopy);
             this.tabPage6.Location = new System.Drawing.Point(4, 22);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(672, 382);
+            this.tabPage6.Size = new System.Drawing.Size(672, 457);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Tool";
             this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.Teal;
+            this.button3.ForeColor = System.Drawing.SystemColors.Menu;
+            this.button3.Location = new System.Drawing.Point(103, 141);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 42);
+            this.button3.TabIndex = 105;
+            this.button3.Text = "Permission";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click_1);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(24, 31);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(27, 13);
+            this.label14.TabIndex = 104;
+            this.label14.Text = "Title";
+            // 
+            // txtScriptTitle
+            // 
+            this.txtScriptTitle.Location = new System.Drawing.Point(27, 47);
+            this.txtScriptTitle.Name = "txtScriptTitle";
+            this.txtScriptTitle.Size = new System.Drawing.Size(110, 20);
+            this.txtScriptTitle.TabIndex = 103;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Teal;
+            this.button1.ForeColor = System.Drawing.SystemColors.Menu;
+            this.button1.Location = new System.Drawing.Point(27, 141);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 42);
+            this.button1.TabIndex = 102;
+            this.button1.Text = "Send Script to Phone";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_3);
+            // 
+            // txtScriptCopy
+            // 
+            this.txtScriptCopy.Location = new System.Drawing.Point(27, 87);
+            this.txtScriptCopy.Multiline = true;
+            this.txtScriptCopy.Name = "txtScriptCopy";
+            this.txtScriptCopy.Size = new System.Drawing.Size(204, 39);
+            this.txtScriptCopy.TabIndex = 101;
             // 
             // btReRun
             // 
             this.btReRun.BackColor = System.Drawing.Color.OrangeRed;
             this.btReRun.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btReRun.ForeColor = System.Drawing.SystemColors.Window;
-            this.btReRun.Location = new System.Drawing.Point(185, 432);
+            this.btReRun.Location = new System.Drawing.Point(594, 483);
             this.btReRun.Name = "btReRun";
             this.btReRun.Size = new System.Drawing.Size(86, 39);
             this.btReRun.TabIndex = 84;
@@ -1036,96 +1112,51 @@
             this.btReRun.UseVisualStyleBackColor = false;
             this.btReRun.Click += new System.EventHandler(this.button1_Click);
             // 
-            // btReset
-            // 
-            this.btReset.BackColor = System.Drawing.SystemColors.InfoText;
-            this.btReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btReset.ForeColor = System.Drawing.SystemColors.Control;
-            this.btReset.Location = new System.Drawing.Point(277, 432);
-            this.btReset.Name = "btReset";
-            this.btReset.Size = new System.Drawing.Size(125, 42);
-            this.btReset.TabIndex = 85;
-            this.btReset.Text = "ONLY RESET ";
-            this.btReset.UseVisualStyleBackColor = false;
-            this.btReset.Click += new System.EventHandler(this.btReset_Click);
-            // 
             // cbClearCaches
             // 
             this.cbClearCaches.AutoSize = true;
-            this.cbClearCaches.Location = new System.Drawing.Point(10, 458);
+            this.cbClearCaches.Location = new System.Drawing.Point(176, 492);
             this.cbClearCaches.Name = "cbClearCaches";
             this.cbClearCaches.Size = new System.Drawing.Size(89, 17);
             this.cbClearCaches.TabIndex = 86;
             this.cbClearCaches.Text = "Clear Caches";
             this.cbClearCaches.UseVisualStyleBackColor = true;
             // 
-            // btStartVNC
+            // btVPNOn
             // 
-            this.btStartVNC.BackColor = System.Drawing.Color.DarkOrange;
-            this.btStartVNC.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btStartVNC.ForeColor = System.Drawing.SystemColors.Control;
-            this.btStartVNC.Location = new System.Drawing.Point(601, 433);
-            this.btStartVNC.Name = "btStartVNC";
-            this.btStartVNC.Size = new System.Drawing.Size(75, 42);
-            this.btStartVNC.TabIndex = 87;
-            this.btStartVNC.Text = "VNC";
-            this.btStartVNC.UseVisualStyleBackColor = false;
+            this.btVPNOn.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btVPNOn.ForeColor = System.Drawing.SystemColors.Menu;
+            this.btVPNOn.Location = new System.Drawing.Point(593, 316);
+            this.btVPNOn.Name = "btVPNOn";
+            this.btVPNOn.Size = new System.Drawing.Size(75, 42);
+            this.btVPNOn.TabIndex = 90;
+            this.btVPNOn.Text = "VPN ON";
+            this.btVPNOn.UseVisualStyleBackColor = false;
+            this.btVPNOn.Click += new System.EventHandler(this.btVPNOn_Click);
             // 
-            // btConverSSH
+            // btFlipWifi
             // 
-            this.btConverSSH.BackColor = System.Drawing.Color.DarkOrange;
-            this.btConverSSH.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btConverSSH.ForeColor = System.Drawing.SystemColors.Control;
-            this.btConverSSH.Location = new System.Drawing.Point(520, 433);
-            this.btConverSSH.Name = "btConverSSH";
-            this.btConverSSH.Size = new System.Drawing.Size(75, 42);
-            this.btConverSSH.TabIndex = 88;
-            this.btConverSSH.Text = "Cover";
-            this.btConverSSH.UseVisualStyleBackColor = false;
-            // 
-            // btClearComand
-            // 
-            this.btClearComand.Location = new System.Drawing.Point(493, 39);
-            this.btClearComand.Name = "btClearComand";
-            this.btClearComand.Size = new System.Drawing.Size(70, 36);
-            this.btClearComand.TabIndex = 86;
-            this.btClearComand.Text = "Clear Command";
-            this.btClearComand.UseVisualStyleBackColor = true;
-            // 
-            // btGenerateCommand
-            // 
-            this.btGenerateCommand.Location = new System.Drawing.Point(569, 39);
-            this.btGenerateCommand.Name = "btGenerateCommand";
-            this.btGenerateCommand.Size = new System.Drawing.Size(83, 36);
-            this.btGenerateCommand.TabIndex = 85;
-            this.btGenerateCommand.Text = "Gen Command";
-            this.btGenerateCommand.UseVisualStyleBackColor = true;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.ForeColor = System.Drawing.Color.OrangeRed;
-            this.label15.Location = new System.Drawing.Point(493, 17);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(87, 13);
-            this.label15.TabIndex = 87;
-            this.label15.Text = "OLD FUNCTION";
+            this.btFlipWifi.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btFlipWifi.ForeColor = System.Drawing.SystemColors.Menu;
+            this.btFlipWifi.Location = new System.Drawing.Point(593, 364);
+            this.btFlipWifi.Name = "btFlipWifi";
+            this.btFlipWifi.Size = new System.Drawing.Size(75, 42);
+            this.btFlipWifi.TabIndex = 96;
+            this.btFlipWifi.Text = "OFF-ON Wifi";
+            this.btFlipWifi.UseVisualStyleBackColor = false;
+            this.btFlipWifi.Click += new System.EventHandler(this.btFlipWifi_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(684, 478);
-            this.Controls.Add(this.btConverSSH);
-            this.Controls.Add(this.btStartVNC);
+            this.ClientSize = new System.Drawing.Size(684, 523);
             this.Controls.Add(this.cbClearCaches);
-            this.Controls.Add(this.btReset);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btReRun);
             this.Controls.Add(this.cbStartWindows);
             this.Controls.Add(this.cbAutoStart);
-            this.Controls.Add(this.btStart);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Form1";
@@ -1142,6 +1173,8 @@
             this.tabPage4.ResumeLayout(false);
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
+            this.tabPage6.ResumeLayout(false);
+            this.tabPage6.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1207,7 +1240,6 @@
         private System.Windows.Forms.DataGridViewButtonColumn Reset;
         private System.Windows.Forms.DataGridViewButtonColumn RunBash;
         private System.Windows.Forms.DataGridViewTextBoxColumn OpenNumber;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.CheckBox cbAll;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.Button btKillCocCoc;
@@ -1234,16 +1266,19 @@
         private System.Windows.Forms.Button btSaveVNCPoint;
         private System.Windows.Forms.Button btGetPoint;
         private System.Windows.Forms.Label labpoint;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox txtScriptCopy;
         private System.Windows.Forms.TabPage tabPage6;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox txtScriptTitle;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button btPrivateVPN;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Button btGenerateCommand;
         private System.Windows.Forms.Button btClearComand;
+        private System.Windows.Forms.TextBox txtScriptCopy;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtScriptTitle;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btVPNOn;
+        private System.Windows.Forms.Button btFlipWifi;
     }
 }
 
