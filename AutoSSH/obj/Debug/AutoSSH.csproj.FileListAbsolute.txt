@@ -1,3 +1,4 @@
+E:\AutoSSHGit\AutoSSH\bin\Debug\AutoSSH.exe.config
 E:\AutoSSHGit\AutoSSH\bin\Debug\AutoSSH.exe
 E:\AutoSSHGit\AutoSSH\bin\Debug\AutoSSH.pdb
 E:\AutoSSHGit\AutoSSH\obj\Debug\AutoSSH.Form1.resources
@@ -5,5 +6,3 @@ E:\AutoSSHGit\AutoSSH\obj\Debug\AutoSSH.Properties.Resources.resources
 E:\AutoSSHGit\AutoSSH\obj\Debug\AutoSSH.csproj.GenerateResource.Cache
 E:\AutoSSHGit\AutoSSH\obj\Debug\AutoSSH.exe
 E:\AutoSSHGit\AutoSSH\obj\Debug\AutoSSH.pdb
-E:\AutoSSHGit\AutoSSH\obj\Debug\AutoSSH.csprojResolveAssemblyReference.cache
-E:\AutoSSHGit\AutoSSH\bin\Debug\AutoSSH.exe.config

@@ -47,6 +47,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.button3 = new System.Windows.Forms.Button();
+            this.label14 = new System.Windows.Forms.Label();
+            this.txtScriptTitle = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.txtScriptCopy = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.cbAll = new System.Windows.Forms.CheckBox();
             this.btRunScript = new System.Windows.Forms.Button();
@@ -58,8 +63,6 @@
             this.btGenBashScript = new System.Windows.Forms.Button();
             this.ListIPCopy = new System.Windows.Forms.Button();
             this.txtListIP = new System.Windows.Forms.TextBox();
-            this.btClearComand = new System.Windows.Forms.Button();
-            this.btGenerateCommand = new System.Windows.Forms.Button();
             this.btSaveListIp = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.txtVNCName = new System.Windows.Forms.TextBox();
@@ -91,6 +94,7 @@
             this.AppName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btSaveAppFromGrid = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.btPrivateVPN = new System.Windows.Forms.Button();
             this.btkillFirefox = new System.Windows.Forms.Button();
             this.btKillChrome = new System.Windows.Forms.Button();
             this.btKillCocCoc = new System.Windows.Forms.Button();
@@ -111,17 +115,15 @@
             this.btSaveVNCPoint = new System.Windows.Forms.Button();
             this.btGetPoint = new System.Windows.Forms.Button();
             this.labpoint = new System.Windows.Forms.Label();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
             this.btReRun = new System.Windows.Forms.Button();
             this.btReset = new System.Windows.Forms.Button();
             this.cbClearCaches = new System.Windows.Forms.CheckBox();
             this.btStartVNC = new System.Windows.Forms.Button();
             this.btConverSSH = new System.Windows.Forms.Button();
-            this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.txtScriptCopy = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.txtScriptTitle = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btClearComand = new System.Windows.Forms.Button();
+            this.btGenerateCommand = new System.Windows.Forms.Button();
+            this.label15 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gridlist)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -305,8 +307,6 @@
             this.tabPage1.Controls.Add(this.btGenBashScript);
             this.tabPage1.Controls.Add(this.ListIPCopy);
             this.tabPage1.Controls.Add(this.txtListIP);
-            this.tabPage1.Controls.Add(this.btClearComand);
-            this.tabPage1.Controls.Add(this.btGenerateCommand);
             this.tabPage1.Controls.Add(this.btSaveListIp);
             this.tabPage1.Controls.Add(this.gridlist);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
@@ -316,6 +316,54 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Main";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.Teal;
+            this.button3.ForeColor = System.Drawing.SystemColors.Menu;
+            this.button3.Location = new System.Drawing.Point(505, 0);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 42);
+            this.button3.TabIndex = 100;
+            this.button3.Text = "Permission";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(100, 6);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(27, 13);
+            this.label14.TabIndex = 99;
+            this.label14.Text = "Title";
+            // 
+            // txtScriptTitle
+            // 
+            this.txtScriptTitle.Location = new System.Drawing.Point(103, 22);
+            this.txtScriptTitle.Name = "txtScriptTitle";
+            this.txtScriptTitle.Size = new System.Drawing.Size(110, 20);
+            this.txtScriptTitle.TabIndex = 98;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Teal;
+            this.button1.ForeColor = System.Drawing.SystemColors.Menu;
+            this.button1.Location = new System.Drawing.Point(429, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 42);
+            this.button1.TabIndex = 97;
+            this.button1.Text = "Send Script to Phone";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_2);
+            // 
+            // txtScriptCopy
+            // 
+            this.txtScriptCopy.Location = new System.Drawing.Point(219, 3);
+            this.txtScriptCopy.Multiline = true;
+            this.txtScriptCopy.Name = "txtScriptCopy";
+            this.txtScriptCopy.Size = new System.Drawing.Size(204, 39);
+            this.txtScriptCopy.TabIndex = 96;
             // 
             // button2
             // 
@@ -342,7 +390,7 @@
             // 
             // btRunScript
             // 
-            this.btRunScript.BackColor = System.Drawing.Color.Tomato;
+            this.btRunScript.BackColor = System.Drawing.Color.Black;
             this.btRunScript.ForeColor = System.Drawing.SystemColors.Menu;
             this.btRunScript.Location = new System.Drawing.Point(593, 144);
             this.btRunScript.Name = "btRunScript";
@@ -354,7 +402,7 @@
             // 
             // btReboot
             // 
-            this.btReboot.BackColor = System.Drawing.Color.Tomato;
+            this.btReboot.BackColor = System.Drawing.Color.Crimson;
             this.btReboot.ForeColor = System.Drawing.SystemColors.Menu;
             this.btReboot.Location = new System.Drawing.Point(593, 288);
             this.btReboot.Name = "btReboot";
@@ -442,29 +490,9 @@
             this.txtListIP.Size = new System.Drawing.Size(90, 332);
             this.txtListIP.TabIndex = 85;
             // 
-            // btClearComand
-            // 
-            this.btClearComand.Location = new System.Drawing.Point(429, 341);
-            this.btClearComand.Name = "btClearComand";
-            this.btClearComand.Size = new System.Drawing.Size(70, 36);
-            this.btClearComand.TabIndex = 84;
-            this.btClearComand.Text = "Clear Command";
-            this.btClearComand.UseVisualStyleBackColor = true;
-            this.btClearComand.Click += new System.EventHandler(this.btClearComand_Click);
-            // 
-            // btGenerateCommand
-            // 
-            this.btGenerateCommand.Location = new System.Drawing.Point(505, 341);
-            this.btGenerateCommand.Name = "btGenerateCommand";
-            this.btGenerateCommand.Size = new System.Drawing.Size(83, 36);
-            this.btGenerateCommand.TabIndex = 83;
-            this.btGenerateCommand.Text = "Gen Command";
-            this.btGenerateCommand.UseVisualStyleBackColor = true;
-            this.btGenerateCommand.Click += new System.EventHandler(this.btGenerateCommand_Click);
-            // 
             // btSaveListIp
             // 
-            this.btSaveListIp.Location = new System.Drawing.Point(341, 341);
+            this.btSaveListIp.Location = new System.Drawing.Point(192, 342);
             this.btSaveListIp.Name = "btSaveListIp";
             this.btSaveListIp.Size = new System.Drawing.Size(83, 36);
             this.btSaveListIp.TabIndex = 81;
@@ -474,6 +502,9 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.label15);
+            this.tabPage2.Controls.Add(this.btClearComand);
+            this.tabPage2.Controls.Add(this.btGenerateCommand);
             this.tabPage2.Controls.Add(this.txtVNCName);
             this.tabPage2.Controls.Add(this.label10);
             this.tabPage2.Controls.Add(this.WaitKillPutty);
@@ -760,6 +791,7 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.btPrivateVPN);
             this.tabPage4.Controls.Add(this.btkillFirefox);
             this.tabPage4.Controls.Add(this.btKillChrome);
             this.tabPage4.Controls.Add(this.btKillCocCoc);
@@ -771,6 +803,16 @@
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Kill";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // btPrivateVPN
+            // 
+            this.btPrivateVPN.Location = new System.Drawing.Point(294, 170);
+            this.btPrivateVPN.Name = "btPrivateVPN";
+            this.btPrivateVPN.Size = new System.Drawing.Size(84, 42);
+            this.btPrivateVPN.TabIndex = 99;
+            this.btPrivateVPN.Text = "Open PrivateVPN";
+            this.btPrivateVPN.UseVisualStyleBackColor = true;
+            this.btPrivateVPN.Click += new System.EventHandler(this.btPrivateVPN_Click);
             // 
             // btkillFirefox
             // 
@@ -971,6 +1013,16 @@
             this.labpoint.Size = new System.Drawing.Size(109, 23);
             this.labpoint.TabIndex = 40;
             // 
+            // tabPage6
+            // 
+            this.tabPage6.Location = new System.Drawing.Point(4, 22);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage6.Size = new System.Drawing.Size(672, 382);
+            this.tabPage6.TabIndex = 5;
+            this.tabPage6.Text = "Tool";
+            this.tabPage6.UseVisualStyleBackColor = true;
+            // 
             // btReRun
             // 
             this.btReRun.BackColor = System.Drawing.Color.OrangeRed;
@@ -1031,63 +1083,33 @@
             this.btConverSSH.Text = "Cover";
             this.btConverSSH.UseVisualStyleBackColor = false;
             // 
-            // tabPage6
+            // btClearComand
             // 
-            this.tabPage6.Location = new System.Drawing.Point(4, 22);
-            this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(672, 382);
-            this.tabPage6.TabIndex = 5;
-            this.tabPage6.Text = "Tool";
-            this.tabPage6.UseVisualStyleBackColor = true;
+            this.btClearComand.Location = new System.Drawing.Point(493, 39);
+            this.btClearComand.Name = "btClearComand";
+            this.btClearComand.Size = new System.Drawing.Size(70, 36);
+            this.btClearComand.TabIndex = 86;
+            this.btClearComand.Text = "Clear Command";
+            this.btClearComand.UseVisualStyleBackColor = true;
             // 
-            // txtScriptCopy
+            // btGenerateCommand
             // 
-            this.txtScriptCopy.Location = new System.Drawing.Point(219, 3);
-            this.txtScriptCopy.Multiline = true;
-            this.txtScriptCopy.Name = "txtScriptCopy";
-            this.txtScriptCopy.Size = new System.Drawing.Size(204, 39);
-            this.txtScriptCopy.TabIndex = 96;
+            this.btGenerateCommand.Location = new System.Drawing.Point(569, 39);
+            this.btGenerateCommand.Name = "btGenerateCommand";
+            this.btGenerateCommand.Size = new System.Drawing.Size(83, 36);
+            this.btGenerateCommand.TabIndex = 85;
+            this.btGenerateCommand.Text = "Gen Command";
+            this.btGenerateCommand.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // label15
             // 
-            this.button1.BackColor = System.Drawing.Color.Teal;
-            this.button1.ForeColor = System.Drawing.SystemColors.Menu;
-            this.button1.Location = new System.Drawing.Point(429, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 42);
-            this.button1.TabIndex = 97;
-            this.button1.Text = "Send Script to Phone";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click_2);
-            // 
-            // txtScriptTitle
-            // 
-            this.txtScriptTitle.Location = new System.Drawing.Point(103, 22);
-            this.txtScriptTitle.Name = "txtScriptTitle";
-            this.txtScriptTitle.Size = new System.Drawing.Size(110, 20);
-            this.txtScriptTitle.TabIndex = 98;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(100, 6);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(27, 13);
-            this.label14.TabIndex = 99;
-            this.label14.Text = "Title";
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.Teal;
-            this.button3.ForeColor = System.Drawing.SystemColors.Menu;
-            this.button3.Location = new System.Drawing.Point(505, 0);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 42);
-            this.button3.TabIndex = 100;
-            this.button3.Text = "Permission";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.label15.AutoSize = true;
+            this.label15.ForeColor = System.Drawing.Color.OrangeRed;
+            this.label15.Location = new System.Drawing.Point(493, 17);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(87, 13);
+            this.label15.TabIndex = 87;
+            this.label15.Text = "OLD FUNCTION";
             // 
             // Form1
             // 
@@ -1153,13 +1175,11 @@
         private System.Windows.Forms.Button btSaveAppFromGrid;
         private System.Windows.Forms.TextBox txtRoundClickAd;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Button btGenerateCommand;
         private System.Windows.Forms.TextBox txtRoundResetIDFV;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btReRun;
         private System.Windows.Forms.NumericUpDown WaitKillPutty;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button btClearComand;
         private System.Windows.Forms.Button btReset;
         private System.Windows.Forms.Button ListIPCopy;
         private System.Windows.Forms.TextBox txtListIP;
@@ -1220,6 +1240,10 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox txtScriptTitle;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btPrivateVPN;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Button btGenerateCommand;
+        private System.Windows.Forms.Button btClearComand;
     }
 }
 

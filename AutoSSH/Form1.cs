@@ -595,7 +595,7 @@ namespace AutoSSH
                 if (apps.Count > 0)
                 {
                     temp = temp.Replace("[[[app1]]]", apps[0].BundleID);
-                    temp = temp.Replace("[[[appname1]]]", "'"+ apps[0].AppName + "'");
+                    temp = temp.Replace("[[[appname1]]]", "\""+ apps[0].AppName + "\"");
                 }
                 if (apps.Count > 1)
                 {
@@ -849,8 +849,9 @@ namespace AutoSSH
                 }
             }
             gridlist.DataSource = listVNC;
-           
-            
+
+            gridlist.Update();
+            gridlist.Refresh();
         }
 
         private void btKillPutty_Click(object sender, EventArgs e)
@@ -1102,6 +1103,34 @@ namespace AutoSSH
 
                 Process p = new Process();
                 OpenPutty(Config.iConfig.DefaultIP + item.IP, "bashscript\\" + "TempPermissiong.txt", ref p);
+
+
+            });
+        }
+
+        private void btPrivateVPN_Click(object sender, EventArgs e)
+        {
+            var scriptPath = Application.StartupPath + "\\bashscript\\";
+
+            if (!System.IO.File.Exists(scriptPath + "privateVPN.txt"))
+            {
+                System.IO.StreamWriter sw = new System.IO.StreamWriter(scriptPath + "privateVPN.txt");
+                sw.WriteLine("activator send net.openvpn.OpenVPN-PrivateTunnel.app");
+                sw.Close();
+
+                Thread.Sleep(2000);
+            }
+
+            
+
+            List<Iphone> iphones = GetListIPFromGrid();
+            // var scriptPath = Application.StartupPath + "\\bashscript";
+
+            Parallel.ForEach(iphones, item =>
+            {
+
+                Process p = new Process();
+                OpenPutty(Config.iConfig.DefaultIP + item.IP, "bashscript\\" + "privateVPN.txt", ref p);
 
 
             });

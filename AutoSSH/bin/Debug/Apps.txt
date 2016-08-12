@@ -6,8 +6,8 @@
   </App>
   <App>
     <ID>2</ID>
-    <BundleID>htmlgame3008.Conway-s-Game-of-Life-1970</BundleID>
-    <AppName>Conway's GOL 1970</AppName>
+    <BundleID>phuongntnew.Bird-Jump</BundleID>
+    <AppName>Bird Jump</AppName>
   </App>
   <App>
     <ID>3</ID>
@@ -23,5 +23,50 @@
     <ID>5</ID>
     <BundleID>phuongnguyennew.Bird-Jump</BundleID>
     <AppName>Bird Jump</AppName>
+  </App>
+  <App>
+    <ID>6</ID>
+    <BundleID>htmlgame3008.Conway-s-Game-of-Life-1970</BundleID>
+    <AppName>Conway's GOL 1970</AppName>
+  </App>
+  <App>
+    <ID>7</ID>
+    <BundleID>game3007.Conway-s-Game-of-Life</BundleID>
+    <AppName>Conway's GOL</AppName>
+  </App>
+  <App>
+    <ID>8</ID>
+    <BundleID>newphuongnt3000.5120-Game</BundleID>
+    <AppName>5120</AppName>
+  </App> 
+  <App>
+    <ID>9</ID>
+    <BundleID>phuongnguyen.Gummy-Fighter</BundleID>
+    <AppName>Gummy Fight</AppName>
+  </App>
+  <App>
+    <ID>10</ID>
+    <BundleID>phuongnguyen1024.Game10240</BundleID>
+    <AppName>10240 Game</AppName>
+  </App>
+  <App>
+    <ID>11</ID>
+    <BundleID>phuongnguyen3006.Hexspin</BundleID>
+    <AppName>Hexspin 2016</AppName>
+  </App>
+  <App>
+    <ID>12</ID>
+    <BundleID>phuongnt20480.Game20480</BundleID>
+    <AppName>20480</AppName>
+  </App>
+  <App>
+    <ID>13</ID>
+    <BundleID>HTML5Game3005.Spin-Hexagon</BundleID>
+    <AppName>Spin Hexagon</AppName>
+  </App>
+ <App>
+    <ID>14</ID>
+    <BundleID>phuongnguyen1997.Snake-1998</BundleID>
+    <AppName>Snake 1998</AppName>
   </App>
 </ArrayOfApp>
