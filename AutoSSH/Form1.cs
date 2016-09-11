@@ -530,8 +530,29 @@ namespace AutoSSH
             }
             catch { }
         }
+        public void OpenPSCP2(string IP, string fileName, string Filepath, ref Process p)
+        {
+            try
+            {
+                string path = @"pscp.exe";
 
-       
+                p.StartInfo.CreateNoWindow = false;
+                p.StartInfo.UseShellExecute = false;
+                p.StartInfo.ErrorDialog = false;
+                p.StartInfo.RedirectStandardOutput = false;
+                p.StartInfo.RedirectStandardInput = false;
+                p.StartInfo.RedirectStandardError = false;
+                p.EnableRaisingEvents = true;
+                ////var/mobile/Library/Preferences/OpenBackupFiles/bckup.txt
+
+                p.StartInfo.Arguments = "-pw alpine " + Filepath + " root@" + IP + ":/var/mobile/Library/Preferences/OpenBackupFiles/" + fileName;
+
+                p.StartInfo.FileName = path;
+                p.Start();
+            }
+            catch { }
+        }
+
 
         private void btGenBashScript_Click(object sender, EventArgs e)
         {
@@ -1185,6 +1206,86 @@ namespace AutoSSH
 
                 Process p = new Process();
                 OpenPutty(Config.iConfig.DefaultIP + item.IP, "bashscript\\" + "FlipWifi.txt", ref p);
+
+
+            });
+        }
+
+        private void btRunKeychain_Click(object sender, EventArgs e)
+        {
+
+
+            var scriptPath = Application.StartupPath + "\\bashscript\\";
+
+            if (!System.IO.File.Exists(scriptPath + "RunKeychain.txt"))
+            {
+                System.IO.StreamWriter sw = new System.IO.StreamWriter(scriptPath + "RunKeychain.txt");
+                sw.WriteLine("bash /User/Library/runbatch/scripts/keychain.sh");
+              
+                sw.Close();
+
+                Thread.Sleep(2000);
+            }
+
+
+
+
+            List<Iphone> iphones = GetListIPFromGrid();
+            // var scriptPath = Application.StartupPath + "\\bashscript";
+
+            Parallel.ForEach(iphones, item =>
+            {
+
+                Process p = new Process();
+                OpenPutty(Config.iConfig.DefaultIP + item.IP, "bashscript\\RunKeychain.txt", ref p);
+
+
+            });
+        }
+
+        private void btCopyOpenBackup_Click(object sender, EventArgs e)
+        {
+            List<Iphone> iphones = GetListIPFromGrid();
+            // var scriptPath = Application.StartupPath + "\\bashscript";
+
+            Parallel.ForEach(iphones, item =>
+            {
+
+                Process p = new Process();
+                OpenPSCP2(Config.iConfig.DefaultIP + item.IP, "bckup.txt", Application.StartupPath + "\\backup\\bckup.txt", ref p);
+                OpenPSCP2(Config.iConfig.DefaultIP + item.IP, "bckup.zip", Application.StartupPath + "\\backup\\bckup.zip", ref p);
+
+
+            }
+        );
+        }
+
+        private void btClearCacheCookie_Click(object sender, EventArgs e)
+        {
+            var scriptPath = Application.StartupPath + "\\bashscript\\";
+
+            if (!System.IO.File.Exists(scriptPath + "cache.txt"))
+            {
+                System.IO.StreamWriter sw = new System.IO.StreamWriter(scriptPath + "cache.txt");
+                sw.WriteLine("rm /var/db/lsd/com.apple.lsdidentifiers.plist");
+                sw.WriteLine("rm $(find //var/mobile/Applications -name 'Caches') -rf");
+                sw.WriteLine("rm $(find //var/mobile/Applications -name 'Cookies') -rf");
+                sw.Close();
+
+                Thread.Sleep(2000);
+            }
+
+
+
+
+            List<Iphone> iphones = GetListIPFromGrid();
+            // var scriptPath = Application.StartupPath + "\\bashscript";
+
+            Parallel.ForEach(iphones, item =>
+            {
+
+                Process p = new Process();
+                OpenPutty(Config.iConfig.DefaultIP + item.IP, "bashscript\\cache.txt", ref p);
 
 
             });

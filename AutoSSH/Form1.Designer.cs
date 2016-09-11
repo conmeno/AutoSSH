@@ -31,22 +31,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.btStart = new System.Windows.Forms.Button();
             this.gridlist = new System.Windows.Forms.DataGridView();
-            this.select = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.IP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Action = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.VNC = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Run = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Script = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Reboot = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Respring = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Reset = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.RunBash = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.OpenNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cbStartWindows = new System.Windows.Forms.CheckBox();
             this.cbAutoStart = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btClickAd = new System.Windows.Forms.Button();
+            this.btFlipWifi = new System.Windows.Forms.Button();
+            this.btVPNOn = new System.Windows.Forms.Button();
             this.cbAll = new System.Windows.Forms.CheckBox();
             this.btRunScript = new System.Windows.Forms.Button();
             this.btReboot = new System.Windows.Forms.Button();
@@ -95,6 +87,9 @@
             this.AppName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btSaveAppFromGrid = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.btClearCacheCookie = new System.Windows.Forms.Button();
+            this.btCopyOpenBackup = new System.Windows.Forms.Button();
+            this.btRunKeychain = new System.Windows.Forms.Button();
             this.btPrivateVPN = new System.Windows.Forms.Button();
             this.btkillFirefox = new System.Windows.Forms.Button();
             this.btKillChrome = new System.Windows.Forms.Button();
@@ -124,8 +119,17 @@
             this.txtScriptCopy = new System.Windows.Forms.TextBox();
             this.btReRun = new System.Windows.Forms.Button();
             this.cbClearCaches = new System.Windows.Forms.CheckBox();
-            this.btVPNOn = new System.Windows.Forms.Button();
-            this.btFlipWifi = new System.Windows.Forms.Button();
+            this.VNC = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.select = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.IP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Action = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Run = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Script = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Reboot = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Respring = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Reset = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.RunBash = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.OpenNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridlist)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -156,10 +160,10 @@
             this.gridlist.BackgroundColor = System.Drawing.Color.AliceBlue;
             this.gridlist.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridlist.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.VNC,
             this.select,
             this.IP,
             this.Action,
-            this.VNC,
             this.Run,
             this.Script,
             this.Reboot,
@@ -174,78 +178,6 @@
             this.gridlist.TabIndex = 19;
             this.gridlist.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridlist_CellClick);
             this.gridlist.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridlist_CellContentClick);
-            // 
-            // select
-            // 
-            this.select.DataPropertyName = "Select";
-            this.select.HeaderText = "select";
-            this.select.Name = "select";
-            this.select.Width = 40;
-            // 
-            // IP
-            // 
-            this.IP.DataPropertyName = "IP";
-            this.IP.HeaderText = "IP";
-            this.IP.Name = "IP";
-            this.IP.Width = 40;
-            // 
-            // Action
-            // 
-            this.Action.DataPropertyName = "Apps";
-            this.Action.HeaderText = "Apps";
-            this.Action.Name = "Action";
-            this.Action.Width = 50;
-            // 
-            // VNC
-            // 
-            this.VNC.HeaderText = "VNC";
-            this.VNC.Name = "VNC";
-            this.VNC.Width = 35;
-            // 
-            // Run
-            // 
-            this.Run.HeaderText = "Putty";
-            this.Run.Name = "Run";
-            this.Run.Text = "Putty";
-            this.Run.Width = 40;
-            // 
-            // Script
-            // 
-            this.Script.HeaderText = "Script";
-            this.Script.Name = "Script";
-            this.Script.Width = 40;
-            // 
-            // Reboot
-            // 
-            this.Reboot.HeaderText = "Reboot";
-            this.Reboot.Name = "Reboot";
-            this.Reboot.Text = "Reboot";
-            this.Reboot.Width = 45;
-            // 
-            // Respring
-            // 
-            this.Respring.HeaderText = "Respring";
-            this.Respring.Name = "Respring";
-            this.Respring.Width = 50;
-            // 
-            // Reset
-            // 
-            this.Reset.HeaderText = "Reset";
-            this.Reset.Name = "Reset";
-            this.Reset.Width = 40;
-            // 
-            // RunBash
-            // 
-            this.RunBash.HeaderText = "RunBash";
-            this.RunBash.Name = "RunBash";
-            this.RunBash.Width = 53;
-            // 
-            // OpenNumber
-            // 
-            this.OpenNumber.DataPropertyName = "OpenNumber";
-            this.OpenNumber.HeaderText = "OpenNumber";
-            this.OpenNumber.Name = "OpenNumber";
-            this.OpenNumber.Visible = false;
             // 
             // cbStartWindows
             // 
@@ -294,6 +226,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.btClickAd);
             this.tabPage1.Controls.Add(this.btFlipWifi);
             this.tabPage1.Controls.Add(this.btVPNOn);
             this.tabPage1.Controls.Add(this.cbAll);
@@ -315,6 +248,41 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Main";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // btClickAd
+            // 
+            this.btClickAd.BackColor = System.Drawing.Color.Maroon;
+            this.btClickAd.ForeColor = System.Drawing.SystemColors.Menu;
+            this.btClickAd.Location = new System.Drawing.Point(593, 185);
+            this.btClickAd.Name = "btClickAd";
+            this.btClickAd.Size = new System.Drawing.Size(75, 42);
+            this.btClickAd.TabIndex = 97;
+            this.btClickAd.Text = "Click Ad";
+            this.btClickAd.UseVisualStyleBackColor = false;
+            // 
+            // btFlipWifi
+            // 
+            this.btFlipWifi.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btFlipWifi.ForeColor = System.Drawing.SystemColors.Menu;
+            this.btFlipWifi.Location = new System.Drawing.Point(593, 364);
+            this.btFlipWifi.Name = "btFlipWifi";
+            this.btFlipWifi.Size = new System.Drawing.Size(75, 42);
+            this.btFlipWifi.TabIndex = 96;
+            this.btFlipWifi.Text = "OFF-ON Wifi";
+            this.btFlipWifi.UseVisualStyleBackColor = false;
+            this.btFlipWifi.Click += new System.EventHandler(this.btFlipWifi_Click);
+            // 
+            // btVPNOn
+            // 
+            this.btVPNOn.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btVPNOn.ForeColor = System.Drawing.SystemColors.Menu;
+            this.btVPNOn.Location = new System.Drawing.Point(593, 316);
+            this.btVPNOn.Name = "btVPNOn";
+            this.btVPNOn.Size = new System.Drawing.Size(75, 42);
+            this.btVPNOn.TabIndex = 90;
+            this.btVPNOn.Text = "VPN ON";
+            this.btVPNOn.UseVisualStyleBackColor = false;
+            this.btVPNOn.Click += new System.EventHandler(this.btVPNOn_Click);
             // 
             // cbAll
             // 
@@ -778,7 +746,7 @@
             this.gridApps.Location = new System.Drawing.Point(17, 9);
             this.gridApps.Name = "gridApps";
             this.gridApps.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.gridApps.Size = new System.Drawing.Size(647, 320);
+            this.gridApps.Size = new System.Drawing.Size(540, 442);
             this.gridApps.TabIndex = 83;
             // 
             // dataGridViewTextBoxColumn1
@@ -804,9 +772,9 @@
             // 
             // btSaveAppFromGrid
             // 
-            this.btSaveAppFromGrid.Location = new System.Drawing.Point(553, 350);
+            this.btSaveAppFromGrid.Location = new System.Drawing.Point(563, 9);
             this.btSaveAppFromGrid.Name = "btSaveAppFromGrid";
-            this.btSaveAppFromGrid.Size = new System.Drawing.Size(113, 36);
+            this.btSaveAppFromGrid.Size = new System.Drawing.Size(96, 36);
             this.btSaveAppFromGrid.TabIndex = 60;
             this.btSaveAppFromGrid.Text = "Save Apps";
             this.btSaveAppFromGrid.UseVisualStyleBackColor = true;
@@ -814,6 +782,9 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.btClearCacheCookie);
+            this.tabPage4.Controls.Add(this.btCopyOpenBackup);
+            this.tabPage4.Controls.Add(this.btRunKeychain);
             this.tabPage4.Controls.Add(this.btPrivateVPN);
             this.tabPage4.Controls.Add(this.btkillFirefox);
             this.tabPage4.Controls.Add(this.btKillChrome);
@@ -827,9 +798,39 @@
             this.tabPage4.Text = "Kill";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
+            // btClearCacheCookie
+            // 
+            this.btClearCacheCookie.Location = new System.Drawing.Point(303, 259);
+            this.btClearCacheCookie.Name = "btClearCacheCookie";
+            this.btClearCacheCookie.Size = new System.Drawing.Size(84, 42);
+            this.btClearCacheCookie.TabIndex = 102;
+            this.btClearCacheCookie.Text = "ClearCacheCookie";
+            this.btClearCacheCookie.UseVisualStyleBackColor = true;
+            this.btClearCacheCookie.Click += new System.EventHandler(this.btClearCacheCookie_Click);
+            // 
+            // btCopyOpenBackup
+            // 
+            this.btCopyOpenBackup.Location = new System.Drawing.Point(203, 259);
+            this.btCopyOpenBackup.Name = "btCopyOpenBackup";
+            this.btCopyOpenBackup.Size = new System.Drawing.Size(84, 42);
+            this.btCopyOpenBackup.TabIndex = 101;
+            this.btCopyOpenBackup.Text = "Copy OpenBackup";
+            this.btCopyOpenBackup.UseVisualStyleBackColor = true;
+            this.btCopyOpenBackup.Click += new System.EventHandler(this.btCopyOpenBackup_Click);
+            // 
+            // btRunKeychain
+            // 
+            this.btRunKeychain.Location = new System.Drawing.Point(97, 259);
+            this.btRunKeychain.Name = "btRunKeychain";
+            this.btRunKeychain.Size = new System.Drawing.Size(84, 42);
+            this.btRunKeychain.TabIndex = 100;
+            this.btRunKeychain.Text = "Run KeyChain";
+            this.btRunKeychain.UseVisualStyleBackColor = true;
+            this.btRunKeychain.Click += new System.EventHandler(this.btRunKeychain_Click);
+            // 
             // btPrivateVPN
             // 
-            this.btPrivateVPN.Location = new System.Drawing.Point(294, 170);
+            this.btPrivateVPN.Location = new System.Drawing.Point(7, 259);
             this.btPrivateVPN.Name = "btPrivateVPN";
             this.btPrivateVPN.Size = new System.Drawing.Size(84, 42);
             this.btPrivateVPN.TabIndex = 99;
@@ -1122,29 +1123,77 @@
             this.cbClearCaches.Text = "Clear Caches";
             this.cbClearCaches.UseVisualStyleBackColor = true;
             // 
-            // btVPNOn
+            // VNC
             // 
-            this.btVPNOn.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btVPNOn.ForeColor = System.Drawing.SystemColors.Menu;
-            this.btVPNOn.Location = new System.Drawing.Point(593, 316);
-            this.btVPNOn.Name = "btVPNOn";
-            this.btVPNOn.Size = new System.Drawing.Size(75, 42);
-            this.btVPNOn.TabIndex = 90;
-            this.btVPNOn.Text = "VPN ON";
-            this.btVPNOn.UseVisualStyleBackColor = false;
-            this.btVPNOn.Click += new System.EventHandler(this.btVPNOn_Click);
+            this.VNC.HeaderText = "VNC";
+            this.VNC.Name = "VNC";
+            this.VNC.Width = 35;
             // 
-            // btFlipWifi
+            // select
             // 
-            this.btFlipWifi.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btFlipWifi.ForeColor = System.Drawing.SystemColors.Menu;
-            this.btFlipWifi.Location = new System.Drawing.Point(593, 364);
-            this.btFlipWifi.Name = "btFlipWifi";
-            this.btFlipWifi.Size = new System.Drawing.Size(75, 42);
-            this.btFlipWifi.TabIndex = 96;
-            this.btFlipWifi.Text = "OFF-ON Wifi";
-            this.btFlipWifi.UseVisualStyleBackColor = false;
-            this.btFlipWifi.Click += new System.EventHandler(this.btFlipWifi_Click);
+            this.select.DataPropertyName = "Select";
+            this.select.HeaderText = "select";
+            this.select.Name = "select";
+            this.select.Width = 40;
+            // 
+            // IP
+            // 
+            this.IP.DataPropertyName = "IP";
+            this.IP.HeaderText = "IP";
+            this.IP.Name = "IP";
+            this.IP.Width = 40;
+            // 
+            // Action
+            // 
+            this.Action.DataPropertyName = "Apps";
+            this.Action.HeaderText = "Apps";
+            this.Action.Name = "Action";
+            this.Action.Width = 50;
+            // 
+            // Run
+            // 
+            this.Run.HeaderText = "Putty";
+            this.Run.Name = "Run";
+            this.Run.Text = "Putty";
+            this.Run.Width = 40;
+            // 
+            // Script
+            // 
+            this.Script.HeaderText = "Script";
+            this.Script.Name = "Script";
+            this.Script.Width = 40;
+            // 
+            // Reboot
+            // 
+            this.Reboot.HeaderText = "Reboot";
+            this.Reboot.Name = "Reboot";
+            this.Reboot.Text = "Reboot";
+            this.Reboot.Width = 45;
+            // 
+            // Respring
+            // 
+            this.Respring.HeaderText = "Respring";
+            this.Respring.Name = "Respring";
+            this.Respring.Width = 50;
+            // 
+            // Reset
+            // 
+            this.Reset.HeaderText = "Reset";
+            this.Reset.Name = "Reset";
+            this.Reset.Width = 40;
+            // 
+            // RunBash
+            // 
+            this.RunBash.HeaderText = "RunBash";
+            this.RunBash.Name = "RunBash";
+            this.RunBash.Width = 53;
+            // 
+            // OpenNumber
+            // 
+            this.OpenNumber.DataPropertyName = "OpenNumber";
+            this.OpenNumber.HeaderText = "OpenNumber";
+            this.OpenNumber.Name = "OpenNumber";
+            this.OpenNumber.Visible = false;
             // 
             // Form1
             // 
@@ -1229,17 +1278,6 @@
         private System.Windows.Forms.Button btRespringAll;
         private System.Windows.Forms.Button btReboot;
         private System.Windows.Forms.Button btRunScript;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn select;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IP;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Action;
-        private System.Windows.Forms.DataGridViewButtonColumn VNC;
-        private System.Windows.Forms.DataGridViewButtonColumn Run;
-        private System.Windows.Forms.DataGridViewButtonColumn Script;
-        private System.Windows.Forms.DataGridViewButtonColumn Reboot;
-        private System.Windows.Forms.DataGridViewButtonColumn Respring;
-        private System.Windows.Forms.DataGridViewButtonColumn Reset;
-        private System.Windows.Forms.DataGridViewButtonColumn RunBash;
-        private System.Windows.Forms.DataGridViewTextBoxColumn OpenNumber;
         private System.Windows.Forms.CheckBox cbAll;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.Button btKillCocCoc;
@@ -1279,6 +1317,21 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btVPNOn;
         private System.Windows.Forms.Button btFlipWifi;
+        private System.Windows.Forms.Button btClickAd;
+        private System.Windows.Forms.Button btRunKeychain;
+        private System.Windows.Forms.Button btCopyOpenBackup;
+        private System.Windows.Forms.Button btClearCacheCookie;
+        private System.Windows.Forms.DataGridViewTextBoxColumn OpenNumber;
+        private System.Windows.Forms.DataGridViewButtonColumn RunBash;
+        private System.Windows.Forms.DataGridViewButtonColumn Reset;
+        private System.Windows.Forms.DataGridViewButtonColumn Respring;
+        private System.Windows.Forms.DataGridViewButtonColumn Reboot;
+        private System.Windows.Forms.DataGridViewButtonColumn Script;
+        private System.Windows.Forms.DataGridViewButtonColumn Run;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Action;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IP;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn select;
+        private System.Windows.Forms.DataGridViewButtonColumn VNC;
     }
 }
 
