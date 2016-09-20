@@ -38,7 +38,7 @@
     <ID>8</ID>
     <BundleID>newphuongnt3000.5120-Game</BundleID>
     <AppName>5120</AppName>
-  </App> 
+  </App>
   <App>
     <ID>9</ID>
     <BundleID>phuongnguyen.Gummy-Fighter</BundleID>
@@ -64,9 +64,44 @@
     <BundleID>HTML5Game3005.Spin-Hexagon</BundleID>
     <AppName>Spin Hexagon</AppName>
   </App>
- <App>
+  <App>
     <ID>14</ID>
     <BundleID>phuongnguyen1997.Snake-1998</BundleID>
     <AppName>Snake 1998</AppName>
+  </App>
+  <App>
+    <ID>15</ID>
+    <BundleID>newphuongnt3002.Snake-1999</BundleID>
+    <AppName>Snake 1999</AppName>
+  </App>
+  <App>
+    <ID>16</ID>
+    <BundleID>phuongnt.hocphat</BundleID>
+    <AppName>hocphat</AppName>
+  </App>
+  <App>
+    <ID>17</ID>
+    <BundleID>com.newbornGame.AppleFighter</BundleID>
+    <AppName>Apple Fighter</AppName>
+  </App>
+  <App>
+    <ID>18</ID>
+    <BundleID>com.newbornGame.BeanJump</BundleID>
+    <AppName>Bean Jump</AppName>
+  </App>
+  <App>
+    <ID>19</ID>
+    <BundleID>com.newbornGame.CarrotPoping</BundleID>
+    <AppName>Carrot Poping</AppName>
+  </App>
+  <App>
+    <ID>20</ID>
+    <BundleID>com.newbornGame.DameJune</BundleID>
+    <AppName>Dame June</AppName>
+  </App>
+  <App>
+    <ID>21</ID>
+    <BundleID>com.newbornGame.EggFight</BundleID>
+    <AppName>Egg Fight</AppName>
   </App>
 </ArrayOfApp>

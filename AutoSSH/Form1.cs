@@ -194,6 +194,10 @@ namespace AutoSSH
             LoadListAppsToForm();
             starWithWindows();
             Apps = Utility.LoadApps();
+
+            //load Note.
+       
+
             if (Config.iConfig.AutoStart)
             {
                 RunAutoGame();
@@ -263,6 +267,7 @@ namespace AutoSSH
             cf.RoundResetIDFV = int.Parse(txtRoundResetIDFV.Text);
             cf.WaitKillPutty = (int)WaitKillPutty.Value;
             cf.VNCName = txtVNCName.Text;
+            cf.Note = txtNote.Text;
             Utility.SaveConfig(cf);
         }
         public void LoadConfigtoForm()
@@ -281,6 +286,8 @@ namespace AutoSSH
             txtRoundClickAd.Text = cf.RoundClickAd.ToString();
             txtRoundResetIDFV.Text = cf.RoundResetIDFV.ToString();
             txtVNCName.Text = cf.VNCName;
+
+            txtNote.Text = cf.Note;
         }
 
 
@@ -1289,6 +1296,11 @@ namespace AutoSSH
 
 
             });
+        }
+
+        private void txtNote_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

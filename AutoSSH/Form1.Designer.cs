@@ -31,6 +31,17 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.btStart = new System.Windows.Forms.Button();
             this.gridlist = new System.Windows.Forms.DataGridView();
+            this.VNC = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.select = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.IP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Action = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Run = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Script = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Reboot = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Respring = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Reset = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.RunBash = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.OpenNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cbStartWindows = new System.Windows.Forms.CheckBox();
             this.cbAutoStart = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -119,17 +130,7 @@
             this.txtScriptCopy = new System.Windows.Forms.TextBox();
             this.btReRun = new System.Windows.Forms.Button();
             this.cbClearCaches = new System.Windows.Forms.CheckBox();
-            this.VNC = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.select = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.IP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Action = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Run = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Script = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Reboot = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Respring = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Reset = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.RunBash = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.OpenNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtNote = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.gridlist)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -178,6 +179,78 @@
             this.gridlist.TabIndex = 19;
             this.gridlist.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridlist_CellClick);
             this.gridlist.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridlist_CellContentClick);
+            // 
+            // VNC
+            // 
+            this.VNC.HeaderText = "VNC";
+            this.VNC.Name = "VNC";
+            this.VNC.Width = 35;
+            // 
+            // select
+            // 
+            this.select.DataPropertyName = "Select";
+            this.select.HeaderText = "select";
+            this.select.Name = "select";
+            this.select.Width = 40;
+            // 
+            // IP
+            // 
+            this.IP.DataPropertyName = "IP";
+            this.IP.HeaderText = "IP";
+            this.IP.Name = "IP";
+            this.IP.Width = 40;
+            // 
+            // Action
+            // 
+            this.Action.DataPropertyName = "Apps";
+            this.Action.HeaderText = "Apps";
+            this.Action.Name = "Action";
+            this.Action.Width = 50;
+            // 
+            // Run
+            // 
+            this.Run.HeaderText = "Putty";
+            this.Run.Name = "Run";
+            this.Run.Text = "Putty";
+            this.Run.Width = 40;
+            // 
+            // Script
+            // 
+            this.Script.HeaderText = "Script";
+            this.Script.Name = "Script";
+            this.Script.Width = 40;
+            // 
+            // Reboot
+            // 
+            this.Reboot.HeaderText = "Reboot";
+            this.Reboot.Name = "Reboot";
+            this.Reboot.Text = "Reboot";
+            this.Reboot.Width = 45;
+            // 
+            // Respring
+            // 
+            this.Respring.HeaderText = "Respring";
+            this.Respring.Name = "Respring";
+            this.Respring.Width = 50;
+            // 
+            // Reset
+            // 
+            this.Reset.HeaderText = "Reset";
+            this.Reset.Name = "Reset";
+            this.Reset.Width = 40;
+            // 
+            // RunBash
+            // 
+            this.RunBash.HeaderText = "RunBash";
+            this.RunBash.Name = "RunBash";
+            this.RunBash.Width = 53;
+            // 
+            // OpenNumber
+            // 
+            this.OpenNumber.DataPropertyName = "OpenNumber";
+            this.OpenNumber.HeaderText = "OpenNumber";
+            this.OpenNumber.Name = "OpenNumber";
+            this.OpenNumber.Visible = false;
             // 
             // cbStartWindows
             // 
@@ -795,7 +868,7 @@
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage4.Size = new System.Drawing.Size(672, 457);
             this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Kill";
+            this.tabPage4.Text = "Tool";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // btClearCacheCookie
@@ -1049,7 +1122,7 @@
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage6.Size = new System.Drawing.Size(672, 457);
             this.tabPage6.TabIndex = 5;
-            this.tabPage6.Text = "Tool";
+            this.tabPage6.Text = "Copy Script";
             this.tabPage6.UseVisualStyleBackColor = true;
             // 
             // button3
@@ -1123,83 +1196,21 @@
             this.cbClearCaches.Text = "Clear Caches";
             this.cbClearCaches.UseVisualStyleBackColor = true;
             // 
-            // VNC
+            // txtNote
             // 
-            this.VNC.HeaderText = "VNC";
-            this.VNC.Name = "VNC";
-            this.VNC.Width = 35;
-            // 
-            // select
-            // 
-            this.select.DataPropertyName = "Select";
-            this.select.HeaderText = "select";
-            this.select.Name = "select";
-            this.select.Width = 40;
-            // 
-            // IP
-            // 
-            this.IP.DataPropertyName = "IP";
-            this.IP.HeaderText = "IP";
-            this.IP.Name = "IP";
-            this.IP.Width = 40;
-            // 
-            // Action
-            // 
-            this.Action.DataPropertyName = "Apps";
-            this.Action.HeaderText = "Apps";
-            this.Action.Name = "Action";
-            this.Action.Width = 50;
-            // 
-            // Run
-            // 
-            this.Run.HeaderText = "Putty";
-            this.Run.Name = "Run";
-            this.Run.Text = "Putty";
-            this.Run.Width = 40;
-            // 
-            // Script
-            // 
-            this.Script.HeaderText = "Script";
-            this.Script.Name = "Script";
-            this.Script.Width = 40;
-            // 
-            // Reboot
-            // 
-            this.Reboot.HeaderText = "Reboot";
-            this.Reboot.Name = "Reboot";
-            this.Reboot.Text = "Reboot";
-            this.Reboot.Width = 45;
-            // 
-            // Respring
-            // 
-            this.Respring.HeaderText = "Respring";
-            this.Respring.Name = "Respring";
-            this.Respring.Width = 50;
-            // 
-            // Reset
-            // 
-            this.Reset.HeaderText = "Reset";
-            this.Reset.Name = "Reset";
-            this.Reset.Width = 40;
-            // 
-            // RunBash
-            // 
-            this.RunBash.HeaderText = "RunBash";
-            this.RunBash.Name = "RunBash";
-            this.RunBash.Width = 53;
-            // 
-            // OpenNumber
-            // 
-            this.OpenNumber.DataPropertyName = "OpenNumber";
-            this.OpenNumber.HeaderText = "OpenNumber";
-            this.OpenNumber.Name = "OpenNumber";
-            this.OpenNumber.Visible = false;
+            this.txtNote.Location = new System.Drawing.Point(280, 488);
+            this.txtNote.Multiline = true;
+            this.txtNote.Name = "txtNote";
+            this.txtNote.Size = new System.Drawing.Size(308, 34);
+            this.txtNote.TabIndex = 98;
+            this.txtNote.TextChanged += new System.EventHandler(this.txtNote_TextChanged);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(684, 523);
+            this.Controls.Add(this.txtNote);
             this.Controls.Add(this.cbClearCaches);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.label2);
@@ -1332,6 +1343,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn IP;
         private System.Windows.Forms.DataGridViewCheckBoxColumn select;
         private System.Windows.Forms.DataGridViewButtonColumn VNC;
+        private System.Windows.Forms.TextBox txtNote;
     }
 }
 

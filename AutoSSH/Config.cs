@@ -22,6 +22,7 @@ namespace AutoSSH
         public int RoundResetIDFV { get; set; }
         public int RoundClickAd { get; set; }
         public int WaitKillPutty { get; set; }
+        public string Note { get; set; }
         [XmlIgnore]
         public static Config iConfig { get; set; }
         public string VNCName { get; set; }
