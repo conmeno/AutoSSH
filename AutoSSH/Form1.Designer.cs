@@ -131,6 +131,9 @@
             this.btReRun = new System.Windows.Forms.Button();
             this.cbClearCaches = new System.Windows.Forms.CheckBox();
             this.txtNote = new System.Windows.Forms.TextBox();
+            this.btChangIOSVersion = new System.Windows.Forms.Button();
+            this.btIOS92 = new System.Windows.Forms.Button();
+            this.btios91 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridlist)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -855,6 +858,9 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.btios91);
+            this.tabPage4.Controls.Add(this.btIOS92);
+            this.tabPage4.Controls.Add(this.btChangIOSVersion);
             this.tabPage4.Controls.Add(this.btClearCacheCookie);
             this.tabPage4.Controls.Add(this.btCopyOpenBackup);
             this.tabPage4.Controls.Add(this.btRunKeychain);
@@ -1205,6 +1211,36 @@
             this.txtNote.TabIndex = 98;
             this.txtNote.TextChanged += new System.EventHandler(this.txtNote_TextChanged);
             // 
+            // btChangIOSVersion
+            // 
+            this.btChangIOSVersion.Location = new System.Drawing.Point(7, 318);
+            this.btChangIOSVersion.Name = "btChangIOSVersion";
+            this.btChangIOSVersion.Size = new System.Drawing.Size(84, 42);
+            this.btChangIOSVersion.TabIndex = 103;
+            this.btChangIOSVersion.Text = "IOS 10.0.1";
+            this.btChangIOSVersion.UseVisualStyleBackColor = true;
+            this.btChangIOSVersion.Click += new System.EventHandler(this.btChangIOSVersion_Click);
+            // 
+            // btIOS92
+            // 
+            this.btIOS92.Location = new System.Drawing.Point(97, 318);
+            this.btIOS92.Name = "btIOS92";
+            this.btIOS92.Size = new System.Drawing.Size(84, 42);
+            this.btIOS92.TabIndex = 104;
+            this.btIOS92.Text = "IOS 9.2";
+            this.btIOS92.UseVisualStyleBackColor = true;
+            this.btIOS92.Click += new System.EventHandler(this.btIOS92_Click);
+            // 
+            // btios91
+            // 
+            this.btios91.Location = new System.Drawing.Point(203, 318);
+            this.btios91.Name = "btios91";
+            this.btios91.Size = new System.Drawing.Size(84, 42);
+            this.btios91.TabIndex = 105;
+            this.btios91.Text = "IOS 9.1";
+            this.btios91.UseVisualStyleBackColor = true;
+            this.btios91.Click += new System.EventHandler(this.btios91_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1344,6 +1380,9 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn select;
         private System.Windows.Forms.DataGridViewButtonColumn VNC;
         private System.Windows.Forms.TextBox txtNote;
+        private System.Windows.Forms.Button btChangIOSVersion;
+        private System.Windows.Forms.Button btIOS92;
+        private System.Windows.Forms.Button btios91;
     }
 }
 

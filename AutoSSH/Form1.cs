@@ -559,7 +559,28 @@ namespace AutoSSH
             }
             catch { }
         }
+        public void PSCPSystemVersion(string IP, string fileName, string Filepath, ref Process p)
+        {
+            try
+            {
+                string path = @"pscp.exe";
 
+                p.StartInfo.CreateNoWindow = false;
+                p.StartInfo.UseShellExecute = false;
+                p.StartInfo.ErrorDialog = false;
+                p.StartInfo.RedirectStandardOutput = false;
+                p.StartInfo.RedirectStandardInput = false;
+                p.StartInfo.RedirectStandardError = false;
+                p.EnableRaisingEvents = true;
+                ////var/mobile/Library/Preferences/OpenBackupFiles/bckup.txt
+
+                p.StartInfo.Arguments = "-pw alpine " + Filepath + " root@" + IP + ":/System/Library/CoreServices//" + fileName;
+
+                p.StartInfo.FileName = path;
+                p.Start();
+            }
+            catch { }
+        }
 
         private void btGenBashScript_Click(object sender, EventArgs e)
         {
@@ -1301,6 +1322,36 @@ namespace AutoSSH
         private void txtNote_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btChangIOSVersion_Click(object sender, EventArgs e)
+        {
+            List<Iphone> iphones = GetListIPFromGrid(); 
+            Parallel.ForEach(iphones, item =>
+            {
+                Process p = new Process();
+                PSCPSystemVersion(Config.iConfig.DefaultIP + item.IP, "SystemVersion.plist", Application.StartupPath + "\\ios10.0.1.plist", ref p);
+            });
+        }
+
+        private void btIOS92_Click(object sender, EventArgs e)
+        {
+            List<Iphone> iphones = GetListIPFromGrid();
+            Parallel.ForEach(iphones, item =>
+            {
+                Process p = new Process();
+                PSCPSystemVersion(Config.iConfig.DefaultIP + item.IP, "SystemVersion.plist", Application.StartupPath + "\\ios9.2.plist", ref p);
+            });
+        }
+
+        private void btios91_Click(object sender, EventArgs e)
+        {
+            List<Iphone> iphones = GetListIPFromGrid();
+            Parallel.ForEach(iphones, item =>
+            {
+                Process p = new Process();
+                PSCPSystemVersion(Config.iConfig.DefaultIP + item.IP, "SystemVersion.plist", Application.StartupPath + "\\ios9.1.plist", ref p);
+            });
         }
     }
 }
