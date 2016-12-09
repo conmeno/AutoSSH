@@ -19,7 +19,9 @@ com.modmyi.serioussbsettingshd
 com.rpetrich.rocketbootstrap		
 com.saurik.substrate.safemode		
 com.sbsdefaulthdtheme			
+com.sull.icleanerpro			
 com.sull.ifile				
+com.sull.repoicons			
 com.theepicorange7.runbatch		
 com.zokunei.openbackup			
 coreutils				
@@ -44,6 +46,7 @@ firmware-sbin
 gawk					
 gnupg					
 grep					
+gsmicon					
 gzip					
 io.pangu.axe7				
 jp.ashikase.mousesupport		

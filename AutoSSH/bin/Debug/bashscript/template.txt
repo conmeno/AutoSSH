@@ -9,7 +9,7 @@ if [ $reset -eq [[[numreset]]] ]; then
 fi
 let "reset += 1 "
 activator send $app1
-sleep 60
+sleep 30
 killall -m $appname1
 sleep 1
 done

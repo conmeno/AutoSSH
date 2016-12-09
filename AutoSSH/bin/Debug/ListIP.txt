@@ -1,70 +1,7 @@
 <ArrayOfIphone>
   <Iphone>
-    <Select>false</Select>
-    <IP>111</IP>
-    <Apps>8</Apps>
-  </Iphone>
-  <Iphone>
-    <Select>false</Select>
-    <IP>115</IP>
-    <Apps>14</Apps>
-  </Iphone>
-  <Iphone>
     <Select>true</Select>
     <IP>125</IP>
-    <Apps>18</Apps>
-  </Iphone>
-  <Iphone>
-    <Select>false</Select>
-    <IP>126</IP>
-    <Apps>2</Apps>
-  </Iphone>
-  <Iphone>
-    <Select>false</Select>
-    <IP>113</IP>
     <Apps>14</Apps>
-  </Iphone>
-  <Iphone>
-    <Select>false</Select>
-    <IP>123</IP>
-    <Apps>16</Apps>
-  </Iphone>
-  <Iphone>
-    <Select>false</Select>
-    <IP>112</IP>
-    <Apps>16</Apps>
-  </Iphone>
-  <Iphone>
-    <Select>false</Select>
-    <IP>127</IP>
-  </Iphone>
-  <Iphone>
-    <Select>false</Select>
-    <IP>129</IP>
-    <Apps>14</Apps>
-  </Iphone>
-  <Iphone>
-    <Select>false</Select>
-    <IP>130</IP>
-    <Apps>14</Apps>
-  </Iphone>
-  <Iphone>
-    <Select>false</Select>
-    <IP>131</IP>
-  </Iphone>
-  <Iphone>
-    <Select>false</Select>
-    <IP>178</IP>
-    <Apps>12</Apps>
-  </Iphone>
-  <Iphone>
-    <Select>false</Select>
-    <IP>133</IP>
-    <Apps>12</Apps>
-  </Iphone>
-  <Iphone>
-    <Select>false</Select>
-    <IP>134</IP>
-    <Apps>12</Apps>
   </Iphone>
 </ArrayOfIphone>
